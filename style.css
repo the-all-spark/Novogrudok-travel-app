@@ -156,37 +156,41 @@ div.switch-language {
     justify-self: center;
 }
 
-/* ---- Slider ---- */
+/* ---- SLIDER ---- */
 
 section.slider {
-    width: 1070px;
+        /*width: 1070px;*/
+    width: 73%;
     height: 630px;
     margin: 50px 135px 110px 235px;
-    /*background-color: rgb(196, 196, 196);*/
+        /*background-color: rgb(196, 196, 196);*/
     display: grid;
     grid-template-areas: "left-block right-block";
-    grid-template-columns: 670px 370px;
+        /*grid-template-columns: 670px 370px;*/
+    grid-template-columns: 60% 40%;
     grid-template-rows: 630px;
-    column-gap: 30px;
+    column-gap: 20px;
 }
 
 div.slider-left-block {
     grid-area: left-block;
     /*background-color: rgb(239, 241, 237);*/
     align-items: center;
-}
-
-div.slider-right-block {
-    grid-area: right-block;
-    /*background-color: rgb(241, 233, 153);*/
-    background: #474747;
-    border-radius: 28px;
+    display: grid;
+    grid-template-areas: "h1-text"
+                        "details-text"
+                        "button-download"
+                        "slider-bullets";
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 27% 20% 8%;
+    column-gap: 0;
 }
 
 h1 {
+    grid-area: h1-text;
     margin: 0;
     margin-left: 100px;
-    margin-top: 60px;
+    margin-top: 55px;
     width: 70%;
     /*height: 210px;*/
     font-family: 'NotoSerifBold';
@@ -199,11 +203,13 @@ h1 {
 }
 
 p.details {
+    grid-area: details-text;
     margin: 0;
     margin-left: 100px;
-    margin-top: 70px;
-    width: 521px;
-    height: 120px;
+        /*margin-top: 30px;*/
+    width: 70%;
+        /*width: 521px;
+        height: 120px;*/
     font-family: 'PlayRegular';
     font-style: normal;
     font-weight: 400;
@@ -211,6 +217,64 @@ p.details {
     line-height: 40px;
     color: #000000;
     text-align: left;
+}
+
+#download {
+    grid-area: button-download;
+    width: 250px;
+    display: block;
+    justify-self: center;
+}
+
+.bullets {
+    grid-area: slider-bullets;
+}
+
+div.slider-right-block {
+    grid-area: right-block;
+        /*background-color: rgb(241, 233, 153);*/
+        /*background: #474747;*/
+    background-image: url("./images/img/app0_phone_mockup.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+        /*border-radius: 28px;*/
+    position: relative;
+}
+
+div.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99; 
+    width: 100%;
+    height: 100%;
+}
+
+div.screen-menu {
+    background-image: url("./images/img/app1_menu.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
+}
+
+div.screen-3d-map {
+    background-image: url("./images/img/app2_3dmap.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+div.screen-plan {
+    background-image: url("./images/img/app3_plan.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
+}
+
+div.screen-objects {
+    background-image: url("./images/img/app4_objects.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
 }
 
 /* -- General styles for sections --*/
@@ -250,9 +314,6 @@ h3 {
     width: 170px;
     height: 50px;
     background: #DDDDDD;
-    border: 1px solid rgba(138, 138, 138, 0.39);
-    box-shadow: inset 9px 4px 4px rgba(0, 0, 0, 0.25), inset -8px 4px 4px #FFFFFF, inset 0px -8px 4px rgba(0, 0, 0, 0.25), inset 0px 8px 4px #FFFFFF;
-    border-radius: 9px;
     font-family: 'PlayRegular';
     font-style: normal;
     font-weight: 400;
@@ -260,6 +321,18 @@ h3 {
     line-height: 25px;
     text-align: center;
     color: #000000;
+    border-radius: 23px;  
+
+    /*градиент на границу без скруглений*/
+    /*border: 5px solid transparent;
+    border-image: linear-gradient(0deg, rgba(81, 81, 81, 0.351) 0%, rgba(62, 62, 62, 0.0156) 100%);
+    border-image-slice: 1;*/
+
+   /*градиент на границу со скруглениями*/
+    border: double 4px transparent;
+    background-image: linear-gradient(#DDDDDD,#DDDDDD), linear-gradient(0deg, rgba(81, 81, 81, 0.351) 0%, rgba(62, 62, 62, 0.0156) 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 p.text-for-block {
