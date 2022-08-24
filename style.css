@@ -1,0 +1,687 @@
+@font-face {
+    font-family: 'NotoSerifBold';
+    src: url(./images/fonts/NotoSerif-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'PlayBold';
+    src: url(./images/fonts/Play-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'PlayRegular';
+    src: url(./images/fonts/Play-Regular.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    /*background-color: rgb(247, 247, 247);*/
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+}
+
+div.decor-line {
+    position: absolute;
+    top: 140px;
+    left: 135px;
+    width: 1062px;
+    height: 3731px;
+    background-image: url("./images/img/bg_decor_line.svg");
+    /*background-repeat: no-repeat;
+    background-position: center center;*/
+    z-index: -1;
+}
+
+:root {
+    --dark_background_color: #474747;
+    --h1_color: #EB5E39;
+    --general_text_color: #FFFFFF;
+
+    /*--mark_color: rgb(66, 65, 146);
+    --menu_text_color: rgb(228, 228, 228);
+    --border_line_color: rgb(173, 173, 207);
+    --span_color: rgb(66, 65, 146);
+    --bgc_header_footer: rgb(129, 129, 129);*/
+}
+
+/* ---- HEADER ---- */
+
+header {
+        /*width: 1440px;*/
+    width: 100%;
+    height: 90px;
+    background-color:var(--dark_background_color);
+    box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-areas: "logo-name nav-menu language";
+        /*grid-template-columns: 270px 800px 100px;*/
+    grid-template-columns: 20% 50% 9%;
+    grid-template-rows: 90px;
+    justify-content: center;
+}
+
+/* -- Logo + Name --*/
+
+div.logo {
+    grid-area: logo-name;
+    display: grid;
+    grid-template-areas: "logo name";
+        /*grid-template-columns: 60px 210px;*/
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 90px;
+}
+
+div.symbol {
+    grid-area: logo;
+    align-self: center;
+}
+
+p.name {
+    grid-area: name;
+    font-family: 'PlayBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: var(--general_text_color);
+}
+
+/* -- Navigation menu -- */
+
+ul.nav-menu {
+    grid-area: nav-menu;
+    padding-left: 90px;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-areas: "about where-to-travel cities buy";
+        /*grid-template-columns: 100px 190px 206px 113px;*/
+    grid-template-columns: 10% 23% 27% 12%;
+    grid-template-rows: 90px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+li.about {
+    grid-area: about;
+}
+
+li.where-to-travel {
+    grid-area: where-to-travel;
+}
+
+li.cities {
+    grid-area: cities;
+}
+
+li.buy {
+    grid-area: buy;
+}
+
+.nav-menu li {
+    /*height: 50px;
+    background: #DDDDDD;
+    box-shadow: inset 9px 4px 4px rgba(0, 0, 0, 0.25), inset -8px 4px 4px #FFFFFF, inset 0px -8px 4px rgba(0, 0, 0, 0.25), inset 0px 8px 4px #FFFFFF;
+    border-radius: 9px;*/
+    text-align: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: var(--general_text_color);
+}
+
+.nav-menu a:hover {
+    border-bottom: 2px solid #EB5E39;
+}
+
+/* -- Switch language -- */
+
+div.switch-language {
+    grid-area: language;
+    align-self: center;
+    justify-self: center;
+}
+
+/* ---- Slider ---- */
+
+section.slider {
+    width: 1070px;
+    height: 630px;
+    margin: 50px 135px 110px 235px;
+    /*background-color: rgb(196, 196, 196);*/
+    display: grid;
+    grid-template-areas: "left-block right-block";
+    grid-template-columns: 670px 370px;
+    grid-template-rows: 630px;
+    column-gap: 30px;
+}
+
+div.slider-left-block {
+    grid-area: left-block;
+    /*background-color: rgb(239, 241, 237);*/
+    align-items: center;
+}
+
+div.slider-right-block {
+    grid-area: right-block;
+    /*background-color: rgb(241, 233, 153);*/
+    background: #474747;
+    border-radius: 28px;
+}
+
+h1 {
+    margin: 0;
+    margin-left: 100px;
+    margin-top: 60px;
+    width: 70%;
+    /*height: 210px;*/
+    font-family: 'NotoSerifBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 70px;
+    color: var(--h1_color);
+    text-align: left;
+}
+
+p.details {
+    margin: 0;
+    margin-left: 100px;
+    margin-top: 70px;
+    width: 521px;
+    height: 120px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    text-align: left;
+}
+
+/* -- General styles for sections --*/
+
+div.titles-frame {
+    width: 570px;
+    background: #474747;
+    box-shadow: inset -16px 4px 7px rgba(255, 255, 255, 0.7), inset 29px 4px 5px rgba(0, 0, 0, 0.25), inset 0px -23px 5px rgba(0, 0, 0, 0.25), inset 0px 19px 7px rgba(255, 255, 255, 0.7);
+    border-radius: 40px;
+    margin: 0 auto;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+h2 {
+    font-family: 'NotoSerifBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    text-align: center;
+    color: var(--general_text_color);
+    margin: 0 auto;
+}
+
+h3 {
+    font-family: 'NotoSerifBold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    text-align: center;
+    color: #EB5E39;
+}
+
+.button {
+    width: 170px;
+    height: 50px;
+    background: #DDDDDD;
+    border: 1px solid rgba(138, 138, 138, 0.39);
+    box-shadow: inset 9px 4px 4px rgba(0, 0, 0, 0.25), inset -8px 4px 4px #FFFFFF, inset 0px -8px 4px rgba(0, 0, 0, 0.25), inset 0px 8px 4px #FFFFFF;
+    border-radius: 9px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+p.text-for-block {
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+}
+
+p.general-text {
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;    
+}
+
+/* ---- About us (with cards) ---- */
+
+section.about-us {
+    width: 1170px;
+    height: 660px;
+    margin: 0 auto;
+    margin-bottom: 110px;
+    /*background-color: rgb(182, 182, 182);*/
+    display: grid;
+    grid-template-areas: "title-about-us"
+                         "cards";
+    grid-template-columns: 1170px;
+    grid-template-rows: 140px 460px;
+    row-gap: 60px;
+}
+
+div.title-about-us {
+    grid-area: title-about-us;  
+   /* height: 140px; */
+}
+
+div.cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-areas: "plan map excursions infrastructure";
+    grid-template-columns: 270px 270px 270px 270px;
+    grid-template-rows: 460px;
+    column-gap: 30px;
+}
+
+.block {
+    background: #FFFFFF;
+    border: 5px solid #474747;
+    border-radius: 20px;
+}
+
+/* -- Plan card -- */
+
+div.plan {
+    grid-area: plan;
+}
+
+.icon-plan {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.plan h3 {
+    margin-bottom: 40px;
+}
+
+ul.plan-advantage-list {
+    list-style: none;
+}
+
+.plan-advantage-list li {
+    margin-bottom: 20px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474747;
+}
+
+/* -- 3d map card -- */
+
+div.map {
+    grid-area: map;
+    /*border: 2px solid #DDDDDD;*/
+}
+
+.icon-map {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.map h3 {
+    margin-bottom: 40px;
+}
+
+ul.map-advantage-list {
+    list-style: none;
+}
+
+.map-advantage-list li {
+    margin-bottom: 20px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474747;
+}
+
+/* -- Excursions card -- */
+
+div.excursions {
+    grid-area: excursions;
+}
+
+.icon-excursions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.excursions h3 {
+    margin-bottom: 40px;
+}
+
+ul.excursions-advantage-list {
+    list-style: none;
+}
+
+.excursions-advantage-list li {
+    margin-bottom: 20px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474747;
+}
+
+/* -- Infrastructure card -- */
+
+div.infrastructure {
+    grid-area: infrastructure;
+}
+
+.icon-infrastructure {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.infrastructure h3 {
+    margin-bottom: 40px;
+}
+
+ul.infrastructure-advantage-list {
+    list-style: none;
+}
+
+.infrastructure-advantage-list li {
+    margin-bottom: 20px;
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474747;
+}
+
+/* ---- Section Where to travel ---- */
+
+section.where-to-travel {
+    width: 1170px;
+    height: 740px;
+    margin: 0 auto;
+    margin-bottom: 110px;
+    /*background-color: rgb(155, 155, 155);*/
+    display: grid;
+    grid-template-areas: "title-where-to-travel"
+                        "questions";
+    grid-template-columns: 1170px;
+    grid-template-rows: 90px 590px;
+    row-gap: 60px;
+}
+
+div.title-where-to-travel {
+    grid-area: title-where-to-travel;  
+}
+
+div.questions {
+    grid-area: questions;  
+    background: #FFFFFF;
+    border: 5px solid #474747;
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: "collage text-button";
+    grid-template-columns: 770px 370px;
+    grid-template-rows: 590px;
+    column-gap: 30px;
+}
+
+div.collage {
+    grid-area: collage;
+    align-self: center;
+    /*margin: 0 auto;*/
+    justify-self: right;
+}
+
+div.text-button {
+    grid-area: text-button;
+}
+
+
+p.text-for-questions {
+    margin-top: 137px;
+    margin-right: 57px;
+    margin-left: 45px;
+    margin-bottom: 67px;
+}
+
+.button-for-questions {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ---- Section Cities of Belarus ---- */
+
+section.cities {
+    width: 1170px;
+    height: 620px;
+    margin: 0 auto;
+    margin-bottom: 110px;
+    /*background-color: rgb(131, 131, 131);*/
+    display: grid;
+    grid-template-areas: "title-cities"
+                        "novogrudok";
+    grid-template-columns: 1170px;
+    grid-template-rows: 90px 470px;
+    row-gap: 60px;
+}
+
+div.title-cities {
+    grid-area: title-cities;
+}
+
+div.novogrudok {
+    grid-area: novogrudok;
+    display: grid;
+    grid-template-areas: "city-map city-info city-photos";
+    grid-template-columns: 370px 370px 370px;
+    grid-template-rows: 470px;
+    column-gap: 30px;
+}
+
+div.city-map {
+    grid-area: city-map;
+}
+
+div.city-info {
+    grid-area: city-info;
+}
+
+div.city-photos {
+    grid-area: city-photos;
+}
+
+.city-photos img:nth-of-type(1) {
+    margin-bottom: 40px;
+}
+
+.city-info p {
+    padding-left:  12px;
+}
+
+/* ---- Section Lets start ---- */
+
+section.lets-start {
+    width: 1070px;
+    height: 590px;
+    margin-left: 235px;
+    margin-bottom: 50px;
+    /*background-color: rgb(99, 99, 99);*/
+    display: grid;
+    grid-template-areas: "title-lets-start"
+                        "advertisement-download";
+    grid-template-columns: 1070px;
+    grid-template-rows: 90px 440px;
+    row-gap: 60px;
+}
+
+div.title-lets-start {
+    grid-area: title-lets-start;
+    margin-left: 200px;
+}
+
+div.advertisement-download {
+    grid-area: advertisement-download;
+    display: grid;
+    grid-template-areas: "map-buttons banner";
+    grid-template-columns: 570px 470px;
+    grid-template-rows: 440px;
+    column-gap: 30px;
+}
+
+div.banner {
+    grid-area: banner;
+    background-color: #b4b3b3;
+}
+
+div.map-buttons {
+    grid-area: map-buttons;
+    display: grid;
+    grid-template-areas: "list-to-download"
+                        "products"
+                        "buttons";
+    grid-template-columns: 570px;
+    grid-template-rows: 70px 250px 60px;
+    row-gap: 30px;
+}
+
+p.list-to-download {
+    grid-area: list-to-download;
+    margin: 10px auto 0;
+}
+
+div.products {
+    grid-area: products;
+    display: grid;
+    grid-template-areas: "map novogrudok-app";
+    grid-template-columns: 270px 270px;
+    grid-template-rows: 250px;
+    column-gap: 30px;
+}
+
+div.map {
+    grid-area: map;
+}
+
+div.novogrudok-app {
+    grid-area: novogrudok-app;
+    display: grid;
+    grid-template-areas: "app-symbol app-name";
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 250px;
+}
+
+img.app-symbol {
+    grid-area: app-symbol;
+    justify-self: center;
+}
+
+p.app-name {
+    grid-area: app-name;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+div.buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-areas: "ask try buy";
+    grid-template-columns: 170px 170px 170px;
+    grid-template-rows: 60px;
+    column-gap: 30px;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+        /*width: 1440px;*/
+    width: 100%;
+    height: 70px;
+    background: var(--dark_background_color);
+    display: grid;
+    grid-template-areas: "rights social-media";
+        /*grid-template-columns: 770px 370px;*/
+    grid-template-columns: 45% 35%;
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+p.rights {
+    grid-area: rights;
+    color: var(--general_text_color);
+    justify-self: left;
+}
+
+div.social-media {
+    grid-area: social-media;
+    display: grid;
+    grid-template-areas: "twitter telegram instagram vk facebook";
+    grid-template-columns: 41px 41px 41px 41px 41px;
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+    justify-items: center;
+    align-items: center;
+    justify-self: right;
+}
+
+img.twitter {
+    grid-area: twitter;
+}
+
+img.telegram {
+    grid-area: telegram;
+}
+
+img.instagram {
+    grid-area: instagram;
+}
+
+img.vk {
+    grid-area: vk;
+}
+
+img.facebook {
+    grid-area: facebook;
+}
