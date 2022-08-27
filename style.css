@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     /*background-color: rgb(247, 247, 247);*/
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
@@ -770,7 +770,7 @@ div.city-photos {
 /* ---- Section Lets start ---- */
 
 section.lets-start {
-    width: 1070px;
+    width: 1030px;
     height: 590px;
     margin-left: 235px;
     margin-bottom: 50px;
@@ -778,7 +778,7 @@ section.lets-start {
     display: grid;
     grid-template-areas: "title-lets-start"
                         "advertisement-download";
-    grid-template-columns: 1070px;
+    grid-template-columns: 1030px;
     grid-template-rows: 90px 440px;
     row-gap: 60px;
 }
@@ -792,9 +792,9 @@ div.advertisement-download {
     grid-area: advertisement-download;
     display: grid;
     grid-template-areas: "map-buttons banner";
-    grid-template-columns: 570px 470px;
+    grid-template-columns: 540px 470px;
     grid-template-rows: 440px;
-    column-gap: 30px;
+    column-gap: 20px;
 }
 
 div.banner {
@@ -856,7 +856,7 @@ div.buttons {
     grid-template-areas: "ask try buy";
     grid-template-columns: 170px 170px 170px;
     grid-template-rows: 60px;
-    column-gap: 30px;
+    column-gap: 15px;
     align-items: end;
 }
 
