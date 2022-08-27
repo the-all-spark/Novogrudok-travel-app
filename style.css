@@ -349,7 +349,8 @@ div.screen-objects {
 }
 
 div.titles-frame {
-    width: 68%;
+        /*width: 68%;*/
+    width: 41vw;
     height: 100%;
         /*padding-top: 22px;
         padding-bottom: 22px;*/
@@ -382,7 +383,8 @@ div.titles-frame {
 }
 
 div.titles-frame-large {
-    width: 80%;
+        /*width: 80%;*/
+    width: 41vw;
     height: 100%;
         /*padding-top: 22px;
         padding-bottom: 22px;*/
