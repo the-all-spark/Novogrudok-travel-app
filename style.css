@@ -65,6 +65,10 @@ header {
     grid-template-columns: 20% 50% 9%;
     grid-template-rows: 90px;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
 }
 
 /* -- Logo + Name --*/
@@ -246,7 +250,7 @@ div.screen {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 99; 
+    z-index: 10; 
     width: 100%;
     height: 100%;
 }
@@ -674,7 +678,8 @@ div.title-where-to-travel {
 div.questions {
     grid-area: questions;  
     background: #FFFFFF;
-    border: 5px solid #474747;
+    border: 1px solid #BEBEBE;
+    box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     display: grid;
     grid-template-areas: "collage text-button";
@@ -754,6 +759,12 @@ div.city-photos {
 
 .city-info p {
     padding-left:  12px;
+}
+
+.city-info h3 {
+    padding-left: 12px;
+    margin: 11px auto;
+    text-align: left;
 }
 
 /* ---- Section Lets start ---- */
@@ -846,6 +857,7 @@ div.buttons {
     grid-template-columns: 170px 170px 170px;
     grid-template-rows: 60px;
     column-gap: 30px;
+    align-items: end;
 }
 
 /* ---- FOOTER ---- */
