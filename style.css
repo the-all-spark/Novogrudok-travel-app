@@ -961,7 +961,7 @@ img.facebook {
     }
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1306px) {
     body {
         background-color: rgb(217, 247, 169);
     }
@@ -1005,8 +1005,11 @@ img.facebook {
     }
 
     div.cards {
-        grid-template-columns: 255px 255px 255px 255px;
-        column-gap: 10px;
+            /*grid-template-columns: 255px 255px 255px 255px;
+            column-gap: 10px;*/
+        grid-template-columns: 260px 260px 260px 260px;
+            /*column-gap: 45px;*/
+        column-gap: 4%;
     }
 
     section.where-to-travel {
@@ -1026,8 +1029,10 @@ img.facebook {
     }
 
     div.novogrudok {
-        grid-template-columns: 350px 360px 343px;
-        column-gap: 0;
+            /*grid-template-columns: 350px 360px 343px;
+            column-gap: 0;*/
+        grid-template-columns: 393px 394px 382px;
+        column-gap: 10px;
     }
 
     .city-map, 
@@ -1048,10 +1053,239 @@ img.facebook {
     }
 
     .banner  {
-        width: 80%;
-        height: 80%;
-        text-align: center;
+        width: 90%;
+        height: 90%;
+        justify-self: center;
         align-self: center;
     }
+
+    div.advertisement-download {
+        column-gap: 33px;
+        grid-template-columns: 565px 470px;
+    }
+
+    div.map-buttons {
+        grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    body {
+        background-color: rgb(231, 226, 182);
+    }
+
+    p.details {
+        margin-left: 10px;
+    }
+
+    h1 {
+        margin-left: 10px;
+    }
+
+    p.name {
+        line-height: 30px;
+    }
+
+                /* ---- CARDS (Section "About us") ---- */
+
+    div.cards {
+        grid-template-areas: "plan map"
+                            "excursions infrastructure";
+        grid-template-columns: 49% 49%;
+        grid-template-rows: 49% 49%;
+        column-gap: 20px;
+        row-gap: 20px;
+        justify-items: center;
+    }
+
+    .plan {
+        display: grid;
+        grid-template-areas: "icon-plan name-plan"
+                            "icon-plan list-plan";
+        grid-template-columns: 45% 53%;
+        grid-template-rows: 30% 68%;
+        column-gap: 10px;
+        row-gap: 10px;
+        width: 90%;
+    }
+
+    .icon-plan {
+        grid-area: icon-plan;
+    }
+
+    .plan h3 {
+        grid-area: name-plan;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .plan-advantage-list {
+        grid-area: list-plan;
+        margin-top: 10px;
+    }
+
+    .map {
+        display: grid;
+        grid-template-areas: "icon-map name-map"
+                            "icon-map list-map";
+        grid-template-columns: 45% 53%;
+        grid-template-rows: 57% 42%;
+        column-gap: 10px;
+        width: 90%;
+    }
+
+    .icon-map {
+        grid-area: icon-map;
+    }
+
+    .map h3 {
+        grid-area: name-map;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .map-advantage-list {
+        grid-area: list-map;
+        margin-top: 10px;
+    }
+
+    .excursions {
+        display: grid;
+        grid-template-areas: "icon-excursions name-excursions"
+                            "icon-excursions list-excursions";
+        grid-template-columns: 45% 53%;
+        grid-template-rows: 57% 42%;
+        column-gap: 10px;
+        width: 90%;
+    }
+
+    .icon-excursions {
+        grid-area: icon-excursions;
+    }
+
+    .excursions h3 {
+        grid-area: name-excursions;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    .excursions-advantage-list {
+        grid-area: list-excursions;
+        margin-top: 10px;
+        margin-right: 7px;
+    }
+
+    .infrastructure {
+        display: grid;
+        grid-template-areas: "icon-infrastructure name-infrastructure"
+                            "icon-infrastructure list-infrastructure";
+        grid-template-columns: 45% 53%;
+        grid-template-rows: 57% 42%;
+        column-gap: 10px;
+        width: 90%;
+    }
+
+    .icon-infrastructure {
+        grid-area: icon-infrastructure;
+    }
+
+    .infrastructure h3 {
+        grid-area: name-infrastructure;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    .infrastructure-advantage-list {
+        grid-area: list-infrastructure;
+        margin-top: 10px;
+        margin-right: 7px;
+    }
+
+            /* ---- Section "Where to travel" ---- */
+
+    section.where-to-travel {
+        width: 85%;
+    }
+
+    div.questions {
+        grid-template-columns: 49% 49%;
+    }
+
+    .collage img {
+        width: 70%;
+    }
+
+    div.collage {
+        text-align: center;
+    }
+
+            /* ---- Section "Cities of Belarus" ---- */
+
+    section.cities {
+        width: 85%;
+    }
+
+    div.novogrudok {
+        grid-template-areas: "city-map city-info"
+                            "city-map city-photos";
+        grid-template-columns: 49% 49%;
+        grid-template-rows: 43% 55%;
+        column-gap: 20px;
+        row-gap: 20px;
+        background-color: #FFFFFF;
+    }
+
+    .city-info h3 {
+        margin: 11px 15px;
+    }
+
+    div.city-map {
+        grid-area: city-map;
+    }
+
+    .city-map img, 
+    .city-photos img {
+        width: 70%;
+    }
+
+    div.city-info p:nth-of-type(1) {
+        grid-area: city-info;
+        margin: 5px 15px 5px;
+    }
+
+    div.city-info p:nth-of-type(2) {
+        display: none;
+    }
+
+    .city-photos img:nth-of-type(1) {
+        grid-area: city-photos;
+        margin-bottom: 0;
+    }
+
+    .city-photos img:nth-of-type(2) {
+        display: none;
+    }
+
+        /* ---- Section "Let's start" ---- */
+
+    div.banner {
+        display: none;
+    }
+
+    div.advertisement-download {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+    }
+
+    div.map-buttons {
+        align-items: center;
+        justify-items: center;
+    }
+
+
 
 }
