@@ -1075,11 +1075,11 @@ img.facebook {
     }
 
     p.details {
-        margin-left: 10px;
+        margin-left: 55px;
     }
 
     h1 {
-        margin-left: 10px;
+        margin-left: 55px;
     }
 
     p.name {
@@ -1249,7 +1249,7 @@ img.facebook {
 
     .city-map img, 
     .city-photos img {
-        width: 70%;
+        width: 65%;
     }
 
     div.city-info p:nth-of-type(1) {
@@ -1285,6 +1285,215 @@ img.facebook {
         align-items: center;
         justify-items: center;
     }
+}
+
+@media screen and (max-width: 1140px) {
+    body {
+        background-color: rgb(212, 234, 245);
+    }
+
+    div.decor-line {
+        display: none;
+    }
+
+    .drop-decor-left::before,
+    .drop-decor-right::after {
+        display: none;
+    }
+
+    section.slider {
+        width: 90%;
+        margin: 50px auto 110px;
+    }
+
+    div.title-about-us,             /* центрирование заголовков*/
+    div.title-where-to-travel,
+    div.title-cities,
+    div.title-lets-start { 
+        margin: auto;
+    }
+
+    .drop-where-to-travel,
+    .drop-travel,
+    .drop-cities,
+    .drop-start {
+        position: static;
+    }
+    
+    .icon-plan img,
+    .icon-map img,
+    .icon-excursions img,
+    .icon-infrastructure img {
+        width: 80%;
+    }
+
+    .plan h3,
+    .map h3,
+    .excursions h3,
+    .infrastructure h3 {
+        font-size: 1.5em;
+    }
+
+    .plan-advantage-list li,
+    .map-advantage-list li,
+    .excursions-advantage-list li,
+    .infrastructure-advantage-list li {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    body {
+        background-color: rgb(230, 200, 227);
+    }
+    
+    section.slider {
+        width: 90%;
+        margin: 50px 20px 110px 20px;
+        height: 531px;
+        grid-template-rows: 100%;
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 45px;
+        margin-left: 25px;
+    }
+
+    p.details {
+        font-size: 26px;
+        line-height: 35px;
+        margin-left: 25px;
+    }
+
+    div.slider-right-block {
+        background-size: contain;
+    }
+
+    div.screen {
+        background-size: contain;
+    }
+
+    div.advertisement-download {
+        column-gap: 0;
+    }
+
+
+    /* -- Texts --- */
+
+    h2 {
+        font-size: 26px;
+        line-height: 35px;
+    }
+
+    p.text-for-block {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    p.general-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    div.social-media {
+        column-gap: 11px;
+    }
+
+    section.lets-start,
+    section.cities,
+    section.where-to-travel,
+    section.about-us {
+        row-gap: 45px;
+    }
+
+    section.cities {
+        height: 502px;
+        grid-template-rows: 90px 367px;
+    }
+
+    .city-map img, .city-photos img {
+        width: 80%;
+    }
+
+    section.where-to-travel {
+        height: 518px;
+        grid-template-rows: 90px 384px;
+    }
+
+    p.text-for-questions {
+        margin-top: 47px;
+        margin-bottom: 47px;
+    }
+
+    div.cards {
+        grid-template-areas:
+            "plan"
+            "map"
+            "excursions"
+            "infrastructure";
+        grid-template-columns: 100%;
+        grid-template-rows: 24% 24% 24% 24%;
+        column-gap: 0;
+        row-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    section.about-us {
+        height: 1225px;
+        grid-template-rows: 140px 1032px;
+    }
+
+    .icon-plan,
+    .icon-map,
+    .icon-excursions,
+    .icon-infrastructure {
+        margin-top: 0;
+        align-self: center;
+    }
+
+    .icon-plan img, 
+    .icon-map img, 
+    .icon-excursions img, 
+    .icon-infrastructure img {
+        width: 70%;
+    }
+
+    .map {
+        height: 100%;
+    }
+
+    .excursions {
+        height: 100%;
+    }
+
+    .map h3,
+    .excursions h3 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .plan-advantage-list li,
+    .map-advantage-list li,
+    .excursions-advantage-list li,
+    .infrastructure-advantage-list li {
+        font-size: 1.2em;
+    }
+
+    header {
+        grid-template-columns: 25% 50% 9%;
+    }
+
+    div.logo {
+        grid-template-columns: 30% 70%;
+    }
+
+    p.name {
+        margin: auto;
+        padding-left: 10px;
+    }
+
 
 
 
