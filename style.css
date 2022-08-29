@@ -71,6 +71,11 @@ header {
     z-index: 99;
 }
 
+.burger-menu,
+.burger-menu-list {
+    display: none;
+}
+
 /* -- Logo + Name --*/
 
 div.logo {
@@ -946,6 +951,10 @@ img.facebook {
         background-color: blueviolet;
     }
 
+    .burger-menu {
+        display: none;
+    }
+
     section.lets-start {
         margin-left: 20%;
     }
@@ -956,6 +965,11 @@ img.facebook {
         background-color: rgb(195, 155, 233);
     }
 
+    .burger-menu,
+    .close-burger-menu {
+        display: none;
+    }
+
     section.lets-start {
         margin-left: 23%;
     }
@@ -964,6 +978,11 @@ img.facebook {
 @media screen and (max-width: 1306px) {
     body {
         background-color: rgb(217, 247, 169);
+    }
+
+    .burger-menu,
+    .close-burger-menu {
+        display: none;
     }
 
     div.decor-line {
@@ -1072,6 +1091,11 @@ img.facebook {
 @media screen and (max-width: 1250px) {
     body {
         background-color: rgb(231, 226, 182);
+    }
+
+    .burger-menu,
+    .close-burger-menu {
+        display: none;
     }
 
     p.details {
@@ -1292,6 +1316,11 @@ img.facebook {
         background-color: rgb(212, 234, 245);
     }
 
+    .burger-menu,
+    .close-burger-menu {
+        display: none;
+    }
+
     div.decor-line {
         display: none;
     }
@@ -1346,7 +1375,96 @@ img.facebook {
     body {
         background-color: rgb(230, 200, 227);
     }
+
+    ul.nav-menu {           /*Основное меню*/
+        display: none;
+    }
+
+    .close-burger-menu {    /*Крестик для закрытия бургер-меню*/
+        display: none;
+        grid-area: burger-menu;
+        align-self: center;
+        justify-self: center;
+    }
+
+    header {
+        grid-template-areas: "logo-name language burger-menu";
+    }
+
+    .burger-menu {          /*Иконка бургер-меню*/
+        grid-area: burger-menu;
+        display: block;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .burger-menu-block {
+        display: none;      /*Скрыть блок бургер меню*/
+        /*display: block;*/         /*Показать блок бургер меню*/
+    }
+
+    ul.burger-menu-list {
+        display: grid;
+        width: 180px;
+        height: 250px;
+        background-color:var(--dark_background_color);
+        border-radius: 0 0 0 20px;
+        list-style: none;
+        position: absolute;
+        top: 88px;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 30px;
+        grid-template-areas: "burger-list-about"
+                            "burger-list-where-to-travel"
+                            "burger-list-cities"
+                            "burger-list-buy";
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 20% 20% 20%;
+        /*row-gap: 10px;*/
+        align-items: center;
+        align-content: center;
+    }
+
+    li.burger-list-about {
+        grid-area: burger-list-about;
+    }
     
+    li.burger-list-where-to-travel {
+        grid-area: burger-list-where-to-travel;
+    }
+    
+    li.burger-list-cities {
+        grid-area: burger-list-cities;
+    }
+    
+    li.burger-list-buy {
+        grid-area: burger-list-buy;
+    }
+
+    div.switch-language {
+        justify-self: right;
+        margin-right: 35px;
+    }
+    
+    .burger-menu-list a {
+        text-decoration: none;
+        font-family: 'PlayRegular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: var(--general_text_color);
+    }
+    
+    .burger-menu-list a:hover {
+        border-bottom: 2px solid #EB5E39;
+    }
+
+    /* --- SLIDER --- */
+
     section.slider {
         width: 90%;
         margin: 50px 20px 110px 20px;
@@ -1355,8 +1473,8 @@ img.facebook {
     }
 
     h1 {
-        font-size: 40px;
-        line-height: 45px;
+        font-size: 35px;
+        line-height: 40px;
         margin-left: 25px;
     }
 
@@ -1493,8 +1611,6 @@ img.facebook {
         margin: auto;
         padding-left: 10px;
     }
-
-
-
-
 }
+
+
