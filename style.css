@@ -828,7 +828,16 @@ section.lets-start {
 
 .banner {
     grid-area: banner;
-    background-color: #b4b3b3;
+    /*background-color: #b4b3b3;*/
+}
+
+img[src="./images/media/banner.gif"] {
+    display: block !important;
+}
+
+.banner img {
+    width: 470px;
+    height: 440px;
 }
 
 .map-buttons {
@@ -945,7 +954,7 @@ img.facebook {
     grid-area: facebook;
 }
 
-/* ---- MEDIA QUERIES ----- */
+/* --------------- MEDIA QUERIES ----------------- */
 
 @media screen and (min-width: 1400px) {
     body {
@@ -1369,8 +1378,6 @@ img.facebook {
         row-gap: 20px;
         align-items: center;
     }
-
-
 }
 
 @media screen and (max-width: 1140px) {
