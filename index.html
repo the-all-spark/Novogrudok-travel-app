@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel with us</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles_test.css">
+    <script src="scripts_test_burgermenu.js"></script>
 </head>
 <body>
     <div class="decor-line"></div>
@@ -23,8 +25,8 @@
             <li class="cities"><a href="#BelarusCities">Города Беларуси</a></li>
             <li class="buy"><a href="#toBuy">Купить</a></li>
         </ul>
-        <div class="burger-menu">
-            <img src="./images/icons/burger-menu.svg" alt="Burger menu">
+        <div class="open-burger-menu">
+            <img src="./images/icons/burger-menu.svg" alt="Open burger menu">
         </div>
         <div class="close-burger-menu">
             <img src="./images/icons/close-burger-menu.svg" alt="Close burger menu">
@@ -120,6 +122,67 @@
                     <button class="button button-for-questions">Пройти опрос</button>
                 </div>
             </div>
+            <div class="test-block">
+                <form method="get" enctype="application/x-www-form-urlencoded" name="testForm">
+                    <p class="task general-text">Отметьте пункты, справедливые для вас:</p>
+                    <div>
+                        <div class="answer minsk">
+                                <input type="checkbox" name="minsk" id="check1" value="1">
+                                <label for="check1">Я люблю много гулять. Расстояния для меня не проблема.</label>
+                        </div>
+                        <div class="answer minsk">
+                                <input type="checkbox" name="minsk" id="check2" value="1">
+                                <label for="check2">Меня привлекает современная архитектура.</label>
+                        </div> 
+                        <div class="answer minsk">
+                                <input type="checkbox" name="minsk" id="check3" value="1">
+                                <label for="check3">Каждый турист должен побывать в столице государства, которое посещает.</label>
+                        </div>
+                        <div class="answer novogrudok">
+                                <input type="checkbox" name="novogrudok" id="check4" value="1">
+                                <label for="check4">История - моя страсть. В насыщенных на исторические события местах особая атмосфера.</label>
+                        </div>
+                        <div class="answer novogrudok"> 
+                                <input type="checkbox" name="novogrudok" id="check5" value="1">
+                                <label for="check5">Я люблю посещать развалины. В них есть что-то трепетное.</label>
+                        </div>
+                        <div class="answer novogrudok">
+                                <input type="checkbox" name="novogrudok" id="check6" value="1">
+                                <label for="check6">Организованные экскурсии не для меня.</label>
+                        </div>
+                        <div class="answer mir">
+                                <input type="checkbox" name="mir" id="check7" value="1">
+                                <label for="check7">Я люблю посещать музеи, но предпочитаю чтобы все экспозиции были сконцентрированы на незначительной территории.</label>
+                        </div>
+                        <div class="answer mir">
+                                <input type="checkbox" name="mir" id="check8" value="1">
+                                <label for="check8">Я предпочитаю замки, а не дворцы и тем более развалины.</label>
+                        </div>
+                        <div class="answer mir">
+                                <input type="checkbox" name="mir" id="check9" value="1">
+                                <label for="check9">Удобно, когда достопримечательность располагается прямо у стоянки или остановки.</label>
+                        </div>
+                        <div class="answer nesvizh">
+                                <input type="checkbox" name="nesvizh" id="check10" value="1">
+                                <label for="check10">Я люблю посещать музеи. Чем разнообразнее экспозиции - тем лучше.</label>
+                        </div>
+                        <div class="answer nesvizh">
+                                <input type="checkbox" name="nesvizh" id="check11" value="1">
+                                <label for="check11">Я предпочитаю дворцы, а не замки или развалины.</label>
+                        </div>
+                        <div class="answer nesvizh">
+                                <input type="checkbox" name="nesvizh" id="check12" value="1">
+                                <label for="check12">Наличие парковых зон рядом очень приветствуется.</label>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" form="testForm" name="submit" id="submit" class="button button-for-questions">Отправить</button> 
+                <div class="result-box">
+                    <div class="close-results">
+                        <img src="./images/icons/close-results.svg" alt="close results">
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="cities" id="BelarusCities">
             <div class="drop-decor-left drop-cities">
@@ -127,7 +190,7 @@
                     <h2>Города Беларуси</h2>
                 </div>
             </div>
-            <div class="novogrudok">
+            <div class="novogrudok-city">
                 <div class="city-map">
                     <img src="./images/img/map_novogrudok.jpg" alt="city map">
                 </div>
@@ -157,9 +220,12 @@
                     <p class="text-for-block list-to-download">Доступны для скачивания</p>
                     <div class="products">
                         <div class="map-navigation">
-                            <!-- Встроенная карта Google -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75768.82637793706!2d25.763007795162494!3d53.59746149204843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dec4f8ccff8b23%3A0x845631e9bbce8729!2z0J3QvtCy0L7Qs9GA0YPQtNC-0Lo!5e0!3m2!1sru!2sby!4v1661885638681!5m2!1sru!2sby" 
-                            width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!-- Встроенная карта Яндекс -->
+                            <div style="position:relative;overflow:hidden;">
+                                <a href="https://yandex.by/maps/26836/novogrudok/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новогрудок</a>
+                                <a href="https://yandex.by/maps/geo/53172563/?ll=25.818389%2C53.589923&tab=attractions&utm_medium=mapframe&utm_source=maps&z=12.3" style="color:#eee;font-size:12px;position:absolute;top:14px;">Новогрудок — Яндекс Карты</a>
+                                <iframe src="https://yandex.by/map-widget/v1/-/CCUV4Zq~XC" width="270" height="230" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                            </div>
                         </div>
                         <div class="novogrudok-app">
                             <img class="app-symbol" src="./images/icons/symbol_logo.svg" alt="icon">

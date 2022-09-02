@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'NotoSerifBold';
-    src: url(./images/fonts/NotoSerif-Bold.ttf);
+    src: url(../images/fonts/NotoSerif-Bold.ttf);
 }
 
 @font-face {
     font-family: 'PlayBold';
-    src: url(./images/fonts/Play-Bold.ttf);
+    src: url(../images/fonts/Play-Bold.ttf);
 }
 
 @font-face {
     font-family: 'PlayRegular';
-    src: url(./images/fonts/Play-Regular.ttf);
+    src: url(../images/fonts/Play-Regular.ttf);
 }
 
 html {
@@ -36,7 +36,7 @@ body {
     left: 135px;
     width: 90%;
     height: 95%;
-    background-image: url("./images/img/decor_line_with_start_drop.svg");
+    background-image: url("../images/img/decor_line_with_start_drop.svg");
         /*background-image: url("./images/img/bg_decor_line.svg");*/
     background-repeat: no-repeat;
         /*background-position: center center;*/
@@ -49,6 +49,7 @@ body {
     --dark_general_text_color: #474747;
     --dark_background_color: #474747;
     --light_background_color: #FFFFFF;
+    --text_highlight_color: #2D6598;
 }
 
 /* ---- HEADER ---- */
@@ -71,7 +72,7 @@ header {
     z-index: 99;
 }
 
-.burger-menu,
+.open-burger-menu,
 .burger-menu-list,
 .close-burger-menu {
     display: none;
@@ -250,7 +251,7 @@ p.details {
     grid-area: right-block;
         /*background-color: rgb(241, 233, 153);*/
         /*background: #474747;*/
-    background-image: url("./images/img/app0_phone_mockup.jpg");
+    background-image: url("../images/img/app0_phone_mockup.jpg");
     background-repeat: no-repeat;
     background-position: center center;
         /*border-radius: 28px;*/
@@ -267,27 +268,27 @@ p.details {
 }
 
 .screen-menu {
-    background-image: url("./images/img/app1_menu.png");
+    background-image: url("../images/img/app1_menu.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
 }
 
 .screen-3d-map {
-    background-image: url("./images/img/app2_3dmap.png");
+    background-image: url("../images/img/app2_3dmap.png");
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 .screen-plan {
-    background-image: url("./images/img/app3_plan.png");
+    background-image: url("../images/img/app3_plan.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
 }
 
 .screen-objects {
-    background-image: url("./images/img/app4_objects.png");
+    background-image: url("../images/img/app4_objects.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
@@ -321,7 +322,7 @@ p.details {
     /*position: absolute;
     left: 17em;
     bottom: 184em;*/
-    background-image: url("./images/img/drop.svg");
+    background-image: url("../images/img/drop.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -341,7 +342,7 @@ p.details {
     /*position: absolute;
     left: 17em;
     bottom: 184em;*/
-    background-image: url("./images/img/drop.svg");
+    background-image: url("../images/img/drop.svg");
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: 25px;
@@ -350,7 +351,7 @@ p.details {
 .drop-where-to-travel {
     width: 61%;
     position: absolute;
-    left: 30%;
+    left: 26%;
 }
 
 .drop-start {
@@ -580,7 +581,7 @@ ul.plan-advantage-list {
     font-size: 20px;
     line-height: 20px;
     color: var(--dark_general_text_color);
-    list-style-image: url("./images/icons/checkmark.svg"); 
+    list-style-image: url("../images/icons/checkmark.svg"); 
     padding-inline-start: 10px;          /*отступ от маркера*/
 }
 
@@ -599,6 +600,8 @@ ul.plan-advantage-list {
 .map-card h3 {
     margin-top: 23px;
     margin-bottom: 23px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 ul.map-advantage-list {
@@ -614,7 +617,7 @@ ul.map-advantage-list {
     font-size: 20px;
     line-height: 25px;
     color:var(--dark_general_text_color);
-    list-style-image: url("./images/icons/checkmark.svg"); 
+    list-style-image: url("../images/icons/checkmark.svg"); 
     padding-inline-start: 10px;   
 }
 
@@ -632,6 +635,8 @@ ul.map-advantage-list {
 .excursions h3 {
     margin-top: 23px;
     margin-bottom: 23px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 ul.excursions-advantage-list {
@@ -640,6 +645,7 @@ ul.excursions-advantage-list {
 
 .excursions-advantage-list li {
     margin-bottom: 20px;
+    margin-right: 15px;
     font-family: 'PlayRegular';
     font-style: normal;
     font-weight: 400;
@@ -677,7 +683,7 @@ ul.infrastructure-advantage-list {
     font-size: 20px;
     line-height: 25px;
     color: var(--dark_general_text_color);
-    list-style-image: url(./images/icons/checkmark.svg);
+    list-style-image: url("../images/icons/checkmark.svg");
     padding-inline-start: 10px;
 }
 
@@ -696,6 +702,7 @@ section.where-to-travel {
     grid-template-columns: 1170px;
     grid-template-rows: 90px 590px;
     row-gap: 60px;
+    position: relative;
 }
 
 .title-where-to-travel {
@@ -760,7 +767,7 @@ section.cities {
     grid-area: title-cities;
 }
 
-.novogrudok {
+.novogrudok-city {
     grid-area: novogrudok;
     display: grid;
     grid-template-areas: "city-map city-info city-photos";
@@ -961,7 +968,7 @@ img.facebook {
         background-color: blueviolet;
     }
 
-    .burger-menu {
+    .open-burger-menu {
         display: none;
     }
 
@@ -975,7 +982,7 @@ img.facebook {
         background-color: rgb(195, 155, 233);
     }
 
-    .burger-menu,
+    .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
@@ -990,7 +997,7 @@ img.facebook {
         background-color: rgb(217, 247, 169);
     }
 
-    .burger-menu,
+    .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
@@ -1057,7 +1064,7 @@ img.facebook {
         grid-template-columns: 100%;
     }
 
-    .novogrudok {
+    .novogrudok-city {
             /*grid-template-columns: 350px 360px 343px;
             column-gap: 0;*/
         grid-template-columns: 393px 394px 382px;
@@ -1126,7 +1133,7 @@ img.facebook {
         position: static;
     }
 
-    .burger-menu,
+    .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
@@ -1292,7 +1299,7 @@ img.facebook {
         width: 85%;
     }
 
-    .novogrudok {
+    .novogrudok-city {
         grid-template-areas: "city-map city-info"
                             "city-map city-photos";
         grid-template-columns: 49% 49%;
@@ -1385,7 +1392,7 @@ img.facebook {
         background-color: rgb(212, 234, 245);
     }
 
-    .burger-menu,
+    .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
@@ -1447,7 +1454,7 @@ img.facebook {
         justify-self: center;
     }
 
-    .burger-menu {          /*Иконка бургер-меню*/
+    .open-burger-menu {          /*Иконка бургер-меню*/
         grid-area: burger-menu;
         display: block;
         align-self: center;
@@ -1598,7 +1605,7 @@ img.facebook {
 
     p.text-for-questions {
         margin-top: 47px;
-        margin-bottom: 47px;
+        margin-bottom: 29px;
     }
 
     .cards {
@@ -1634,12 +1641,16 @@ img.facebook {
     .icon-infrastructure img {
         width: 70%;
     }
-
-    .map-card {
+    
+    .excursions {
         height: 100%;
     }
 
-    .excursions {
+    .infrastructure {
+        height: 100%;
+    }
+
+    .map-card {
         height: 100%;
     }
 
@@ -1815,7 +1826,7 @@ img.facebook {
         grid-template-rows: 90px 375px;
     }
 
-    .novogrudok {
+    .novogrudok-city {
         grid-template-columns: 45% 54%;
         grid-template-rows: 66% 33%;
         row-gap: 10px;
@@ -1859,7 +1870,7 @@ img.facebook {
         text-align: center;
     }
 
-    .map-navigation img {
+    .map-navigation div {
         width: 90%;
     }
 
@@ -1885,11 +1896,11 @@ img.facebook {
         line-height: 25px;
     }
 
-    .burger-menu {
+    .open-burger-menu {
         text-align: center;
     }
 
-    .burger-menu img,
+    .open-burger-menu img,
     .switch-language img {
         width: 80%;
     }
@@ -2024,14 +2035,13 @@ img.facebook {
     /* -- Section Where to travel --*/
 
     section.where-to-travel {
-        height: 518px;
-        grid-template-rows: 90px 384px;
+        height: 552px;
+        grid-template-rows: 90px 420px;
     }
 
     .questions {
         grid-template-columns: 100%;
-        grid-template-rows: 51% 47%;
-        row-gap: 10px;
+        grid-template-rows: 52% 48%;
         grid-template-areas: "collage"
                             "text-button";
     }
@@ -2050,20 +2060,24 @@ img.facebook {
         margin-bottom: 16px;
     }
 
+    .text-button {
+        align-self: center;
+    }
+
     /* -- Section Cities --*/
 
     section.cities {
-        height: 841px;
-        grid-template-rows: 90px 705px;
+        height: 948px;
+        grid-template-rows: 90px 815px;
     }
-
-    .novogrudok {
+    
+    .novogrudok-city {
         grid-template-areas:
             "city-info"
             "city-map"
             "city-photos";
         grid-template-columns: 100%;
-        grid-template-rows: 32% 43% 23%;
+        grid-template-rows: 25% 50% 25%;
         row-gap: 0;
     }
 
