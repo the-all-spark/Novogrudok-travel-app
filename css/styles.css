@@ -179,9 +179,9 @@ section.slider {
     display: grid;
     grid-template-areas: "left-block right-block";
         /*grid-template-columns: 670px 370px;*/
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 59% 40%;
     grid-template-rows: 630px;
-    column-gap: 20px;
+    column-gap: 10px;
 }
 
 .slider-left-block {
@@ -203,7 +203,7 @@ h1 {
     margin: 0;
     margin-left: 100px;
     margin-top: 55px;
-    width: 70%;
+    width: 75%;
     /*height: 210px;*/
     font-family: 'NotoSerifBold';
     font-style: normal;
@@ -242,11 +242,57 @@ p.details {
     width: 250px;
 }
 
-
+/*Буллеты*/
 .bullets {
     grid-area: slider-bullets;
 }
 
+.slider-controls {
+    display: grid;
+    grid-template-areas: "bullet1 bullet2 bullet3 bullet4";
+    grid-template-columns: 20px 20px 20px 20px;
+    grid-template-rows: 100%;
+    column-gap: 16px;
+    justify-content: right;
+}
+
+#bullet1 {
+    grid-area: bullet1;
+}
+
+#bullet2 {
+    grid-area: bullet2;
+}
+
+#bullet3 {
+    grid-area: bullet3;
+}
+
+#bullet4 {
+    grid-area: bullet4;
+}
+
+.slider-controls div {
+    height: 20px;
+    width: 20px;
+    border-radius: 6px;
+    background-color: #474747;
+    display: block; 
+}
+
+.slider-controls div:hover{
+    cursor: pointer;
+}
+
+.slider-controls div.active {
+    background-color: #EB5E39;
+}
+
+/*.slider-controls.active {
+    background: #EB5E39;
+}*/
+
+/*Слайдер (правый блок)*/
 .slider-right-block {
     grid-area: right-block;
         /*background-color: rgb(241, 233, 153);*/
@@ -256,8 +302,46 @@ p.details {
     background-position: center center;
         /*border-radius: 28px;*/
     position: relative;
+    display: grid;
+    grid-template-areas: "arrow-left app-mockup arrow-right";
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100%;
+    row-gap: 10px;
 }
 
+/*стрелки слайдера*/
+.arrow-slider {
+    border: none;
+    width: 30px;
+    height: 60px;
+    margin: 10px;
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    z-index: 20;
+}
+
+.slider-to-right {
+    grid-area: arrow-right;
+    background-image: url("../images/icons/arrow_right.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.slider-to-left {
+    grid-area: arrow-left;
+    background-image: url("../images/icons/arrow_left.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.app-mockup {
+    grid-area: app-mockup;
+}
+
+/*общий класс для всех экранов*/
 .screen {
     position: absolute;
     top: 0;
@@ -267,32 +351,36 @@ p.details {
     height: 100%;
 }
 
-.screen-menu {
+/*3й экран*/
+/*.screen-menu {
     background-image: url("../images/img/app1_menu.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
-}
+}*/
 
-.screen-3d-map {
+/*0й экран, начальный*/
+/*.screen-3d-map {
     background-image: url("../images/img/app2_3dmap.png");
     background-repeat: no-repeat;
     background-position: center center;
-}
+}*/
 
-.screen-plan {
+/*1й экран*/
+/*.screen-plan {
     background-image: url("../images/img/app3_plan.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
-}
+}*/
 
-.screen-objects {
+/*2й экран*/
+/*.screen-objects {
     background-image: url("../images/img/app4_objects.png");
     background-repeat: no-repeat;
     background-position: center center;
     display: none;
-}
+}*/
 
 /* -- General styles for sections --*/
 

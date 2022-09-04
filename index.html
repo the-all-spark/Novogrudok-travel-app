@@ -49,14 +49,22 @@
                 <h1>Путешествуйте по Беларуси вместе с нами</h1>
                 <p class="details">Красочные изображения самых интересных городов у вас в  кармане</p>
                 <a href="https://play.google.com/store/apps" target="_blank" id="download"><button class="button" >Скачать приложение</button></a>
-                <div class="bullets"><!-- тут будут кнопки слайдера--></div>
+                <div class="bullets">
+                    <!-- кнопки слайдера-->
+                    <div class="slider-controls">
+                        <div id="bullet1"></div>
+                        <div id="bullet2" class="active"></div>
+                        <div id="bullet3"></div>
+                        <div id="bullet4"></div>
+                    </div>
+                </div>
             </div>
             <div class="slider-right-block">
-                <div class = "screen screen-menu"><!-- тут меню--></div>
-                <div class = "screen screen-3d-map"><!-- тут 3d карта--></div>
-                <div class = "screen screen-plan"><!-- тут план--></div>
-                <div class = "screen screen-objects"><!-- тут объекты--></div>
-                <div class="app-mockup"><!-- тут смартфон--></div> 
+                <button class="arrow-slider slider-to-left" onclick="slider.toLeft();"></button>
+                <div class="app-mockup">   
+                    <div class = "screen screens-img"></div>
+                </div> 
+                <button class="arrow-slider slider-to-right" onclick="slider.toRight();"></button>
             </div>
         </section>
         <section class="about-us" id="about">
@@ -127,51 +135,51 @@
                     <p class="task general-text">Отметьте пункты, справедливые для вас:</p>
                     <div>
                         <div class="answer minsk">
-                                <input type="checkbox" name="minsk" id="check1" value="1">
+                                <input class="test-point" type="checkbox" name="minsk" id="check1" value="1">
                                 <label for="check1">Я люблю много гулять. Расстояния для меня не проблема.</label>
                         </div>
                         <div class="answer minsk">
-                                <input type="checkbox" name="minsk" id="check2" value="1">
+                                <input class="test-point" type="checkbox" name="minsk" id="check2" value="1">
                                 <label for="check2">Меня привлекает современная архитектура.</label>
                         </div> 
                         <div class="answer minsk">
-                                <input type="checkbox" name="minsk" id="check3" value="1">
+                                <input class="test-point" type="checkbox" name="minsk" id="check3" value="1">
                                 <label for="check3">Каждый турист должен побывать в столице государства, которое посещает.</label>
                         </div>
                         <div class="answer novogrudok">
-                                <input type="checkbox" name="novogrudok" id="check4" value="1">
+                                <input class="test-point" type="checkbox" name="novogrudok" id="check4" value="1">
                                 <label for="check4">История - моя страсть. В насыщенных на исторические события местах особая атмосфера.</label>
                         </div>
                         <div class="answer novogrudok"> 
-                                <input type="checkbox" name="novogrudok" id="check5" value="1">
+                                <input class="test-point" type="checkbox" name="novogrudok" id="check5" value="1">
                                 <label for="check5">Я люблю посещать развалины. В них есть что-то трепетное.</label>
                         </div>
                         <div class="answer novogrudok">
-                                <input type="checkbox" name="novogrudok" id="check6" value="1">
+                                <input class="test-point" type="checkbox" name="novogrudok" id="check6" value="1">
                                 <label for="check6">Организованные экскурсии не для меня.</label>
                         </div>
                         <div class="answer mir">
-                                <input type="checkbox" name="mir" id="check7" value="1">
+                                <input class="test-point" type="checkbox" name="mir" id="check7" value="1">
                                 <label for="check7">Я люблю посещать музеи, но предпочитаю чтобы все экспозиции были сконцентрированы на незначительной территории.</label>
                         </div>
                         <div class="answer mir">
-                                <input type="checkbox" name="mir" id="check8" value="1">
+                                <input class="test-point" type="checkbox" name="mir" id="check8" value="1">
                                 <label for="check8">Я предпочитаю замки, а не дворцы и тем более развалины.</label>
                         </div>
                         <div class="answer mir">
-                                <input type="checkbox" name="mir" id="check9" value="1">
+                                <input class="test-point" type="checkbox" name="mir" id="check9" value="1">
                                 <label for="check9">Удобно, когда достопримечательность располагается прямо у стоянки или остановки.</label>
                         </div>
                         <div class="answer nesvizh">
-                                <input type="checkbox" name="nesvizh" id="check10" value="1">
+                                <input class="test-point" type="checkbox" name="nesvizh" id="check10" value="1">
                                 <label for="check10">Я люблю посещать музеи. Чем разнообразнее экспозиции - тем лучше.</label>
                         </div>
                         <div class="answer nesvizh">
-                                <input type="checkbox" name="nesvizh" id="check11" value="1">
+                                <input class="test-point" type="checkbox" name="nesvizh" id="check11" value="1">
                                 <label for="check11">Я предпочитаю дворцы, а не замки или развалины.</label>
                         </div>
                         <div class="answer nesvizh">
-                                <input type="checkbox" name="nesvizh" id="check12" value="1">
+                                <input class="test-point" type="checkbox" name="nesvizh" id="check12" value="1">
                                 <label for="check12">Наличие парковых зон рядом очень приветствуется.</label>
                         </div>
                     </div>

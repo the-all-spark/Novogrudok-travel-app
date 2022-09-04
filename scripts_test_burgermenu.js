@@ -45,7 +45,7 @@ window.onload = function() {
 
     //клик по кнопке - выбор ответа и стилизация
 
-    let points = document.querySelectorAll("input");
+    let points = document.querySelectorAll("input.test-point");
     points.forEach(function(input) {
         input.onclick = function() {
             input.classList.toggle("checked"); //добавление-удаление класса input
@@ -69,7 +69,7 @@ window.onload = function() {
         let countNesvizh = 0;
         let countNovogrudok = 0;
         
-        //создание массива из всех блоков с выбранными элементами
+        //массив из всех блоков с выбранными элементами
         const answ = document.querySelectorAll(".checked-block-style");
 
         //перебор массива, поиск соответствующих классов и увеличение счетчиков
@@ -94,7 +94,7 @@ window.onload = function() {
         const arr = [countMinsk,countMir,countNesvizh,countNovogrudok];
 
         //максимальное значение из 4х значений
-        let maxValue = Math.max(countMinsk,countMir,countNesvizh,countNovogrudok);
+        let maxValue = Math.max(...arr);
 
         //индекс максимального значения в массиве
         let ind = arr.indexOf(maxValue)
@@ -183,7 +183,6 @@ window.onload = function() {
 
     }
 
-
     // БУРГЕР-МЕНЮ
 
     //получение доступа к кнопкам и блоку
@@ -209,4 +208,99 @@ window.onload = function() {
         document.querySelector(".open-burger-menu").style.display = "block";
     }
 
+    // СЛАЙДЕР
+    slider.init(); //запуск слайдера после загрузки страницы
+
+    //переключение слайдов по буллетам
+    const bullet1 = document.querySelector("#bullet1");
+    const bullet2 = document.querySelector("#bullet2");
+    const bullet3 = document.querySelector("#bullet3");
+    const bullet4 = document.querySelector("#bullet4");
+
+    bullet1.onclick = function setTo1() {
+        bullet1.className = "active";
+        slider.set(slider.slides[3]);
+        bullet2.removeAttribute("class");
+        bullet3.removeAttribute("class");
+        bullet4.removeAttribute("class");
+    }
+    
+    bullet2.onclick = function setTo2() {
+        bullet2.className = "active";
+        slider.set(slider.slides[0]);
+        bullet1.removeAttribute("class");
+        bullet3.removeAttribute("class");
+        bullet4.removeAttribute("class");
+    }
+    
+    bullet3.onclick = function setTo3() {
+        bullet3.className = "active";
+        slider.set(slider.slides[1]);
+        bullet2.removeAttribute("class");
+        bullet1.removeAttribute("class");
+        bullet4.removeAttribute("class");
+    }
+
+    bullet4.onclick = function setTo4() {
+        bullet4.className = "active";
+        slider.set(slider.slides[2]);
+        bullet2.removeAttribute("class");
+        bullet3.removeAttribute("class");
+        bullet1.removeAttribute("class");
+    }
+
 }
+
+// СЛАЙДЕР
+//создание объекта-слайдера
+var slider = {
+    slides: ['../images/img/app2_3dmap.png','../images/img/app3_plan.png','../images/img/app4_objects.png','../images/img/app1_menu.png'],
+    
+    number: 0, 
+    
+    set: function(image) {
+        let block = document.querySelector(".screens-img");
+        block.style.backgroundImage = "url(" + image + ")"; 
+        block.style.backgroundRepeat = "no-repeat";
+        block.style.backgroundPosition = "center center";
+    },
+    
+    init: function() {
+        this.set(this.slides[this.number]);
+    }, 
+
+    toLeft: function() {
+        console.log("Сработало влево!")
+        this.number--;
+        if(this.number < 0) this.number = this.slides.length-1;
+        this.set(this.slides[this.number]);
+        this.changeBulletToLeft();
+    },
+
+    toRight: function() {
+        console.log("Сработало вправо!")
+        this.number++;
+        if(this.number == this.slides.length) this.number = 0;
+        this.set(this.slides[this.number]);
+        this.changeBulletToRight();
+    },
+
+    changeBulletToLeft: function() {
+        console.log("Сработала функция смены буллета влево!");
+        let activeBullet = document.querySelector(".slider-controls div.active");
+        let previousBullet = activeBullet.previousElementSibling;
+        if(previousBullet === null) previousBullet = document.querySelector("#bullet4");
+        previousBullet.className = "active";
+        activeBullet.removeAttribute("class");
+    },
+    
+    changeBulletToRight: function() {
+        console.log("Сработала функция смены буллета вправо!");
+        let activeBullet = document.querySelector(".slider-controls div.active");
+        let nextBullet = activeBullet.nextElementSibling;
+        if(nextBullet === null) nextBullet = document.querySelector("#bullet1");
+        nextBullet.className = "active";
+        activeBullet.removeAttribute("class");
+    }  
+
+};
