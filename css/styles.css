@@ -78,6 +78,129 @@ header {
     display: none;
 }
 
+.open-burger-menu img,
+.close-burger-menu img {
+    display: none;
+}
+
+/* -- Audio Block -- */
+
+.audio-block {
+    width: 50px;
+    height: 300px;
+    background-color:var(--dark_background_color);
+    border-radius: 0 0 20px 0;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.audio-controls {
+    display: grid;
+    grid-template-areas: "play"
+                         "pause"
+                         "yes-no-volume"
+                         "volume-to-high"
+                         "volume-to-low";
+    grid-template-columns: 90%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    row-gap: 7px;
+}
+
+.play {
+    grid-area: play;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+
+.play img {
+    height: 35px;
+    width: 35px; 
+    display: block;
+    margin: auto;
+    margin-top: 2px;
+}
+
+.pause {
+    grid-area: pause;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+
+.pause img {
+    height: 30px;
+    width: 30px; 
+    display: block;
+    margin: auto;
+    margin-top: 7px;
+}
+
+.yes-no-volume {
+    grid-area: yes-no-volume;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+
+.yes-no-volume img {
+    height: 35px;
+    width: 35px; 
+    margin: auto;
+    margin-top: 5px;
+}
+
+.yes-no-volume img.sound-off {
+    display: block;
+}
+
+.yes-no-volume img.sound-on {
+    display: none;
+}
+
+.volume-up {
+    grid-area: volume-to-high;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+
+.volume-up img {
+    height: 35px;
+    width: 37px; 
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.volume-down {
+    grid-area: volume-to-low;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+
+.volume-down img {
+    height: 35px;
+    width: 37px; 
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.play img:hover,
+.pause img:hover,
+.yes-no-volume img:hover,
+.volume-up img:hover,
+.volume-down img:hover {
+    cursor: pointer;
+}
+
 /* -- Logo + Name --*/
 
 .logo {
@@ -1535,6 +1658,10 @@ img.facebook {
         display: none;
     }
 
+    .open-burger-menu img, .close-burger-menu img {
+        display: block;
+    }
+
     .close-burger-menu {    /*Крестик для закрытия бургер-меню*/
         display: none;
         grid-area: burger-menu;
@@ -1635,18 +1762,37 @@ img.facebook {
         margin-left: 25px;
     }
 
+    .slider-left-block {
+        grid-template-rows: 40% 29% 20% 10%;
+    }
+    
     .slider-right-block {
+        grid-template-areas: "app-mockup app-mockup"
+                             "arrow-left arrow-right";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 89% 10%;
+        row-gap: 10px;
+        background-position: center top;
         background-size: contain;
+    }
+
+    .arrow-slider {
+        height: 70%; 
+    }
+
+    .slider-controls {
+        margin-right: 20px;
+        margin-top: 20px;
     }
 
     .screen {
         background-size: contain;
+        top: -30px;
     }
 
     .advertisement-download {
         column-gap: 0;
     }
-
 
     /* -- Texts --- */
 
@@ -1813,13 +1959,31 @@ img.facebook {
         grid-template-areas: "left-block "
                              "right-block";
         grid-template-columns: 100%;
-        grid-template-rows: 40% 58%;
-        row-gap: 20px;
+        grid-template-rows: 40% 60%;
+        row-gap: 0;
         margin: 50px auto 110px;
+    }
+
+    .slider-right-block {
+        grid-template-areas: "arrow-left app-mockup arrow-right";
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 100%;
+        row-gap: 0;
+        background-position: center center;
     }
 
     .slider-left-block {
         grid-template-rows: 30% 32% 20% 13%;
+    }
+
+    .slider-controls {
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .arrow-slider {
+        width: 30px;
+        height: 60px;
     }
 
     h1 {
@@ -1836,6 +2000,10 @@ img.facebook {
         margin-left: 0;
         margin: auto;
         width: 80%;
+    }
+
+    .screen {
+        top: 0;
     }
 
     /* -- Section About us --*/
@@ -2016,13 +2184,17 @@ img.facebook {
     /* -- Slider -- */
 
     .slider-left-block {
-        grid-template-rows: 31% 39% 20% 10%;
+        grid-template-rows: 31% 34% 20% 15%;
     }
 
     h1 {
         font-size: 26px;
         line-height: 30px;
         width: 85%;
+    }
+
+    .slider-controls {
+        margin-top: 0;
     }
 
     /* -- Section About us --*/

@@ -249,6 +249,65 @@ window.onload = function() {
         bullet1.removeAttribute("class");
     }
 
+    // ЗВУК (мелодия)
+
+    const audio = document.getElementById("audio");   
+    const buttonPlay = document.querySelector(".play"); 
+    const buttonPause = document.querySelector(".pause");
+    const buttonYesNoVolume = document.querySelector(".yes-no-volume");  
+    const buttonVolumeUp = document.querySelector(".volume-up");
+    const buttonVolumeDown = document.querySelector(".volume-down"); 
+    let flag = true;                  //когда есть звук
+
+    buttonPlay.addEventListener("click", function() {
+        console.log("Музыка заиграла!");
+        audio.play();
+        audio.volume = 0.5;
+    });
+
+    buttonPause.addEventListener("click", function() {
+        console.log("Музыка на паузе!");
+        audio.pause();
+    });
+
+    buttonYesNoVolume.addEventListener("click", function() {
+        if(flag === true) {
+            console.log("Без звука!");
+            audio.volume = 0.00009;
+            flag = false;             //когда нет звука
+            document.querySelector(".sound-off").style.display = "none";
+            document.querySelector(".sound-on").style.display = "block";
+        } else {
+            console.log("Со звуком!");
+            audio.volume = 0.5;
+            flag = true;
+            document.querySelector(".sound-off").style.display = "block";
+            document.querySelector(".sound-on").style.display = "none";
+        }
+    });
+
+    buttonVolumeUp.addEventListener("click",up); 
+    function up() {
+        console.log("Увеличение громкости!");
+        audio.volume += 0.1;
+        if(audio.volume > 0.9) {
+            audio.volume = 0.99;
+            buttonVolumeUp.removeEventListener("click",up);
+            buttonVolumeDown.addEventListener("click",down);
+        }
+    }
+
+    buttonVolumeDown.addEventListener("click",down); 
+    function down() {
+        console.log("Уменьшение громкости!");
+        audio.volume -= 0.1;
+        if(+audio.volume.toFixed(2) <= 0.09) {
+            audio.volume = 0.1;
+            buttonVolumeDown.removeEventListener("click",down);
+            buttonVolumeUp.addEventListener("click",up);
+        }
+    }
+
 }
 
 // СЛАЙДЕР
@@ -270,7 +329,6 @@ var slider = {
     }, 
 
     toLeft: function() {
-        console.log("Сработало влево!")
         this.number--;
         if(this.number < 0) this.number = this.slides.length-1;
         this.set(this.slides[this.number]);
@@ -278,7 +336,6 @@ var slider = {
     },
 
     toRight: function() {
-        console.log("Сработало вправо!")
         this.number++;
         if(this.number == this.slides.length) this.number = 0;
         this.set(this.slides[this.number]);
@@ -286,7 +343,6 @@ var slider = {
     },
 
     changeBulletToLeft: function() {
-        console.log("Сработала функция смены буллета влево!");
         let activeBullet = document.querySelector(".slider-controls div.active");
         let previousBullet = activeBullet.previousElementSibling;
         if(previousBullet === null) previousBullet = document.querySelector("#bullet4");
@@ -295,7 +351,6 @@ var slider = {
     },
     
     changeBulletToRight: function() {
-        console.log("Сработала функция смены буллета вправо!");
         let activeBullet = document.querySelector(".slider-controls div.active");
         let nextBullet = activeBullet.nextElementSibling;
         if(nextBullet === null) nextBullet = document.querySelector("#bullet1");
