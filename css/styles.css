@@ -459,6 +459,7 @@ p.details {
     align-self: center;
     justify-self: center;
     z-index: 20;
+    background: white;
 }
 
 .slider-to-right {
