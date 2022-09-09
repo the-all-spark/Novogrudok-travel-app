@@ -462,6 +462,10 @@ p.details {
     background: white;
 }
 
+.arrow-slider:hover {
+    cursor: pointer;
+}
+
 .slider-to-right {
     grid-area: arrow-right;
     background-image: url("../images/icons/arrow_right.svg");
