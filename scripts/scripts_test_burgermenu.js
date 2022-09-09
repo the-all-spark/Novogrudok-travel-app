@@ -362,7 +362,7 @@ window.onload = function() {
 // СЛАЙДЕР
 //создание объекта-слайдера
 var slider = {
-    slides: ['./images/img/app2_3dmap.png','./images/img/app3_plan.png','./images/img/app4_objects.png','./images/img/app1_menu.png'],
+    slides: ['././images/img/app2_3dmap.png','././images/img/app3_plan.png','././images/img/app4_objects.png','././images/img/app1_menu.png'],
     
     number: 0, 
     
