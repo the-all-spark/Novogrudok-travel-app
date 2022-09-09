@@ -1,0 +1,137 @@
+/* -- Form for question --*/
+
+.question-form {
+    display: none;
+    border: 1px solid #BEBEBE;
+    box-shadow: 0px 4px 26px rgb(0 0 0 / 12%);
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 5%;
+    left: 11%;
+    
+}
+
+.question-form form {
+    margin: 20px 5px 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.close-block {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.close-block:hover {
+    cursor: pointer;
+}
+
+#send{
+    display: block;
+    margin: 20px auto 35px;
+}
+
+.question-form  label {
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #474747;    
+}
+
+select, 
+textarea, 
+input {
+    font-family: 'PlayRegular';
+    color: #474747; 
+}
+
+:focus-visible {
+    outline: #2D6598 auto 1px;
+}
+
+input::placeholder,
+#theme option,
+textarea::placeholder {
+    font-family: 'PlayRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color:  #797979;  
+}
+
+.question-form form label:not(.choice label) {
+    display: block;
+    color: rgb(70, 70, 70);
+    font-size: 1em;
+    padding-left: 60px;
+    padding-top: 20px;
+}
+
+.question-form form .line {
+    padding: 0 10px;  
+    text-align: center;
+}
+
+.field textarea {
+    max-width: 90%;
+}
+
+.question-form form input:not(.choice input), 
+.question-form form select {
+    display: inline-block;
+    width: 90%;
+}
+
+div.choice {
+    display: inline-block;
+    font-size: 1em;
+    padding-left: 60px;
+    padding-top: 10px;
+}
+
+.choice label {
+    margin-right: 10px;
+}
+
+input:required, textarea:required {
+    border: 2px solid var(--text_highlight_color);
+}
+
+.request::before {
+    content: "* ";
+    font-size: 18px;
+    font-weight: bold;
+    color:var(--text_error_color);
+}
+
+@media screen and (max-width: 690px) {
+
+    .question-form {
+        width: 80%;
+        bottom: 3.5%;
+        left: 10%; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .question-form {
+        width: 90%;
+        bottom: 2.5%;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .question-form {
+        bottom: 2.6%; 
+    }
+}

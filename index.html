@@ -8,14 +8,29 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/styles_test.css">
+    <link rel="stylesheet" href="./css/styles_question.css">
     <link rel="icon" href="./images/icons/symbol_logo.svg" size="32x32">
-    <script src="scripts_test_burgermenu.js"></script>
+    <script src="./scripts/jquery-3.6.0.min.js"></script>
+    <script src="./scripts/script_jQ_question.js"></script>
+    <script src="./scripts/scripts_test_burgermenu.js"></script>
 </head>
 <body>
     <div class="decor-line"></div>
+    <!-- Preloader -->
+    <div class="mask">
+        <div class="loader">
+            <img src="./images/media/preloader.gif" alt="Прелоадер">
+        </div>
+    </div>
     <header>
+        <div class="audio-controls-on">
+            <img src="./images/icons/music.svg" alt="Открыть элементы управления звуком">
+        </div>
+        <div class="audio-controls-off">
+            <img src="./images/icons/music.svg" alt="Закрыть элементы управления звуком">
+        </div>
         <div class="audio-block">
-            <audio id="audio" loop preload="metadata">
+            <audio id="audio" loop>
                 <source src="./images/media/kupalinka.mp3" type="audio/mpeg">
             </audio>
             <div class="audio-controls">
@@ -41,7 +56,7 @@
             <div class="symbol">
                 <img src="./images/icons/symbol_logo.svg" alt="logo">
             </div>
-            <p class="name">Travel with us</p>
+            <p class="name">Travel with us</p> 
         </div>
         <ul class="nav-menu">
             <li class="about"><a href="#about">О нас</a></li>
@@ -74,7 +89,6 @@
                 <p class="details">Красочные изображения самых интересных городов у вас в  кармане</p>
                 <a href="https://play.google.com/store/apps" target="_blank" id="download"><button class="button" >Скачать приложение</button></a>
                 <div class="bullets">
-                    <!-- кнопки слайдера-->
                     <div class="slider-controls">
                         <div id="bullet1"></div>
                         <div id="bullet2" class="active"></div>
@@ -154,6 +168,7 @@
                     <button class="button button-for-questions">Пройти опрос</button>
                 </div>
             </div>
+            <!-- Quiz -->
             <div class="test-block">
                 <form method="get" enctype="application/x-www-form-urlencoded" name="testForm">
                     <p class="task general-text">Отметьте пункты, справедливые для вас:</p>
@@ -237,7 +252,7 @@
                 </div>
                 <div class="city-photos">
                     <img src="./images/img/photo_novogrudok.jpg" alt="photo">
-                    <img src="./images/img/scheme_novogrudok.jpg" alt="scheme">
+                    <img src="./images/img/photo_novogrudok2.jpg" alt="photo">
                 </div>
             </div>
         </section>
@@ -252,7 +267,7 @@
                     <p class="text-for-block list-to-download">Доступны для скачивания</p>
                     <div class="products">
                         <div class="map-navigation">
-                            <!-- Встроенная карта Яндекс -->
+                            <!-- Yandex map -->
                             <div style="position:relative;overflow:hidden;">
                                 <a href="https://yandex.by/maps/26836/novogrudok/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новогрудок</a>
                                 <a href="https://yandex.by/maps/geo/53172563/?ll=25.818389%2C53.589923&tab=attractions&utm_medium=mapframe&utm_source=maps&z=12.3" style="color:#eee;font-size:12px;position:absolute;top:14px;">Новогрудок — Яндекс Карты</a>
@@ -265,17 +280,64 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button class="button ask">Задать вопрос</button>
+                        <a href="#askQuestion"><button class="button ask">Задать вопрос</button></a>
                         <a href="https://play.google.com/store/apps" target="_blank"><button class="button try">Попробовать</button></a>
                         <a href="https://play.google.com/store/apps" target="_blank"><button class="button buy">Купить</button></a>
                     </div>
                 </div>
                 <div class="banner">
                     <img src="./images/media/banner.gif" alt="Анимированный рекламный баннер">
-                    <!-- Анимация работает только с выключенным AddBlock-->
                 </div>
             </div>
         </section>
+        <!-- Question Form-->
+        <div id="askQuestion" class="question-form">
+            <div class="close-block">
+                <img src="./images/icons/close-results.svg" alt="close results">
+            </div>
+            <form name="questionForm" method="get" enctype="application/x-www-form-urlencoded" target="_self" action="#" autocomplete="on">
+                <div>
+                    <label for="myname" class="request">Имя:</label>
+                </div>
+                <div class="line">
+                    <input type="text" name="myname" id="myname" placeholder="Введите ваше имя на латинице или кириллице"/>
+                </div>
+                <div>
+                    <label for="myemail" class="request">Email:</label>
+                </div>
+                <div class="line">
+                    <input type="email" name="mail" id="myemail" placeholder="Введите ваш email в формате email@gmail.com"/>
+                </div>
+                <div>
+                    <label for="theme">Выберите тему вопроса:</label>
+                </div>
+                <div class="line">
+                    <select name="theme" id="theme">
+                            <option>Регистрация</option>
+                            <option>Вход</option>
+                            <option>Создание своей коллекции</option>
+                            <option>Общение на форуме</option>
+                            <option>Сотрудничество</option>
+                            <option>Другое</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="quest" class="request">Задайте вопрос:</label> 
+                </div>
+                <div class="line field">
+                    <textarea name="question" id="quest" rows="5" cols="100" placeholder="Напишите ваш вопрос"></textarea>
+                </div>
+                <div>
+                    <label for="dt">Дата заполнения:</label>
+                </div>
+                <div class="line">
+                    <input type="date" name="currentDate" id="dt"/>
+                </div>
+                <div class="line send">
+                    <button type="submit" name="send" id="send" class="button button-for-questions">Отправить</button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <p class="rights general-text">All Rights Reserved &copy; Travel with us</p>

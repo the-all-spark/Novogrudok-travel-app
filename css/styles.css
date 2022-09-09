@@ -19,7 +19,6 @@ html {
 
 body {
     width: 100%;
-    /*background-color: rgb(247, 247, 247);*/
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
     position: relative;
@@ -28,18 +27,12 @@ body {
 
 .decor-line {
     position: absolute;
-        /*top: 140px;
-        left: 135px;
-        width: 1062px;
-        height: 3731px;*/
     top: 140px;
     left: 135px;
     width: 90%;
     height: 95%;
     background-image: url("../images/img/decor_line_with_start_drop.svg");
-        /*background-image: url("./images/img/bg_decor_line.svg");*/
     background-repeat: no-repeat;
-        /*background-position: center center;*/
     z-index: -1;
 }
 
@@ -50,19 +43,44 @@ body {
     --dark_background_color: #474747;
     --light_background_color: #FFFFFF;
     --text_highlight_color: #2D6598;
+    --text_error_color: #EB5E39;
+}
+
+/* --- Preloader --- */
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 400px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
+.hide {
+    opacity: 0;
 }
 
 /* ---- HEADER ---- */
 
 header {
-        /*width: 1440px;*/
     width: 100%;
     height: 90px;
     background-color:var(--dark_background_color);
     box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-areas: "logo-name nav-menu language";
-        /*grid-template-columns: 270px 800px 100px;*/
     grid-template-columns: 20% 50% 9%;
     grid-template-rows: 90px;
     justify-content: center;
@@ -86,6 +104,7 @@ header {
 /* -- Audio Block -- */
 
 .audio-block {
+    display: block;
     width: 50px;
     height: 300px;
     background-color:var(--dark_background_color);
@@ -97,6 +116,11 @@ header {
     margin-bottom: 0;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.audio-controls-on,
+.audio-controls-off {
+    display: none;
 }
 
 .audio-controls {
@@ -193,12 +217,25 @@ header {
     margin-top: 5px;
 }
 
-.play img:hover,
-.pause img:hover,
-.yes-no-volume img:hover,
-.volume-up img:hover,
-.volume-down img:hover {
+.play:hover,
+.pause:hover,
+.yes-no-volume:hover,
+.volume-up:hover,
+.volume-down:hover {
     cursor: pointer;
+    background-color: rgba(209, 171, 161, 0.363);
+    border-radius: 7px;
+}
+
+.pause:hover img {
+    width: 58%;
+}
+
+.play:hover img,
+.yes-no-volume:hover img,
+.volume-up:hover img,
+.volume-down:hover img {
+    width: 70%;
 }
 
 /* -- Logo + Name --*/
@@ -237,7 +274,6 @@ ul.nav-menu {
     list-style: none;
     display: grid;
     grid-template-areas: "about where-to-travel cities buy";
-        /*grid-template-columns: 100px 190px 206px 113px;*/
     grid-template-columns: 10% 23% 27% 12%;
     grid-template-rows: 90px;
     align-items: center;
@@ -261,10 +297,6 @@ li.buy {
 }
 
 .nav-menu li {
-    /*height: 50px;
-    background: #DDDDDD;
-    box-shadow: inset 9px 4px 4px rgba(0, 0, 0, 0.25), inset -8px 4px 4px #FFFFFF, inset 0px -8px 4px rgba(0, 0, 0, 0.25), inset 0px 8px 4px #FFFFFF;
-    border-radius: 9px;*/
     text-align: center;
 }
 
@@ -294,14 +326,11 @@ li.buy {
 /* ---- SLIDER ---- */
 
 section.slider {
-        /*width: 1070px;*/
     width: 73%;
     height: 630px;
     margin: 50px 135px 110px 235px;
-        /*background-color: rgb(196, 196, 196);*/
     display: grid;
     grid-template-areas: "left-block right-block";
-        /*grid-template-columns: 670px 370px;*/
     grid-template-columns: 59% 40%;
     grid-template-rows: 630px;
     column-gap: 10px;
@@ -309,7 +338,6 @@ section.slider {
 
 .slider-left-block {
     grid-area: left-block;
-    /*background-color: rgb(239, 241, 237);*/
     align-items: center;
     display: grid;
     grid-template-areas: "h1-text"
@@ -327,7 +355,6 @@ h1 {
     margin-left: 100px;
     margin-top: 55px;
     width: 75%;
-    /*height: 210px;*/
     font-family: 'NotoSerifBold';
     font-style: normal;
     font-weight: 700;
@@ -341,10 +368,7 @@ p.details {
     grid-area: details-text;
     margin: 0;
     margin-left: 100px;
-        /*margin-top: 30px;*/
     width: 70%;
-        /*width: 521px;
-        height: 120px;*/
     font-family: 'PlayRegular';
     font-style: normal;
     font-weight: 400;
@@ -411,19 +435,12 @@ p.details {
     background-color: #EB5E39;
 }
 
-/*.slider-controls.active {
-    background: #EB5E39;
-}*/
-
 /*Слайдер (правый блок)*/
 .slider-right-block {
     grid-area: right-block;
-        /*background-color: rgb(241, 233, 153);*/
-        /*background: #474747;*/
     background-image: url("../images/img/app0_phone_mockup.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-        /*border-radius: 28px;*/
     position: relative;
     display: grid;
     grid-template-areas: "arrow-left app-mockup arrow-right";
@@ -474,37 +491,6 @@ p.details {
     height: 100%;
 }
 
-/*3й экран*/
-/*.screen-menu {
-    background-image: url("../images/img/app1_menu.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: none;
-}*/
-
-/*0й экран, начальный*/
-/*.screen-3d-map {
-    background-image: url("../images/img/app2_3dmap.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-}*/
-
-/*1й экран*/
-/*.screen-plan {
-    background-image: url("../images/img/app3_plan.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: none;
-}*/
-
-/*2й экран*/
-/*.screen-objects {
-    background-image: url("../images/img/app4_objects.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: none;
-}*/
-
 /* -- General styles for sections --*/
 
 .drop-decor-left {
@@ -530,9 +516,6 @@ p.details {
     display: inline-block;
     width: 6em;
     height: 6em;
-    /*position: absolute;
-    left: 17em;
-    bottom: 184em;*/
     background-image: url("../images/img/drop.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -550,9 +533,6 @@ p.details {
     display: inline-block;
     width: 6em;
     height: 6em;
-    /*position: absolute;
-    left: 17em;
-    bottom: 184em;*/
     background-image: url("../images/img/drop.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -572,17 +552,10 @@ p.details {
 }
 
 .titles-frame {
-        /*width: 68%;*/
     width: 41vw;
     height: 100%;
-        /*padding-top: 22px;
-        padding-bottom: 22px;*/
     background: var(--light_background_color);
-        /*box-shadow: inset -16px 4px 7px rgba(255, 255, 255, 0.7), inset 29px 4px 5px rgba(0, 0, 0, 0.25), inset 0px -23px 5px rgba(0, 0, 0, 0.25), inset 0px 19px 7px rgba(255, 255, 255, 0.7);
-        border-radius: 40px;*/ 
-    /*display: inline-block;*/
     display: flex;
-        /*position: relative;*/
 }
 
 .titles-frame::before {
@@ -606,17 +579,10 @@ p.details {
 }
 
 .titles-frame-large {
-        /*width: 80%;*/
     width: 41vw;
     height: 100%;
-        /*padding-top: 22px;
-        padding-bottom: 22px;*/
     background: var(--light_background_color);
-        /*box-shadow: inset -16px 4px 7px rgba(255, 255, 255, 0.7), inset 29px 4px 5px rgba(0, 0, 0, 0.25), inset 0px -23px 5px rgba(0, 0, 0, 0.25), inset 0px 19px 7px rgba(255, 255, 255, 0.7);
-        border-radius: 40px;*/ 
-    /*display: inline-block;*/
     display: flex;
-        /*position: relative;*/
 }
 
 .titles-frame-large::before {
@@ -653,11 +619,6 @@ h2 {
 h2.format {
     width: 75%;
 }
-
-/*h2.format-where {
-    margin: 0 8% 0;
-    align-self: center;
-}*/
 
 h3 {
     font-family: 'NotoSerifBold';
@@ -732,7 +693,6 @@ section.about-us {
     scroll-margin-top: 90px;
     margin: 0 auto;
     margin-bottom: 110px;
-    /*background-color: rgb(182, 182, 182);*/
     display: grid;
     grid-template-areas: "title-about-us"
                          "cards";
@@ -744,7 +704,6 @@ section.about-us {
 
 .title-about-us {
     grid-area: title-about-us;  
-   /* height: 140px; */
 }
 
 .cards {
@@ -800,7 +759,6 @@ ul.plan-advantage-list {
 
 .map-card {
     grid-area: map;
-    /*border: 2px solid #DDDDDD;*/
 }
 
 .icon-map {
@@ -863,6 +821,8 @@ ul.excursions-advantage-list {
     font-size: 20px;
     line-height: 25px;
     color: var(--dark_general_text_color);
+    list-style-image: url(../images/icons/checkmark.svg);
+    padding-inline-start: 10px;
 }
 
 /* -- Infrastructure card -- */
@@ -906,7 +866,6 @@ section.where-to-travel {
     scroll-margin-top: 90px;
     margin: 0 auto;
     margin-bottom: 110px;
-    /*background-color: rgb(155, 155, 155);*/
     display: grid;
     grid-template-areas: "title-where-to-travel"
                         "questions";
@@ -936,7 +895,6 @@ section.where-to-travel {
 .collage {
     grid-area: collage;
     align-self: center;
-    /*margin: 0 auto;*/
     justify-self: right;
 }
 
@@ -965,7 +923,6 @@ section.cities {
     scroll-margin-top: 90px;
     margin: 0 auto;
     margin-bottom: 110px;
-    /*background-color: rgb(131, 131, 131);*/
     display: grid;
     grid-template-areas: "title-cities"
                         "novogrudok";
@@ -1021,7 +978,6 @@ section.lets-start {
     scroll-margin-top: 90px;
     margin-left: 235px;
     margin-bottom: 50px;
-    /*background-color: rgb(99, 99, 99);*/
     display: grid;
     grid-template-areas: "title-lets-start"
                         "advertisement-download";
@@ -1046,7 +1002,6 @@ section.lets-start {
 
 .banner {
     grid-area: banner;
-    /*background-color: #b4b3b3;*/
 }
 
 img[src="./images/media/banner.gif"] {
@@ -1119,13 +1074,11 @@ p.app-name {
 /* ---- FOOTER ---- */
 
 footer {
-        /*width: 1440px;*/
     width: 100%;
     height: 70px;
     background: var(--dark_background_color);
     display: grid;
     grid-template-areas: "rights social-media";
-        /*grid-template-columns: 770px 370px;*/
     grid-template-columns: 45% 35%;
     grid-template-rows: 1fr;
     column-gap: 30px;
@@ -1152,6 +1105,16 @@ p.rights {
     justify-self: right;
 }
 
+.social-media a {
+    display: inline-block;
+    margin: 5px;
+}
+
+.social-media a:hover img {
+    transform: scale(1.2);
+}
+
+
 img.twitter {
     grid-area: twitter;
 }
@@ -1175,10 +1138,7 @@ img.facebook {
 /* --------------- MEDIA QUERIES ----------------- */
 
 @media screen and (min-width: 1400px) {
-    body {
-        background-color: blueviolet;
-    }
-
+    
     .open-burger-menu {
         display: none;
     }
@@ -1189,10 +1149,7 @@ img.facebook {
 }
 
 @media screen and (min-width: 1610px) {
-    body {
-        background-color: rgb(195, 155, 233);
-    }
-
+    
     .open-burger-menu,
     .close-burger-menu {
         display: none;
@@ -1204,9 +1161,6 @@ img.facebook {
 }
 
 @media screen and (max-width: 1306px) {
-    body {
-        background-color: rgb(217, 247, 169);
-    }
 
     .open-burger-menu,
     .close-burger-menu {
@@ -1216,6 +1170,39 @@ img.facebook {
     .decor-line {
         left: 66px;
         width: 93%;
+    }
+
+    .audio-block {
+        display: none;
+    }
+
+    .audio-controls-on {
+        display: block;
+        position: absolute;
+        top: 26px;
+        left: 20px;
+        width: 35px; 
+        height: 34px;
+    }
+
+    .audio-controls-off {
+        display: none;
+        position: absolute;
+        top: 26px;
+        left: 20px;
+        width: 35px; 
+        height: 34px;
+    }
+
+    .audio-controls-on img,
+    .audio-controls-off img {
+        width: 35px; 
+        height: 34px;
+        display: block;
+    }
+    
+    .audio-controls-on:hover {
+        cursor: pointer;
     }
 
     p.name {
@@ -1252,10 +1239,7 @@ img.facebook {
     }
 
     .cards {
-            /*grid-template-columns: 255px 255px 255px 255px;
-            column-gap: 10px;*/
         grid-template-columns: 260px 260px 260px 260px;
-            /*column-gap: 45px;*/
         column-gap: 4%;
     }
 
@@ -1276,8 +1260,6 @@ img.facebook {
     }
 
     .novogrudok-city {
-            /*grid-template-columns: 350px 360px 343px;
-            column-gap: 0;*/
         grid-template-columns: 393px 394px 382px;
         column-gap: 10px;
     }
@@ -1317,9 +1299,6 @@ img.facebook {
 }
 
 @media screen and (max-width: 1250px) {
-    body {
-        background-color: rgb(231, 226, 182);
-    }
 
     .decor-line {
         display: none;
@@ -1330,7 +1309,7 @@ img.facebook {
         display: none;
     }
 
-    .title-about-us,             /* центрирование заголовков*/
+    .title-about-us,        /* центрирование заголовков*/
     .title-where-to-travel,
     .title-cities,
     .title-lets-start { 
@@ -1357,15 +1336,11 @@ img.facebook {
         margin-left: 55px;
     }
 
-    p.name {
-        line-height: 30px;
-    }
-
     section.slider {
         margin: 50px auto 110px;
     }
 
-                /* ---- CARDS (Section "About us") ---- */
+    /* ---- CARDS (Section "About us") ---- */
 
     .cards {
         grid-template-areas: "plan map"
@@ -1484,7 +1459,7 @@ img.facebook {
         margin-right: 7px;
     }
 
-            /* ---- Section "Where to travel" ---- */
+    /* ---- Section "Where to travel" ---- */
 
     section.where-to-travel {
         width: 85%;
@@ -1504,7 +1479,7 @@ img.facebook {
         text-align: center;
     }
 
-            /* ---- Section "Cities of Belarus" ---- */
+    /* ---- Section "Cities of Belarus" ---- */
 
     section.cities {
         width: 85%;
@@ -1551,7 +1526,7 @@ img.facebook {
         display: none;
     }
 
-        /* ---- Section "Let's start" ---- */
+    /* ---- Section "Let's start" ---- */
 
     section.lets-start {
         margin: 0 auto 50px;
@@ -1599,9 +1574,6 @@ img.facebook {
 }
 
 @media screen and (max-width: 1140px) {
-    body {
-        background-color: rgb(212, 234, 245);
-    }
 
     .open-burger-menu,
     .close-burger-menu {
@@ -1636,22 +1608,24 @@ img.facebook {
 }
 
 @media screen and (max-width: 690px) {
-    body {
-        background-color: rgb(230, 200, 227);
-    }
 
     header {
         grid-template-areas: "logo-name language burger-menu";
-        grid-template-columns: 25% 50% 9%;
+        grid-template-columns: 40% 27% 17%;
+        justify-content: end;
+    }
+    .logo {
+        grid-template-columns: 29% 71%;
     }
 
-    .logo {
-        grid-template-columns: 30% 70%;
+    .symbol {
+        align-self: center;
+        justify-self: center;
     }
 
     p.name {
         margin: auto;
-        padding-left: 10px;
+        padding-left: 0;
     }
 
     ul.nav-menu {           /*Основное меню*/
@@ -1677,8 +1651,8 @@ img.facebook {
     }
 
     .burger-menu-block {
-        display: none;      /*Скрыть блок бургер меню*/
-        /*display: block;*/         /*Показать блок бургер меню*/
+        display: none;         /*Скрыть блок бургер меню*/
+        /*display: block;*/    /*Показать блок бургер меню*/
     }
 
     ul.burger-menu-list {
@@ -1700,7 +1674,6 @@ img.facebook {
                             "burger-list-buy";
         grid-template-columns: 100%;
         grid-template-rows: 20% 20% 20% 20%;
-        /*row-gap: 10px;*/
         align-items: center;
         align-content: center;
     }
@@ -1927,15 +1900,17 @@ img.facebook {
 }
 
 @media screen and (max-width: 500px) {
-    body {
-        background-color: rgb(255, 221, 235);
-    }
-
+    
     /* -- Header, General settings --*/
 
     header {
         grid-template-columns: 35% 30% 15%;
     }
+
+    p.name {
+        text-align: center;
+        line-height: 30px;
+    }    
 
     .titles-frame {
         width: 90vw;
@@ -2138,20 +2113,20 @@ img.facebook {
 }
 
 @media screen and (max-width: 400px) {
-    body {
-        background-color: rgb(200, 230, 215);
-    }
 
     /* -- Header, General section settings --*/
 
     header {
-        grid-template-columns: 50% 20% 20%;
+        grid-template-columns: 50% 17% 15%;
     }
 
     p.name {
         line-height: 25px;
+        text-align: left;
+        padding-left: 5px;
+        font-size: 18px;
     }
-
+    
     .open-burger-menu {
         text-align: center;
     }

@@ -1,9 +1,20 @@
+// ПРЕДЗАГРУЗЧИК
+
+window.addEventListener("load",startLoader);
+
+function startLoader() {
+    let mask = document.querySelector(".mask");
+    mask.classList.add("hide");
+    setTimeout( function() {
+        mask.remove();
+    },600);
+}
+
 window.onload = function() {
 
     // ТЕСТ
 
     //открытие теста при клике на кнопку "Пройти опрос"
-
     const startTest = document.querySelector(".button-for-questions");
     startTest.addEventListener("click",start);
 
@@ -55,7 +66,7 @@ window.onload = function() {
         };
     })
 
-    //обработка результатов теста. Доступ к кнопке, запуск функции при клике на "Отправить"
+    //обработка результатов теста при клике на кнопке "Отправить"
 
     let done = document.querySelector("#submit");
     done.addEventListener("click",countAnswers);
@@ -69,27 +80,19 @@ window.onload = function() {
         let countNesvizh = 0;
         let countNovogrudok = 0;
         
-        //массив из всех блоков с выбранными элементами
+        //массив из всех блоков с выбранными пользователем элементами
         const answ = document.querySelectorAll(".checked-block-style");
 
         //перебор массива, поиск соответствующих классов и увеличение счетчиков
         for (let i=0; i<answ.length; i++) {
-        if(answ[i].classList.contains("minsk")) { countMinsk += 1; }
-        if(answ[i].classList.contains("mir")) { countMir += 1; }
-        if(answ[i].classList.contains("nesvizh")) { countNesvizh += 1; }
-        if(answ[i].classList.contains("novogrudok")) { countNovogrudok += 1; }
+            if(answ[i].classList.contains("minsk")) { countMinsk += 1; }
+            if(answ[i].classList.contains("mir")) { countMir += 1; }
+            if(answ[i].classList.contains("nesvizh")) { countNesvizh += 1; }
+            if(answ[i].classList.contains("novogrudok")) { countNovogrudok += 1; }
         }
-
         console.log(`Результаты подсчета: Минск(${countMinsk}), Мир(${countMir}), Несвиж(${countNesvizh}), Новогрудок(${countNovogrudok})`);
-        
-        //счетчики ответов (примеры)
-        /*let countMinsk = 2;
-        let countMir = 3;
-        let countNesvizh = 1;
-        let countNovogrudok = 2;*/
 
-        //вывод результата
-        
+        //определение результата
         //создание массива из результатов теста
         const arr = [countMinsk,countMir,countNesvizh,countNovogrudok];
 
@@ -117,7 +120,7 @@ window.onload = function() {
             //добавление нового класса результирующему блоку
             document.querySelector(".test-block").classList.add("results-block");
 
-            let resultBox = document.querySelector(".result-box");            //доступ к контейнеру выгрузки!!
+            let resultBox = document.querySelector(".result-box");  
             resultBox.style.display = "block";
 
             let nameElement = document.createElement("p"); //вывод имени
@@ -144,9 +147,9 @@ window.onload = function() {
         
         document.testForm.style.display = "none"; //скрыть форму после ответа
         done.style.display = "none";               //скрыть кнопку "Ответить"
-        document.querySelector(".task").style.display = "none";           //скрыть заголовок
+        document.querySelector(".task").style.display = "none";  //скрыть заголовок
 
-        //запуск функции по выводу изображения
+        //запуск функции по выводу результата
         if(result === `countMinsk`) {
             minsk.show();
         }
@@ -180,7 +183,6 @@ window.onload = function() {
             passMessage.insertAdjacentHTML("beforeend","Опрос пройден. Спасибо! <br> Для повторного прохождения обновите страницу.");
             passTest.append(passMessage);
         }
-
     }
 
     // БУРГЕР-МЕНЮ
@@ -190,7 +192,7 @@ window.onload = function() {
     const burgerMenuBlock = document.querySelector(".burger-menu-block");
     const burgerMenuCloseButton = document.querySelector(".close-burger-menu");
     
-    // открытие меню при клике на бургер-меню
+    //открытие меню при клике на бургер-меню
     burgerMenuOpenButton.addEventListener("click",openMenu);
 
     function openMenu() {
@@ -257,12 +259,12 @@ window.onload = function() {
     const buttonYesNoVolume = document.querySelector(".yes-no-volume");  
     const buttonVolumeUp = document.querySelector(".volume-up");
     const buttonVolumeDown = document.querySelector(".volume-down"); 
-    let flag = true;                  //когда есть звук
+    let flag = true;        //устанавливается, когда есть звук
 
     buttonPlay.addEventListener("click", function() {
         console.log("Музыка заиграла!");
         audio.play();
-        audio.volume = 0.5;
+        audio.volume = 0.3;
     });
 
     buttonPause.addEventListener("click", function() {
@@ -274,38 +276,85 @@ window.onload = function() {
         if(flag === true) {
             console.log("Без звука!");
             audio.volume = 0.00009;
-            flag = false;             //когда нет звука
+            flag = false;       //устанавливается, когда нет звука
             document.querySelector(".sound-off").style.display = "none";
             document.querySelector(".sound-on").style.display = "block";
         } else {
             console.log("Со звуком!");
-            audio.volume = 0.5;
+            audio.volume = 0.3;
             flag = true;
             document.querySelector(".sound-off").style.display = "block";
             document.querySelector(".sound-on").style.display = "none";
+            buttonVolumeUp.addEventListener("click",up); 
+            buttonVolumeDown.addEventListener("click",down); 
         }
     });
 
     buttonVolumeUp.addEventListener("click",up); 
     function up() {
         console.log("Увеличение громкости!");
-        audio.volume += 0.1;
-        if(audio.volume > 0.9) {
-            audio.volume = 0.99;
-            buttonVolumeUp.removeEventListener("click",up);
-            buttonVolumeDown.addEventListener("click",down);
-        }
+        if(flag === true) {
+            audio.volume += 0.1;
+            if(audio.volume > 0.9) {
+                audio.volume = 0.99;
+                buttonVolumeUp.removeEventListener("click",up);
+                buttonVolumeDown.addEventListener("click",down);
+            } 
+        }  
     }
 
     buttonVolumeDown.addEventListener("click",down); 
     function down() {
         console.log("Уменьшение громкости!");
-        audio.volume -= 0.1;
-        if(+audio.volume.toFixed(2) <= 0.09) {
-            audio.volume = 0.1;
-            buttonVolumeDown.removeEventListener("click",down);
-            buttonVolumeUp.addEventListener("click",up);
+        if(flag === true) {
+            audio.volume -= 0.1;
+            if(+(audio.volume.toFixed(2)) <= 0.10) {
+                audio.volume = 0.12;
+                buttonVolumeDown.removeEventListener("click",down);
+                buttonVolumeUp.addEventListener("click",up);
+            }
         }
+    }
+
+    // кнопка открытия панели управления звуком при ширине экрана 1306px и менее
+    const buttonMusicOn = document.querySelector(".audio-controls-on");
+    const controls = document.querySelector(".audio-block");
+    const buttonMusicOff = document.querySelector(".audio-controls-off");
+
+    buttonMusicOn.addEventListener("click",openControls);
+
+    function openControls() {
+        console.log("Открыта панель");
+        controls.style.display = "block";
+        buttonMusicOn.style.display = "none";
+        buttonMusicOff.style.display = "block";
+        buttonMusicOff.addEventListener("click",closeControls);
+    }
+
+    function closeControls() {
+        console.log("Закрыта панель");
+        document.querySelector(".audio-block").style.display = "none";
+        buttonMusicOff.style.display = "none";
+        buttonMusicOn.style.display = "block";
+    }
+
+    // ФОРМА ОБРАТНОЙ СВЯЗИ
+
+    const buttonAsk = document.querySelector(".ask");
+    buttonAsk.addEventListener("click",openQuestionForm);
+
+    function openQuestionForm() {
+        const questionForm = document.querySelector(".question-form");
+        questionForm.style.display = "block";
+    }
+
+    //закрытие блока без отправления вопроса
+    const closeFormBtn = document.querySelector(".close-block");
+    closeFormBtn.addEventListener("click",closeForm);
+
+    function closeForm() {
+        const questionForm = document.querySelector(".question-form");
+        questionForm.style.display = "none";
     }
 
 }
@@ -357,5 +406,5 @@ var slider = {
         nextBullet.className = "active";
         activeBullet.removeAttribute("class");
     }  
-
 };
+
