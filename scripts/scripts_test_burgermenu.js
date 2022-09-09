@@ -26,25 +26,25 @@ window.onload = function() {
     //объекты с данными по городам - название, изображение
     const minsk = {
         name: "Минск",
-        src: "../images/img/minsk.jpg",    
+        src: "./images/img/minsk.jpg",    
         image: new Image,                   
     }
     
     const novogrudok = {
         name: "Новогрудок",
-        src: "../images/img/novogrudok.jpg",    
+        src: "./images/img/novogrudok.jpg",    
         image: new Image,                  
     }
 
     const mir = {
         name: "Мир",
-        src: "../images/img/mir.jpg",    
+        src: "./images/img/mir.jpg",    
         image: new Image,                
     }
 
     const nesvizh = {
         name: "Несвиж",
-        src: "../images/img/nesvizh.jpg",    
+        src: "./images/img/nesvizh.jpg",    
         image: new Image,               
     }
 
@@ -362,7 +362,7 @@ window.onload = function() {
 // СЛАЙДЕР
 //создание объекта-слайдера
 var slider = {
-    slides: ['../images/img/app2_3dmap.png','../images/img/app3_plan.png','../images/img/app4_objects.png','../images/img/app1_menu.png'],
+    slides: ['./images/img/app2_3dmap.png','./images/img/app3_plan.png','./images/img/app4_objects.png','./images/img/app1_menu.png'],
     
     number: 0, 
     
