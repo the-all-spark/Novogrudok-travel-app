@@ -347,6 +347,10 @@ li.buy {
     justify-self: center;
 }
 
+.switch-language img {
+    filter: opacity(0.2);
+}
+
 /* ---- SLIDER ---- */
 
 section.slider {
