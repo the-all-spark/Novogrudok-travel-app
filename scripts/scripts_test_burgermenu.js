@@ -12,6 +12,19 @@ function startLoader() {
 
 window.onload = function() {
 
+    // Прокрутка при клике на кнопку Up
+    let bntUp = document.querySelector(".up-btn");
+
+    bntUp.onclick = function(event) {
+        event.preventDefault();
+        
+        const anchor = document.querySelector('#anchor-logo');
+        anchor.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+            });
+    }
+
     // ТЕСТ
 
     //открытие теста при клике на кнопку "Пройти опрос"

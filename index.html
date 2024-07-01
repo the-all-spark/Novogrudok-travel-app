@@ -22,6 +22,7 @@
             <img src="./images/media/preloader.gif" alt="Прелоадер">
         </div>
     </div>
+    
     <header>
         <div class="audio-controls-on">
             <img src="./images/icons/music.svg" alt="Открыть элементы управления звуком">
@@ -85,7 +86,9 @@
                 style="filter: opacity(0.2);">
         </div>
     </header>
+
     <main>
+    
         <section class="slider">
             <div class="slider-left-block">
                 <h1>Путешествуйте по Беларуси вместе с нами</h1>
@@ -108,191 +111,204 @@
                 <button class="arrow-slider slider-to-right" onclick="slider.toRight();"></button>
             </div>
         </section>
-        <section class="about-us" id="about">
-            <div class="drop-decor-left drop-travel"> 
-                <div class="titles-frame-large title-about-us">
-                    <h2 class="format">Почему приложения от Travel with us?</h2>
-                </div>
-            </div>
-            <div class="cards">
-                <div class="block plan">
-                    <div class="icon-plan">
-                        <img src="./images/icons/icon_plan.svg" alt="plan of a city">
-                    </div>
-                    <h3>План города</h3>
-                    <ul class="plan-advantage-list">
-                        <li>названия улиц</li>
-                        <li>номера домов</li>
-                        <li>никакой лишней информации</li>
-                    </ul>
-                </div>
-                <div class="block map-card">
-                    <div class="icon-map">
-                        <img src="./images/icons/icon_3d.svg" alt="3d map of a city">
-                    </div>
-                    <h3>3D карта исторического центра</h3>
-                    <ul class="map-advantage-list">
-                        <li>наглядное представление объектов</li>
-                    </ul>
-                </div>
-                <div class="block excursions">
-                    <div class="icon-excursions">
-                        <img src="./images/icons/icon_excursion.svg" alt="Excursions">
-                    </div>
-                    <h3>Экскурсионные маршруты на выбор</h3>
-                    <ul class="excursions-advantage-list">
-                        <li>с возможностью добавить или убрать объекты</li>
-                    </ul>
-                </div>
-                <div class="block infrastructure">
-                    <div class="icon-infrastructure">
-                        <img src="./images/icons/icon_infrastructure.svg" alt="City infrastructure">
-                    </div>
-                    <h3>Туристическая инфраструктура города</h3>
-                    <ul class="infrastructure-advantage-list">
-                        <li>адреса и сайты</li>
-                        <li>телефоны</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="where-to-travel" id="where">
-            <div class="drop-decor-right drop-where-to-travel">
-                <div class="titles-frame title-where-to-travel">
-                    <h2>Куда мне съездить?</h2>
-                </div>
-            </div>
-            <div class="questions">
-                <div class="collage">
-                    <img src="./images/img/photos_collage.jpg" alt="collage">
-                </div>
-                <div class="text-button">
-                    <p class="text-for-block text-for-questions">Узнайте, какой город ближе всего вам по духу - пройдите опрос.</p>
-                    <button class="button button-for-questions">Пройти опрос</button>
-                </div>
-            </div>
-            <!-- Quiz -->
-            <div class="test-block">
-                <form method="get" enctype="application/x-www-form-urlencoded" name="testForm">
-                    <p class="task general-text">Отметьте пункты, справедливые для вас:</p>
-                    <div>
-                        <div class="answer minsk">
-                                <input class="test-point" type="checkbox" name="minsk" id="check1" value="1">
-                                <label for="check1">Я люблю много гулять. Расстояния для меня не проблема.</label>
-                        </div>
-                        <div class="answer minsk">
-                                <input class="test-point" type="checkbox" name="minsk" id="check2" value="1">
-                                <label for="check2">Меня привлекает современная архитектура.</label>
-                        </div> 
-                        <div class="answer minsk">
-                                <input class="test-point" type="checkbox" name="minsk" id="check3" value="1">
-                                <label for="check3">Каждый турист должен побывать в столице государства, которое посещает.</label>
-                        </div>
-                        <div class="answer novogrudok">
-                                <input class="test-point" type="checkbox" name="novogrudok" id="check4" value="1">
-                                <label for="check4">История - моя страсть. В насыщенных на исторические события местах особая атмосфера.</label>
-                        </div>
-                        <div class="answer novogrudok"> 
-                                <input class="test-point" type="checkbox" name="novogrudok" id="check5" value="1">
-                                <label for="check5">Я люблю посещать развалины. В них есть что-то трепетное.</label>
-                        </div>
-                        <div class="answer novogrudok">
-                                <input class="test-point" type="checkbox" name="novogrudok" id="check6" value="1">
-                                <label for="check6">Организованные экскурсии не для меня.</label>
-                        </div>
-                        <div class="answer mir">
-                                <input class="test-point" type="checkbox" name="mir" id="check7" value="1">
-                                <label for="check7">Я люблю посещать музеи, но предпочитаю чтобы все экспозиции были сконцентрированы на незначительной территории.</label>
-                        </div>
-                        <div class="answer mir">
-                                <input class="test-point" type="checkbox" name="mir" id="check8" value="1">
-                                <label for="check8">Я предпочитаю замки, а не дворцы и тем более развалины.</label>
-                        </div>
-                        <div class="answer mir">
-                                <input class="test-point" type="checkbox" name="mir" id="check9" value="1">
-                                <label for="check9">Удобно, когда достопримечательность располагается прямо у стоянки или остановки.</label>
-                        </div>
-                        <div class="answer nesvizh">
-                                <input class="test-point" type="checkbox" name="nesvizh" id="check10" value="1">
-                                <label for="check10">Я люблю посещать музеи. Чем разнообразнее экспозиции - тем лучше.</label>
-                        </div>
-                        <div class="answer nesvizh">
-                                <input class="test-point" type="checkbox" name="nesvizh" id="check11" value="1">
-                                <label for="check11">Я предпочитаю дворцы, а не замки или развалины.</label>
-                        </div>
-                        <div class="answer nesvizh">
-                                <input class="test-point" type="checkbox" name="nesvizh" id="check12" value="1">
-                                <label for="check12">Наличие парковых зон рядом очень приветствуется.</label>
-                        </div>
-                    </div>
-                </form>
-                <button type="submit" form="testForm" name="submit" id="submit" class="button button-for-questions">Отправить</button> 
-                <div class="result-box">
-                    <div class="close-results">
-                        <img src="./images/icons/close-results.svg" alt="close results">
+
+        <div>    
+            <section class="about-us" id="about">
+                <div class="drop-decor-left drop-travel"> 
+                    <div class="titles-frame-large title-about-us">
+                        <h2 class="format">Почему приложения от Travel with us?</h2>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="cities" id="BelarusCities">
-            <div class="drop-decor-left drop-cities">
-                <div class="titles-frame title-cities">
-                    <h2>Города Беларуси</h2>
+                <div class="cards">
+                    <div class="block plan">
+                        <div class="icon-plan">
+                            <img src="./images/icons/icon_plan.svg" alt="plan of a city">
+                        </div>
+                        <h3>План города</h3>
+                        <ul class="plan-advantage-list">
+                            <li>названия улиц</li>
+                            <li>номера домов</li>
+                            <li>никакой лишней информации</li>
+                        </ul>
+                    </div>
+                    <div class="block map-card">
+                        <div class="icon-map">
+                            <img src="./images/icons/icon_3d.svg" alt="3d map of a city">
+                        </div>
+                        <h3>3D карта исторического центра</h3>
+                        <ul class="map-advantage-list">
+                            <li>наглядное представление объектов</li>
+                        </ul>
+                    </div>
+                    <div class="block excursions">
+                        <div class="icon-excursions">
+                            <img src="./images/icons/icon_excursion.svg" alt="Excursions">
+                        </div>
+                        <h3>Экскурсионные маршруты на выбор</h3>
+                        <ul class="excursions-advantage-list">
+                            <li>с возможностью добавить или убрать объекты</li>
+                        </ul>
+                    </div>
+                    <div class="block infrastructure">
+                        <div class="icon-infrastructure">
+                            <img src="./images/icons/icon_infrastructure.svg" alt="City infrastructure">
+                        </div>
+                        <h3>Туристическая инфраструктура города</h3>
+                        <ul class="infrastructure-advantage-list">
+                            <li>адреса и сайты</li>
+                            <li>телефоны</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="novogrudok-city">
-                <div class="city-map">
-                    <img src="./images/img/map_novogrudok.jpg" alt="city map">
+            </section>
+
+            <section class="where-to-travel" id="where">
+                <div class="drop-decor-right drop-where-to-travel">
+                    <div class="titles-frame title-where-to-travel">
+                        <h2>Куда мне съездить?</h2>
+                    </div>
                 </div>
-                <div class="city-info">
-                    <h3>Новогрудок</h3>
-                    <p class="general-text">Город в Гродненской области, известный своим замком (а точнее руинами двух башен). 
-                        Центр Новогрудка расположен на Замковой горе - одной из самых высоких точек Беларуси (324 метра над уровнем моря).  
-                    </p>
-                    <p class="general-text">Первое упоминание Новогрудка в 1044 году связано с тем, что именно здесь была заложена крепость, <br> а 
-                        после, спустя два столетия произошла коронация Миндовга <br> и создание Великого княжества Литовского со столицей <br> в Новогрудке.
-                    </p>
+                <div class="questions">
+                    <div class="collage">
+                        <img src="./images/img/photos_collage.jpg" alt="collage">
+                    </div>
+                    <div class="text-button">
+                        <p class="text-for-block text-for-questions">Узнайте, какой город ближе всего вам по духу - пройдите опрос.</p>
+                        <button class="button button-for-questions">Пройти опрос</button>
+                    </div>
                 </div>
-                <div class="city-photos">
-                    <img src="./images/img/photo_novogrudok.jpg" alt="photo">
-                    <img src="./images/img/photo_novogrudok2.jpg" alt="photo">
-                </div>
-            </div>
-        </section>
-        <section class="lets-start" id="toBuy">
-            <div class="drop-decor-right drop-start">
-                <div class="titles-frame title-lets-start">
-                    <h2>А теперь пора в путь!</h2>
-                </div>
-            </div>
-            <div class="advertisement-download">
-                <div class="map-buttons">
-                    <p class="text-for-block list-to-download">Доступны для скачивания</p>
-                    <div class="products">
-                        <div class="map-navigation">
-                            <!-- Yandex map -->
-                            <div style="position:relative;overflow:hidden;">
-                                <a href="https://yandex.by/maps/26836/novogrudok/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новогрудок</a>
-                                <a href="https://yandex.by/maps/geo/53172563/?ll=25.818389%2C53.589923&tab=attractions&utm_medium=mapframe&utm_source=maps&z=12.3" style="color:#eee;font-size:12px;position:absolute;top:14px;">Новогрудок — Яндекс Карты</a>
-                                <iframe src="https://yandex.by/map-widget/v1/-/CCUV4Zq~XC" width="270" height="230" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                <!-- Quiz -->
+                <div class="test-block">
+                    <form method="get" enctype="application/x-www-form-urlencoded" name="testForm">
+                        <p class="task general-text">Отметьте пункты, справедливые для вас:</p>
+                        <div>
+                            <div class="answer minsk">
+                                    <input class="test-point" type="checkbox" name="minsk" id="check1" value="1">
+                                    <label for="check1">Я люблю много гулять. Расстояния для меня не проблема.</label>
+                            </div>
+                            <div class="answer minsk">
+                                    <input class="test-point" type="checkbox" name="minsk" id="check2" value="1">
+                                    <label for="check2">Меня привлекает современная архитектура.</label>
+                            </div> 
+                            <div class="answer minsk">
+                                    <input class="test-point" type="checkbox" name="minsk" id="check3" value="1">
+                                    <label for="check3">Каждый турист должен побывать в столице государства, которое посещает.</label>
+                            </div>
+                            <div class="answer novogrudok">
+                                    <input class="test-point" type="checkbox" name="novogrudok" id="check4" value="1">
+                                    <label for="check4">История - моя страсть. В насыщенных на исторические события местах особая атмосфера.</label>
+                            </div>
+                            <div class="answer novogrudok"> 
+                                    <input class="test-point" type="checkbox" name="novogrudok" id="check5" value="1">
+                                    <label for="check5">Я люблю посещать развалины. В них есть что-то трепетное.</label>
+                            </div>
+                            <div class="answer novogrudok">
+                                    <input class="test-point" type="checkbox" name="novogrudok" id="check6" value="1">
+                                    <label for="check6">Организованные экскурсии не для меня.</label>
+                            </div>
+                            <div class="answer mir">
+                                    <input class="test-point" type="checkbox" name="mir" id="check7" value="1">
+                                    <label for="check7">Я люблю посещать музеи, но предпочитаю чтобы все экспозиции были сконцентрированы на незначительной территории.</label>
+                            </div>
+                            <div class="answer mir">
+                                    <input class="test-point" type="checkbox" name="mir" id="check8" value="1">
+                                    <label for="check8">Я предпочитаю замки, а не дворцы и тем более развалины.</label>
+                            </div>
+                            <div class="answer mir">
+                                    <input class="test-point" type="checkbox" name="mir" id="check9" value="1">
+                                    <label for="check9">Удобно, когда достопримечательность располагается прямо у стоянки или остановки.</label>
+                            </div>
+                            <div class="answer nesvizh">
+                                    <input class="test-point" type="checkbox" name="nesvizh" id="check10" value="1">
+                                    <label for="check10">Я люблю посещать музеи. Чем разнообразнее экспозиции - тем лучше.</label>
+                            </div>
+                            <div class="answer nesvizh">
+                                    <input class="test-point" type="checkbox" name="nesvizh" id="check11" value="1">
+                                    <label for="check11">Я предпочитаю дворцы, а не замки или развалины.</label>
+                            </div>
+                            <div class="answer nesvizh">
+                                    <input class="test-point" type="checkbox" name="nesvizh" id="check12" value="1">
+                                    <label for="check12">Наличие парковых зон рядом очень приветствуется.</label>
                             </div>
                         </div>
-                        <div class="novogrudok-app">
-                            <img class="app-symbol" src="./images/icons/symbol_logo.svg" alt="icon">
-                            <p class="app-name general-text">Новогрудок</p>
+                    </form>
+                    <button type="submit" form="testForm" name="submit" id="submit" class="button button-for-questions">Отправить</button> 
+                    <div class="result-box">
+                        <div class="close-results">
+                            <img src="./images/icons/close-results.svg" alt="close results">
                         </div>
                     </div>
-                    <div class="buttons">
-                        <a href="#askQuestion"><button class="button ask">Задать вопрос</button></a>
-                        <a href="https://play.google.com/store/apps" target="_blank"><button class="button try">Попробовать</button></a>
-                        <a href="https://play.google.com/store/apps" target="_blank"><button class="button buy">Купить</button></a>
+                </div>
+            </section>
+
+            <section class="cities" id="BelarusCities">
+                <div class="drop-decor-left drop-cities">
+                    <div class="titles-frame title-cities">
+                        <h2>Города Беларуси</h2>
                     </div>
                 </div>
-                <div class="banner">
-                    <img src="./images/media/banner.gif" alt="Анимированный рекламный баннер">
+                <div class="novogrudok-city">
+                    <div class="city-map">
+                        <img src="./images/img/map_novogrudok.jpg" alt="city map">
+                    </div>
+                    <div class="city-info">
+                        <h3>Новогрудок</h3>
+                        <p class="general-text">Город в Гродненской области, известный своим замком (а точнее руинами двух башен). 
+                            Центр Новогрудка расположен на Замковой горе - одной из самых высоких точек Беларуси (324 метра над уровнем моря).  
+                        </p>
+                        <p class="general-text">Первое упоминание Новогрудка в 1044 году связано с тем, что именно здесь была заложена крепость, <br> а 
+                            после, спустя два столетия произошла коронация Миндовга <br> и создание Великого княжества Литовского со столицей <br> в Новогрудке.
+                        </p>
+                    </div>
+                    <div class="city-photos">
+                        <img src="./images/img/photo_novogrudok.jpg" alt="photo">
+                        <img src="./images/img/photo_novogrudok2.jpg" alt="photo">
+                    </div>
                 </div>
+            </section>
+
+            <section class="lets-start" id="toBuy">
+                <div class="drop-decor-right drop-start">
+                    <div class="titles-frame title-lets-start">
+                        <h2>А теперь пора в путь!</h2>
+                    </div>
+                </div>
+                <div class="advertisement-download">
+                    <div class="map-buttons">
+                        <p class="text-for-block list-to-download">Доступны для скачивания</p>
+                        <div class="products">
+                            <div class="map-navigation">
+                                <!-- Yandex map -->
+                                <div style="position:relative;overflow:hidden;">
+                                    <a href="https://yandex.by/maps/26836/novogrudok/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новогрудок</a>
+                                    <a href="https://yandex.by/maps/geo/53172563/?ll=25.818389%2C53.589923&tab=attractions&utm_medium=mapframe&utm_source=maps&z=12.3" style="color:#eee;font-size:12px;position:absolute;top:14px;">Новогрудок — Яндекс Карты</a>
+                                    <iframe src="https://yandex.by/map-widget/v1/-/CCUV4Zq~XC" width="270" height="230" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                                </div>
+                            </div>
+                            <div class="novogrudok-app">
+                                <img class="app-symbol" src="./images/icons/symbol_logo.svg" alt="icon">
+                                <p class="app-name general-text">Новогрудок</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a href="#askQuestion"><button class="button ask">Задать вопрос</button></a>
+                            <a href="https://play.google.com/store/apps" target="_blank"><button class="button try">Попробовать</button></a>
+                            <a href="https://play.google.com/store/apps" target="_blank"><button class="button buy">Купить</button></a>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <img src="./images/media/banner.gif" alt="Анимированный рекламный баннер">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Up button -->
+            <div class="up-btn">
+                <div>UP</div>
             </div>
-        </section>
+
+        </div>
+
         <!-- Question Form-->
         <div id="askQuestion" class="question-form">
             <div class="close-block">
@@ -341,6 +357,7 @@
                 </div>
             </form>
         </div>
+
     </main>
     <footer>
         <p class="rights general-text">All Rights Reserved &copy; Travel with us</p>

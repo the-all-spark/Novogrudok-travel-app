@@ -46,6 +46,30 @@ body {
     --text_error_color: #EB5E39;
 }
 
+/* Up button */
+
+.up-btn {
+    position: sticky;
+    bottom: 80px;
+    left: calc(100% - 70px);
+    background-color: #f8f8f8;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgb(235, 94, 57);
+    color: rgb(235, 94, 57);
+    font-weight: bold;
+    font-family: 'PlayRegular';
+  }
+  
+.up-btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 5px #6f90af);
+}
+
 /* --- Preloader --- */
 
 .mask {
@@ -1703,10 +1727,6 @@ img.facebook {
         justify-self: right;
         margin-right: 35px;
     }
-
-    /*.switch-language img {
-        filter: opacity(0.2);
-    }*/
     
     .burger-menu-list a {
         text-decoration: none;
