@@ -462,6 +462,10 @@ p.details {
     background: white;
 }
 
+.arrow-slider {
+    cursor: pointer;
+}
+
 .slider-to-right {
     grid-area: arrow-right;
     background-image: url("../images/icons/arrow_right.svg");
@@ -1699,6 +1703,10 @@ img.facebook {
         justify-self: right;
         margin-right: 35px;
     }
+
+    /*.switch-language img {
+        filter: opacity(0.2);
+    }*/
     
     .burger-menu-list a {
         text-decoration: none;
