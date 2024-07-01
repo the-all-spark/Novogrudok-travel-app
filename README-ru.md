@@ -1,4 +1,4 @@
-# Novogrudok-travel-app, промо туристического приложения (HTML | CSS | JS)
+# Novogrudok-travel-app, промо-сайт туристического приложения (HTML | CSS | JS)
 
 [Переключиться на английский | Switch to English](./readme.md)
 
