@@ -1,6 +1,6 @@
 # Novogrudok-travel-app, promo site of travel app (HTML | CSS | JS)
 
-[Switch to Russian | Переключиться на русский](./readme-ru.md)
+[Switch to Russian | Переключиться на русский](./README-ru.md)
 
 ## About the project
 A promotional page for the Novogrudok tourist app, describing its strengths and providing information about the city.
