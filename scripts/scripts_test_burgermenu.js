@@ -40,7 +40,7 @@ window.onload = function () {
     const minsk = {
         name: "Минск",
         src: "./images/img/minsk.jpg",
-        image: new Image,
+        image: new Image, // создание элемента <img>
     }
 
     const novogrudok = {
@@ -61,7 +61,7 @@ window.onload = function () {
         image: new Image,
     }
 
-    //установка источника изображения для городов
+    //установка источника изображения для городов (полный URL)
     minsk.image.src = minsk.src;
     novogrudok.image.src = novogrudok.src;
     mir.image.src = mir.src;
@@ -149,7 +149,7 @@ window.onload = function () {
             resultBox.append(imgElement);
         }
 
-        //присваивание функции showResult свойству show объектов
+        //присваивание функции showResult новому свойству show объектов
         minsk.show = showResult;
         novogrudok.show = showResult;
         mir.show = showResult;
@@ -190,8 +190,22 @@ window.onload = function () {
             const passTest = document.querySelector(".text-button");
             let passMessage = document.createElement("p");
             passMessage.className = "pass-message";
-            passMessage.insertAdjacentHTML("beforeend", "Опрос пройден. Спасибо! <br> Для повторного прохождения обновите страницу.");
+            passMessage.insertAdjacentHTML("beforeend", "Опрос пройден. Спасибо! <br> Для повторного прохождения нажмите на кнопку ниже.");
             passTest.append(passMessage);
+
+            // добавление кнопки перезапуска опроса
+            let resetBtnBlock = document.createElement("div");
+            resetBtnBlock.className = "resetBtnBlock";
+            passMessage.after(resetBtnBlock);
+
+            let resetBtnImg = document.createElement("img");
+            resetBtnImg.setAttribute("src", "./images/icons/rotate-icon.svg");
+            resetBtnBlock.append(resetBtnImg);
+
+            // TODO - обновление блока после клика на иконку  
+
+            
+
         }
     }
 
