@@ -100,7 +100,11 @@ p.task.general-text {
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    margin: 20px 20px;
+    margin: 20px 20px 30px;
+}
+
+.resetBtnBlock {
+    text-align: center;
 }
 
 /* --- Media queries --- */
