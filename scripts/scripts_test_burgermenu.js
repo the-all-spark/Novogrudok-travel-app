@@ -12,7 +12,7 @@ function startLoader() {
 
 window.onload = function () {
 
-    // Прокрутка при клике на кнопку Up
+    // * Прокрутка при клике на кнопку Up
     let bntUp = document.querySelector(".up-btn");
 
     bntUp.onclick = function (event) {
@@ -27,13 +27,29 @@ window.onload = function () {
 
     // * ТЕСТ-ОПРОС
 
-    //открытие теста при клике на кнопку "Пройти опрос"
-    const startTest = document.querySelector(".button-for-questions");
-    startTest.addEventListener("click", start);
+    // запуск теста-опроса при клике на кнопку "Пройти опрос"
+    const startTestBtn = document.querySelector(".button-for-questions");
+    startTestBtn.addEventListener("click", startQuiz);
 
-    function start() {
+    function startQuiz() {
         const quiz = document.querySelector(".test-block");
         quiz.style.display = "block";
+
+        // клик по кнопке - выбор ответа и стилизация
+        let points = document.querySelectorAll("input.test-point");
+    
+        points.forEach(function (input) {
+            input.onclick = function () {
+                input.classList.toggle("checked"); //добавление/удаление класса у input
+                let blockChecked = input.parentElement;
+                //console.log(blockChecked);
+                blockChecked.classList.toggle("checked-block-style"); //добавление/удаление класса у div (родителя input)
+            };
+        })
+
+        // запуск обработки результатов теста при клике на кнопке "Отправить"
+        let done = document.querySelector("#submit");
+        done.addEventListener("click", countAnswers); // вызов функции
     }
 
     //объекты с данными по городам - название, изображение
@@ -61,29 +77,13 @@ window.onload = function () {
         image: new Image,
     }
 
-    //установка источника изображения для городов (полный URL)
+    // установка источника изображения для городов (полный URL)
     minsk.image.src = minsk.src;
     novogrudok.image.src = novogrudok.src;
     mir.image.src = mir.src;
     nesvizh.image.src = nesvizh.src;
 
-    //клик по кнопке - выбор ответа и стилизация
-
-    let points = document.querySelectorAll("input.test-point");
-    points.forEach(function (input) {
-        input.onclick = function () {
-            input.classList.toggle("checked"); //добавление/удаление класса input
-            let blockChecked = input.parentElement;
-            //console.log(blockChecked);
-            blockChecked.classList.toggle("checked-block-style"); //добавление/удаление класса div
-        };
-    })
-
-    //обработка результатов теста при клике на кнопке "Отправить"
-
-    let done = document.querySelector("#submit");
-    done.addEventListener("click", countAnswers);
-
+    // функция подсчета результатов
     function countAnswers() {
         console.log("Запуск функции подсчета");
 
@@ -121,33 +121,18 @@ window.onload = function () {
                 case 3: return "countNovogrudok";
             }
         }
-        let result = switchResult(ind);
 
-        //функция-сборка названия и изображения города для вывода результата
-        const showResult = function () {
-            console.log("Запуск функции сборки");
+        let result = switchResult(ind); // город, который выбрал пользователь
+        prepareToShowResult(result); // вызов функции
+    }
 
-            //добавление нового класса результирующему блоку
-            document.querySelector(".test-block").classList.add("results-block");
+    // функция подготовки к отображению результата
+    function prepareToShowResult(result) {
 
-            let resultBox = document.querySelector(".result-box");
-            resultBox.style.display = "block";
-
-            let nameElement = document.createElement("p"); //вывод имени
-            nameElement.className = "city-name-test";
-            nameElement.textContent = `${this.name}`;
-            resultBox.prepend(nameElement);
-
-            let title = document.createElement("p"); //вывод заголовка
-            title.className = "title-test";
-            title.textContent = "Ваш город:";
-            resultBox.prepend(title);
-
-            let imgElement = document.createElement("img"); //вывод фото
-            imgElement.className = "image-test";
-            imgElement.setAttribute("src", `${this.src}`);
-            resultBox.append(imgElement);
-        }
+        // скрыть форму, заголовок и кнопку "Ответить" после отправки ответа
+        document.testForm.style.display = "none"; 
+        document.querySelector(".task").style.display = "none";  
+        document.querySelector("#submit").style.display = "none"; 
 
         //присваивание функции showResult новому свойству show объектов
         minsk.show = showResult;
@@ -155,11 +140,7 @@ window.onload = function () {
         mir.show = showResult;
         nesvizh.show = showResult;
 
-        document.testForm.style.display = "none"; //скрыть форму после ответа
-        done.style.display = "none";               //скрыть кнопку "Ответить"
-        document.querySelector(".task").style.display = "none";  //скрыть заголовок
-
-        //запуск функции по выводу результата
+        //запуск функции-сборки по выводу результата
         if (result === `countMinsk`) {
             minsk.show();
         }
@@ -175,38 +156,85 @@ window.onload = function () {
         if (result === `countNovogrudok`) {
             novogrudok.show();
         }
+    }
 
-        //закрытие блока с результатами
+    // функция-сборка названия и изображения города для вывода результата
+    const showResult = function () {
+        console.log("Запуск функции сборки");
 
-        const closeTest = document.querySelector(".close-results");
-        closeTest.addEventListener("click", close);
+        //добавление нового класса результирующему блоку
+        document.querySelector(".test-block").classList.add("results-block");
 
-        function close() {
-            const quiz = document.querySelector(".test-block");
-            quiz.style.display = "none";
-            startTest.style.display = "none";
+        let resultBox = document.querySelector(".result-box");
+        resultBox.style.display = "block";
 
-            //добавление сообщения, что опрос пройден
-            const passTest = document.querySelector(".text-button");
-            let passMessage = document.createElement("p");
-            passMessage.className = "pass-message";
-            passMessage.insertAdjacentHTML("beforeend", "Опрос пройден. Спасибо! <br> Для повторного прохождения нажмите на кнопку ниже.");
-            passTest.append(passMessage);
+        let nameElement = document.createElement("p"); //вывод имени
+        nameElement.className = "city-name-test";
+        nameElement.textContent = `${this.name}`;
+        resultBox.prepend(nameElement);
 
-            // добавление кнопки перезапуска опроса
-            let resetBtnBlock = document.createElement("div");
-            resetBtnBlock.className = "resetBtnBlock";
-            passMessage.after(resetBtnBlock);
+        let title = document.createElement("p"); //вывод заголовка
+        title.className = "title-test";
+        title.textContent = "Ваш город:";
+        resultBox.prepend(title);
 
-            let resetBtnImg = document.createElement("img");
-            resetBtnImg.setAttribute("src", "./images/icons/rotate-icon.svg");
-            resetBtnBlock.append(resetBtnImg);
+        let imgElement = document.createElement("img"); //вывод фото
+        imgElement.className = "image-test";
+        imgElement.setAttribute("src", `${this.src}`);
+        resultBox.append(imgElement);
+    }
 
-            // TODO - обновление блока после клика на иконку  
 
-            
+
+
+    // TODO закрытие блока с результатами
+
+    const closeTest = document.querySelector(".close-results");
+    closeTest.addEventListener("click", close);
+
+    function close() {
+        const quiz = document.querySelector(".test-block");
+        quiz.style.display = "none";
+        startTestBtn.style.display = "none";
+
+        //добавление сообщения, что опрос пройден
+        const passTest = document.querySelector(".text-button");
+        let passMessage = document.createElement("p");
+        passMessage.className = "pass-message";
+        passMessage.insertAdjacentHTML("beforeend", "Опрос пройден. Спасибо! <br> Для повторного прохождения нажмите на кнопку ниже.");
+        passTest.append(passMessage);
+
+        // добавление кнопки перезапуска опроса
+        let resetBtnBlock = document.createElement("div");
+        resetBtnBlock.className = "resetBtnBlock";
+        passMessage.after(resetBtnBlock);
+
+        let resetBtnImg = document.createElement("img");
+        resetBtnImg.setAttribute("src", "./images/icons/rotate-icon.svg");
+        resetBtnBlock.append(resetBtnImg);
+
+        // TODO - обновление блока после клика на иконку  
+        resetBtnBlock.addEventListener("click", resetQuiz);
+
+        function resetQuiz() {
+            console.log("Перезагружаем тест");
+
+            passMessage.style.display = "none";
+            resetBtnBlock.style.display = "none";
+
+            //startTest.style.display = "block";
+            //start();
+
+            console.log(document.querySelector(".test-block"));
+
+            //document.querySelector(".result-box").style.display = "none";
+            //document.querySelector(".test-block").style.display = "block";
+            //startTestBtn.style.display = "block";
+
+
 
         }
+
     }
 
     // * БУРГЕР-МЕНЮ
