@@ -107,6 +107,10 @@ p.task.general-text {
     text-align: center;
 }
 
+.resetBtnBlock:hover {
+    cursor: pointer;
+}
+
 /* --- Media queries --- */
 
 @media screen and (max-width: 690px) {
