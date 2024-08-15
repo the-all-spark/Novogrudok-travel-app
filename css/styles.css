@@ -1044,6 +1044,18 @@ img[src="./images/media/banner.gif"] {
 .banner img {
     width: 470px;
     height: 440px;
+    z-index: 99;
+}
+
+.banner-static img {
+    width: auto;
+    height: 350px;
+}
+
+.warning {
+    font-family: 'PlayRegular';
+    font-size: 18px;
+    color: var(--text_error_color);
 }
 
 .map-buttons {

@@ -326,9 +326,19 @@
                                     class="button buy">Купить</button></a>
                         </div>
                     </div>
+                    
                     <div class="banner">
                         <img src="./images/media/banner.gif" alt="Анимированный рекламный баннер">
+                        <!-- ! сообщение должно отображаться только если баннер не загружается из-за AdBlock -->
+                        <!-- ! http://127.0.0.1:5500/images/media/banner.gif 
+                        <!-- ! net::ERR_BLOCKED_BY_CLIENT -->
+                        <div class="banner-static">
+                            <p class="warning">Вы не видите баннер, т.к. включен блокировщик рекламы. Пожалуйста, отключите его 
+                                и перезагрузите страницу.</p>
+                            <img src="./images/media/banner.jpg" alt="Рекламное изображение"> 
+                        </div>      
                     </div>
+            
                 </div>
             </section>
 
