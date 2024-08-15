@@ -27,6 +27,8 @@ window.onload = function () {
 
     // * ТЕСТ-ОПРОС
 
+    let flagResult; // флаг, содержащий true/false - есть ли информация в блоке результата
+
     // запуск теста-опроса при клике на кнопку "Пройти опрос"
     const startTestBtn = document.querySelector(".button-for-questions");
     startTestBtn.addEventListener("click", startQuiz);
@@ -35,8 +37,6 @@ window.onload = function () {
         
         // проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
         if(startTestBtn.style.display === "none" && testForm.style.display === "none") {
-            console.log("Кнопка и форма не видны");
-
             document.querySelector(".submit-btn").style.display = "block"; // кнопка "Отправить"
             testForm.style.display = "block"; // форма с тестом
             document.querySelector(".task").style.display = "block";  // вводный к форме текст
@@ -56,14 +56,6 @@ window.onload = function () {
                     element.setAttribute("checked", false);
                 } 
             })
-
-            // TODO очистить предыдущий вывод результата
-
-
-
-
-
-
         }
 
         const quiz = document.querySelector(".test-block");
@@ -158,6 +150,8 @@ window.onload = function () {
         }
 
         let result = switchResult(ind); // город, который выбрал пользователь
+        console.log(`result: ${result}`);
+
         prepareToShowResult(result); // вызов функции
     }
 
@@ -175,7 +169,19 @@ window.onload = function () {
         mir.show = showResult;
         nesvizh.show = showResult;
 
-        //запуск функции-сборки по выводу результата
+        // проверяем флаг - выведена ли информация в блоке результата
+        console.log(`flagResult: ${flagResult}`);
+
+        if(flagResult) {
+            console.log("Сброс предыдущего результата");
+
+            document.querySelector(".title-test").remove();
+            document.querySelector(".city-name-test").remove();
+            document.querySelector(".image-test").remove();
+            document.querySelector(".result-box").style.display = "block";
+        } 
+
+        // запуск функции-сборки по выводу результата
         if (result === `countMinsk`) {
             minsk.show();
         }
@@ -191,6 +197,7 @@ window.onload = function () {
         if (result === `countNovogrudok`) {
             novogrudok.show();
         }
+
     }
 
     // функция-сборка названия и изображения города для вывода результата
@@ -217,6 +224,8 @@ window.onload = function () {
         imgElement.className = "image-test";
         imgElement.setAttribute("src", `${this.src}`);
         resultBox.append(imgElement);
+
+        flagResult = true; // в блок добавлен результат
     }
 
     // * закрытие блока с результатами
@@ -249,7 +258,7 @@ window.onload = function () {
         resetBtnBlock.addEventListener("click", resetQuiz);
 
         function resetQuiz() {
-            console.log("Перезагружаем тест");
+            console.log("Перезагрузка теста");
 
             passMessage.style.display = "none";
             resetBtnBlock.style.display = "none";
