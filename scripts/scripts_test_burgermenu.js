@@ -32,6 +32,40 @@ window.onload = function () {
     startTestBtn.addEventListener("click", startQuiz);
 
     function startQuiz() {
+        
+        // проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
+        if(startTestBtn.style.display === "none" && testForm.style.display === "none") {
+            console.log("Кнопка и форма не видны");
+
+            document.querySelector(".submit-btn").style.display = "block"; // кнопка "Отправить"
+            testForm.style.display = "block"; // форма с тестом
+            document.querySelector(".task").style.display = "block";  // вводный к форме текст
+            document.querySelector(".result-box").style.display = "none"; // блок с результатом
+
+            let checkedPoint = document.querySelectorAll(".checked-block-style"); // выбранные пункты
+            checkedPoint.forEach(function (elem) {
+                elem.classList.remove("checked-block-style"); //удаление класса у div
+            })
+
+            let checkedInput = document.querySelectorAll(".test-point.checked"); // выбранные checkbox
+            checkedInput.forEach(function (element) {
+                element.classList.remove("checked"); //удаление checked у input
+
+                if(element.checked === true) {
+                    element.checked = false;
+                    element.setAttribute("checked", false);
+                } 
+            })
+
+            // TODO очистить предыдущий вывод результата
+
+
+
+
+
+
+        }
+
         const quiz = document.querySelector(".test-block");
         quiz.style.display = "block";
 
@@ -41,6 +75,7 @@ window.onload = function () {
         points.forEach(function (input) {
             input.onclick = function () {
                 input.classList.toggle("checked"); //добавление/удаление класса у input
+                input.setAttribute("checked", true);
                 let blockChecked = input.parentElement;
                 //console.log(blockChecked);
                 blockChecked.classList.toggle("checked-block-style"); //добавление/удаление класса у div (родителя input)
@@ -184,10 +219,7 @@ window.onload = function () {
         resultBox.append(imgElement);
     }
 
-
-
-
-    // TODO закрытие блока с результатами
+    // * закрытие блока с результатами
 
     const closeTest = document.querySelector(".close-results");
     closeTest.addEventListener("click", close);
@@ -213,7 +245,7 @@ window.onload = function () {
         resetBtnImg.setAttribute("src", "./images/icons/rotate-icon.svg");
         resetBtnBlock.append(resetBtnImg);
 
-        // TODO - обновление блока после клика на иконку  
+        // * Обновление блока после клика на иконку  
         resetBtnBlock.addEventListener("click", resetQuiz);
 
         function resetQuiz() {
@@ -222,17 +254,7 @@ window.onload = function () {
             passMessage.style.display = "none";
             resetBtnBlock.style.display = "none";
 
-            //startTest.style.display = "block";
-            //start();
-
-            console.log(document.querySelector(".test-block"));
-
-            //document.querySelector(".result-box").style.display = "none";
-            //document.querySelector(".test-block").style.display = "block";
-            //startTestBtn.style.display = "block";
-
-
-
+            startQuiz();
         }
 
     }
