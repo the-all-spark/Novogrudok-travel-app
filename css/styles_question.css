@@ -111,6 +111,17 @@ input:required, textarea:required {
     color:var(--text_error_color);
 }
 
+/* After form submitting */
+
+.thanks {
+    display: none;
+    text-align: center;
+    margin: 60px 0;
+    font-family: 'PlayRegular';
+    font-size: 20px;
+    color: var(--text_highlight_color);
+}
+
 @media screen and (max-width: 690px) {
 
     .question-form {

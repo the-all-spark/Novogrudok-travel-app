@@ -1,5 +1,7 @@
 $(function () {
-      $("form").submit(function() {
+      $("form").submit(function(e) {
+            e.preventDefault();           // предотвращение перезагрузки страницы (форма не отправляет данные самостоятельно)
+
             let trueSend = true;    //флаг для отправки формы
             $("span").remove();     //убираем предупреждения при отправке формы
 
@@ -43,6 +45,22 @@ $(function () {
             else {
                   $("#dt").css("border","2px solid var(--text_highlight_color)");
             }
+
+            // если все поля заполнены верно
+            if (trueSend) {
+                  $(".question-form form").css("display", "none");
+                  $(".question-form").css("border", "3px solid var(--text_error_color)");
+                  $(".question-form").css("width", "45%");
+                  $(".question-form").css("bottom", "90px");
+
+                  $(".thanks").css("display", "block");
+                  $(".close-block").css("top", "10%");
+
+                  /*setTimeout(function (e) {
+                        location.reload();
+                  }, 5000);*/
+            }
+
             return trueSend;
       });
 })
