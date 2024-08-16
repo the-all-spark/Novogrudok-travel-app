@@ -52,15 +52,10 @@ $(function () {
                   $(".question-form").css("border", "3px solid var(--text_error_color)");
                   $(".question-form").css("width", "45%");
                   $(".question-form").css("bottom", "90px");
-
-                  $(".thanks").css("display", "block");
+                  $(".thanks").css("display", "block"); // вывод сообщения
                   $(".close-block").css("top", "10%");
-
-                  /*setTimeout(function (e) {
-                        location.reload();
-                  }, 5000);*/
             }
-
             return trueSend;
+            
       });
 })

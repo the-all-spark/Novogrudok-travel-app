@@ -431,7 +431,7 @@ window.onload = function () {
         questionForm.style.display = "block";
     }
 
-    //закрытие блока без отправления вопроса
+    //закрытие блока
     const closeFormBtn = document.querySelector(".close-block");
     closeFormBtn.addEventListener("click", closeForm);
 
@@ -439,7 +439,7 @@ window.onload = function () {
         const questionForm = document.querySelector(".question-form");
         questionForm.style.display = "none";
     }
-
+    
 }
 
 // * СЛАЙДЕР

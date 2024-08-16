@@ -116,10 +116,15 @@ input:required, textarea:required {
 .thanks {
     display: none;
     text-align: center;
-    margin: 60px 0;
+    margin: 40px 0;
     font-family: 'PlayRegular';
     font-size: 20px;
     color: var(--text_highlight_color);
+}
+
+.thanks-link {
+    text-decoration: underline;
+    color: var(--text_error_color);
 }
 
 @media screen and (max-width: 690px) {
