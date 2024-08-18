@@ -35,7 +35,7 @@ window.onload = function () {
 
     function startQuiz() {
         
-        // проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
+        // * проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
         if(startTestBtn.style.display === "none" && testForm.style.display === "none") {
             document.querySelector(".submit-btn").style.display = "block"; // кнопка "Отправить"
             testForm.style.display = "block"; // форма с тестом
@@ -61,9 +61,10 @@ window.onload = function () {
         const quiz = document.querySelector(".test-block");
         quiz.style.display = "block";
 
-        // клик по кнопке - выбор ответа и стилизация
+        // * клик по кнопке - выбор ответа и стилизация
         let points = document.querySelectorAll("input.test-point");
-    
+        let blockCheckedCount = 0; // количество выбранных пунктов (счетчик)
+
         points.forEach(function (input) {
             input.onclick = function () {
                 input.classList.toggle("checked"); //добавление/удаление класса у input
@@ -71,7 +72,25 @@ window.onload = function () {
                 let blockChecked = input.parentElement;
                 //console.log(blockChecked);
                 blockChecked.classList.toggle("checked-block-style"); //добавление/удаление класса у div (родителя input)
+
+                // если пункт выбран - +1 к счетчику
+                if(blockChecked.classList.contains("checked-block-style")) { 
+                    blockCheckedCount += 1;
+                } else {
+                    blockCheckedCount -= 1;
+                }
+                //console.log(blockCheckedCount);
+
+                // если выбран хотя бы 1 пункт
+                if(blockCheckedCount >= 1) {
+                    document.querySelector("#submit").classList.add("active-btn"); // сделать активной кнопку Отправить
+                    document.querySelector(".warning-point").classList.add("hide-message"); // скрыть предупреждение
+                } else {
+                    document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
+                    document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
+                }
             };
+            
         })
 
         // запуск обработки результатов теста при клике на кнопке "Отправить"
@@ -132,27 +151,32 @@ window.onload = function () {
         }
         console.log(`Результаты подсчета: Минск(${countMinsk}), Мир(${countMir}), Несвиж(${countNesvizh}), Новогрудок(${countNovogrudok})`);
 
-        //определение результата
-        //создание массива из результатов теста
-        const arr = [countMinsk, countMir, countNesvizh, countNovogrudok];
+        if(countMinsk !== 0 || countMir !== 0 || countNesvizh !== 0 || countNovogrudok !== 0 ) {
+            console.log("Пользователь выбрал хотя бы 1 пункт!");
 
-        let maxValue = Math.max(...arr); //максимальное значение из 4х значений
-        let ind = arr.indexOf(maxValue) //индекс максимального значения в массиве
+            //определение результата
+            //создание массива из результатов теста
+            const arr = [countMinsk, countMir, countNesvizh, countNovogrudok];
 
-        //получение названия переменной в качестве результата
-        function switchResult(index) {
-            switch (index) {
-                case 0: return "countMinsk";
-                case 1: return "countMir";
-                case 2: return "countNesvizh";
-                case 3: return "countNovogrudok";
+            let maxValue = Math.max(...arr); //максимальное значение из 4х значений
+            let ind = arr.indexOf(maxValue) //индекс максимального значения в массиве
+
+            //получение названия переменной в качестве результата
+            function switchResult(index) {
+                switch (index) {
+                    case 0: return "countMinsk";
+                    case 1: return "countMir";
+                    case 2: return "countNesvizh";
+                    case 3: return "countNovogrudok";
+                }
             }
+
+            let result = switchResult(ind); // город, который выбрал пользователь
+            console.log(`result: ${result}`);
+
+            prepareToShowResult(result); // вызов функции
         }
-
-        let result = switchResult(ind); // город, который выбрал пользователь
-        console.log(`result: ${result}`);
-
-        prepareToShowResult(result); // вызов функции
+        
     }
 
     // функция подготовки к отображению результата
