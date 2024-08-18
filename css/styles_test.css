@@ -21,6 +21,11 @@
 #submit{
     display: block;
     margin: 20px auto 35px;
+    cursor: not-allowed;
+}
+
+#submit.active-btn:hover {
+    cursor: pointer;
 }
 
 .answer input {
@@ -44,6 +49,21 @@ p.task.general-text {
 .checked-block-style label {
     color: var(--text_highlight_color);
 }
+
+.warning-point {
+    font-family: 'PlayRegular';
+    color: var(--text_error_color);
+    font-size: 20px;
+    position: absolute;
+    bottom: 8%;
+    right: 10%;
+    width: 300px;
+}
+
+.warning-point.hide-message {
+    display: none;
+}
+
 
 /* ---- Show test result ---- */
 
