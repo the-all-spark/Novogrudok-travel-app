@@ -56,6 +56,10 @@ window.onload = function () {
                     element.setAttribute("checked", false);
                 } 
             })
+
+            document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
+            document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
+
         }
 
         const quiz = document.querySelector(".test-block");
