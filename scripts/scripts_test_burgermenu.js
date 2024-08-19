@@ -41,6 +41,7 @@ window.onload = function () {
             testForm.style.display = "block"; // форма с тестом
             document.querySelector(".task").style.display = "block";  // вводный к форме текст
             document.querySelector(".result-box").style.display = "none"; // блок с результатом
+            document.querySelector("#close-quiz-btn").style.display = "block"; // показать кнопку закрытия формы
 
             let checkedPoint = document.querySelectorAll(".checked-block-style"); // выбранные пункты
             checkedPoint.forEach(function (elem) {
@@ -64,6 +65,12 @@ window.onload = function () {
 
         const quiz = document.querySelector(".test-block");
         quiz.style.display = "block";
+
+        // * кнопка закрытия опроса
+        let closeBtn = document.querySelector("#close-quiz-btn");
+        closeBtn.addEventListener("click", function() {
+            quiz.style.display = "none";
+        });
 
         // * клик по кнопке - выбор ответа и стилизация
         let points = document.querySelectorAll("input.test-point");
@@ -234,6 +241,7 @@ window.onload = function () {
 
         //добавление нового класса результирующему блоку
         document.querySelector(".test-block").classList.add("results-block");
+        document.querySelector("#close-quiz-btn").style.display = "none"; // скрыть кнопку закрытия формы
 
         let resultBox = document.querySelector(".result-box");
         resultBox.style.display = "block";
@@ -288,6 +296,8 @@ window.onload = function () {
         function resetQuiz() {
             console.log("Перезагрузка теста");
 
+            // TODO сообщение и кнопка обновления теста дублируются в DOM 
+            // TODO (т.к. создание элемента и добавление при каждом прохождении теста)
             passMessage.style.display = "none";
             resetBtnBlock.style.display = "none";
 
