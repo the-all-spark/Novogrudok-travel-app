@@ -53,7 +53,7 @@ $(function () {
                   $(".question-form").css("width", "45%");
                   $(".question-form").css("bottom", "90px");
                   $(".thanks").css("display", "block"); // вывод сообщения
-                  $(".close-block").css("top", "10%");
+                  $("#close-question-form-btn").css("top", "10%");
             }
             return trueSend;
             

@@ -1,4 +1,3 @@
-
 /* -- Test Block -- */
 
 .test-block {
@@ -64,6 +63,15 @@ p.task.general-text {
     display: none;
 }
 
+#close-quiz-btn {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+}
+
+#close-quiz-btn:hover {
+    cursor: pointer;
+}
 
 /* ---- Show test result ---- */
 

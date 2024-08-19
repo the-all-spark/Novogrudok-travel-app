@@ -460,7 +460,7 @@ window.onload = function () {
     }
 
     //закрытие блока
-    const closeFormBtn = document.querySelector(".close-block");
+    const closeFormBtn = document.querySelector("#close-question-form-btn");
     closeFormBtn.addEventListener("click", closeForm);
 
     function closeForm() {
