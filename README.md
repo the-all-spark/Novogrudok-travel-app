@@ -20,11 +20,13 @@ A promotional page for the Novogrudok tourist app, describing its strengths and 
 
 ## Realized functionality:
 1. site preloader in the animation format (Adobe Animate CC);
-2. sound control panel (buttons to play melody, pause, mute, increase and decrease volume) (JS);
+2. sound control panel (buttons to play music, pause, mute, increase and decrease volume) (JS);
 3. slider with mobile application screens (JS);
 4. survey-test in the “Where should I go?” section (JS):
    - if no item is selected, the form cannot be submitted;
-   - after closing the result, you can take the survey again by clicking the “Reset” button.
+   - if at least one item is selected, the warning message is deleted and the button becomes active;
+   - open form can be closed by clicking on the “cross” icon in the upper right corner; 
+   - after closing the result, you can take the survey again by clicking on the “Reset” icon.
 5. “Ask a question” feedback form (validation using jQuery library). After submitting the form, a "thank" message is displayed.
 6. integrated Yandex-map with marked city Novogrudok on it (HTML);
 7. integrated advertising banner (Adobe Animate CC). 
