@@ -36,7 +36,7 @@ window.onload = function () {
     function startQuiz() {
         
         // * проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
-        if(startTestBtn.style.display === "none" && testForm.style.display === "none") {
+        if(testForm.style.display === "none") {
             document.querySelector(".submit-btn").style.display = "block"; // кнопка "Отправить"
             testForm.style.display = "block"; // форма с тестом
             document.querySelector(".task").style.display = "block";  // вводный к форме текст
@@ -72,9 +72,9 @@ window.onload = function () {
             quiz.style.display = "none";
         });
 
-        // * клик по кнопке - выбор ответа и стилизация
+        // * клик по чекбоксу - выбор ответа и стилизация
         let points = document.querySelectorAll("input.test-point");
-        let blockCheckedCount = 0; // количество выбранных пунктов (счетчик)
+        let checkedBlockCount = 0; // количество выбранных пунктов (счетчик)
 
         points.forEach(function (input) {
             input.onclick = function () {
@@ -86,14 +86,14 @@ window.onload = function () {
 
                 // если пункт выбран - +1 к счетчику
                 if(blockChecked.classList.contains("checked-block-style")) { 
-                    blockCheckedCount += 1;
+                    checkedBlockCount += 1;
                 } else {
-                    blockCheckedCount -= 1;
+                    checkedBlockCount -= 1;
                 }
-                //console.log(blockCheckedCount);
+                //console.log(checkedBlockCount);
 
                 // если выбран хотя бы 1 пункт
-                if(blockCheckedCount >= 1) {
+                if(checkedBlockCount >= 1) {
                     document.querySelector("#submit").classList.add("active-btn"); // сделать активной кнопку Отправить
                     document.querySelector(".warning-point").classList.add("hide-message"); // скрыть предупреждение
                 } else {
@@ -109,7 +109,7 @@ window.onload = function () {
         done.addEventListener("click", countAnswers); // вызов функции
     }
 
-    //объекты с данными по городам - название, изображение
+    // * объекты с данными по городам - название, изображение
     const minsk = {
         name: "Минск",
         src: "./images/img/minsk.jpg",
@@ -261,10 +261,10 @@ window.onload = function () {
         imgElement.setAttribute("src", `${this.src}`);
         resultBox.append(imgElement);
 
-        flagResult = true; // в блок добавлен результат
+        flagResult = true; // флаг -> в блок добавлен результат
     }
 
-    // * закрытие блока с результатами
+    // * закрытие блока с результатами при клике на крестик
 
     const closeTest = document.querySelector(".close-results");
     closeTest.addEventListener("click", close);
@@ -296,11 +296,11 @@ window.onload = function () {
         function resetQuiz() {
             console.log("Перезагрузка теста");
 
-            // TODO сообщение и кнопка обновления теста дублируются в DOM 
-            // TODO (т.к. создание элемента и добавление при каждом прохождении теста)
-            passMessage.style.display = "none";
-            resetBtnBlock.style.display = "none";
+            // удаление блока с сообщением и кнопки перезапуска опроса, чтобы они не дублировались в DOM 
+            passMessage.remove();
+            resetBtnBlock.remove();
 
+            startTestBtn.style.display = "block"; //показать кнопку "Пройти опрос"
             startQuiz();
         }
 
