@@ -25,7 +25,7 @@ A promotional page for the Novogrudok tourist app, describing its strengths and 
 4. survey-test in the “Where should I go?” section (JS):
    - if no item is selected, the form cannot be submitted;
    - if at least one item is selected, the warning message is deleted and the button becomes active;
-   - open form can be closed by clicking on the “cross” icon in the upper right corner; 
+   - opened form can be closed by clicking on the “cross” icon in the upper right corner; 
    - after closing the result, you can take the survey again by clicking on the “Reset” icon.
 5. “Ask a question” feedback form (validation using jQuery library). After submitting the form, a "thank" message is displayed.
 6. integrated Yandex-map with marked city Novogrudok on it (HTML);

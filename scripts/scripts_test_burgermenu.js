@@ -43,24 +43,7 @@ window.onload = function () {
             document.querySelector(".result-box").style.display = "none"; // блок с результатом
             document.querySelector("#close-quiz-btn").style.display = "block"; // показать кнопку закрытия формы
 
-            let checkedPoint = document.querySelectorAll(".checked-block-style"); // выбранные пункты
-            checkedPoint.forEach(function (elem) {
-                elem.classList.remove("checked-block-style"); //удаление класса у div
-            })
-
-            let checkedInput = document.querySelectorAll(".test-point.checked"); // выбранные checkbox
-            checkedInput.forEach(function (element) {
-                element.classList.remove("checked"); //удаление checked у input
-
-                if(element.checked === true) {
-                    element.checked = false;
-                    element.setAttribute("checked", false);
-                } 
-            })
-
-            document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
-            document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
-
+            cancelChecking(); // вызов функции
         }
 
         const quiz = document.querySelector(".test-block");
@@ -70,6 +53,7 @@ window.onload = function () {
         let closeBtn = document.querySelector("#close-quiz-btn");
         closeBtn.addEventListener("click", function() {
             quiz.style.display = "none";
+            cancelChecking(); //вызов функции
         });
 
         // * клик по чекбоксу - выбор ответа и стилизация
@@ -107,6 +91,29 @@ window.onload = function () {
         // запуск обработки результатов теста при клике на кнопке "Отправить"
         let done = document.querySelector("#submit");
         done.addEventListener("click", countAnswers); // вызов функции
+    }
+
+    // * функция удаления выделения чекбоксов опроса и строк пунктов:
+    // добавление сообщения, изменение статуса кнопки
+    function cancelChecking() {
+
+        let checkedPoint = document.querySelectorAll(".checked-block-style"); // выбранные пункты
+        checkedPoint.forEach(function (elem) {
+            elem.classList.remove("checked-block-style"); //удаление класса у div
+        })
+
+        let checkedInput = document.querySelectorAll(".test-point.checked"); // выбранные checkbox
+        checkedInput.forEach(function (element) {
+            element.classList.remove("checked"); //удаление checked у input
+
+            if(element.checked === true) {
+                element.checked = false;
+                element.setAttribute("checked", false);
+            } 
+        })
+
+        document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
+        document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
     }
 
     // * объекты с данными по городам - название, изображение
