@@ -87,6 +87,7 @@ p.task.general-text {
 
 #reset:hover {
     color: #FFFFFF;
+    background: linear-gradient(180deg, #b84331ba 0%, rgba(56, 6, 6, 0.85) 100%);
 }
 
 .warning-point {
