@@ -935,17 +935,11 @@ section.where-to-travel {
     grid-area: text-button;
 }
 
-
 p.text-for-questions {
     margin-top: 70px;
     margin-right: 57px;
     margin-left: 45px;
     margin-bottom: 50px;
-}
-
-.button-for-questions {
-    display: block;
-    margin: 0 auto;
 }
 
 /* ---- Section Cities of Belarus ---- */

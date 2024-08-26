@@ -1,4 +1,6 @@
-/* -- Test Block -- */
+/* ------------------------ Quiz (Test) Block ----------------------- */
+
+/* ----------- General ----------- */
 
 .test-block {
     display: none;
@@ -13,27 +15,31 @@
     left: 5%;
 }
 
-.test-block form {
-    margin: 35px 68px 35px;
+/* ------Close Quiz Button ------- */
+
+#close-quiz-btn {
+    position: absolute;
+    top: 5%;
+    right: 3%;
 }
 
-#submit{
-    display: block;
-    margin: 20px auto 35px;
-    cursor: not-allowed;
-}
-
-#submit.active-btn:hover {
+#close-quiz-btn:hover {
     cursor: pointer;
 }
 
-.answer input {
-    margin-right: 15px;
+/* ------------ Form --------------*/
+
+.test-block form {
+    margin: 35px 68px 35px;
 }
 
 p.task.general-text {
     text-align: center;
     font-weight: bold;
+}
+
+.answer input {
+    margin-right: 15px;
 }
 
 .test-block label {
@@ -49,31 +55,56 @@ p.task.general-text {
     color: var(--text_highlight_color);
 }
 
+/* ------------ Form buttons  ------------*/
+
+.quiz-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin-bottom: 35px;
+    float: right;
+}
+
+.text-button .button-for-questions  {
+    display: block;
+    margin: 0 auto;
+}
+
+#submit,
+#reset {
+    display: block;
+    cursor: not-allowed;
+}
+
+#submit.active-btn:hover,
+#reset.active-btn:hover {
+    cursor: pointer;
+}
+
+#reset {
+    color: #7b7b7b;
+}
+
+#reset:hover {
+    color: #FFFFFF;
+}
+
 .warning-point {
     font-family: 'PlayRegular';
     color: var(--text_error_color);
     font-size: 20px;
-    position: absolute;
-    bottom: 8%;
-    right: 10%;
+    /*position: absolute;*/
+    /* bottom: 8%; */
+    /*right: 14%;*/
     width: 300px;
 }
 
 .warning-point.hide-message {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
 }
 
-#close-quiz-btn {
-    position: absolute;
-    top: 5%;
-    right: 3%;
-}
-
-#close-quiz-btn:hover {
-    cursor: pointer;
-}
-
-/* ---- Show test result ---- */
+/* -------------- Show test result -------------- */
 
 .result-box {
     display: none;
@@ -139,7 +170,7 @@ p.task.general-text {
     cursor: pointer;
 }
 
-/* --- Media queries --- */
+/* ------------------------------ Media queries ------------------------------ */
 
 @media screen and (max-width: 690px) {
     
@@ -187,4 +218,3 @@ p.task.general-text {
         line-height: 20px;
     }
 }
-
