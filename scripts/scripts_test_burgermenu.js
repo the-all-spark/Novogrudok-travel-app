@@ -30,14 +30,14 @@ window.onload = function () {
     let flagResult; // флаг, содержащий true/false - есть ли информация в блоке результата
 
     // запуск теста-опроса при клике на кнопку "Пройти опрос"
-    const startTestBtn = document.querySelector(".button-for-questions");
+    const startTestBtn = document.querySelector(".text-button .button-for-questions");
     startTestBtn.addEventListener("click", startQuiz);
 
     function startQuiz() {
         
         // * проверяем, были ли ранее выведены результаты (и следовательно скрыта форма)
         if(testForm.style.display === "none") {
-            document.querySelector(".submit-btn").style.display = "block"; // кнопка "Отправить"
+            document.querySelector(".quiz-buttons").style.display = "flex"; // кнопки "Отправить", "Сбросить", сообщение
             testForm.style.display = "block"; // форма с тестом
             document.querySelector(".task").style.display = "block";  // вводный к форме текст
             document.querySelector(".result-box").style.display = "none"; // блок с результатом
@@ -85,7 +85,6 @@ window.onload = function () {
                     document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
                 }
             };
-            
         })
 
         // запуск обработки результатов теста при клике на кнопке "Отправить"
@@ -194,7 +193,6 @@ window.onload = function () {
 
             prepareToShowResult(result); // вызов функции
         }
-        
     }
 
     // функция подготовки к отображению результата
@@ -203,7 +201,7 @@ window.onload = function () {
         // скрыть форму, заголовок и кнопку "Ответить" после отправки ответа
         document.testForm.style.display = "none"; 
         document.querySelector(".task").style.display = "none";  
-        document.querySelector("#submit").style.display = "none"; 
+        document.querySelector(".quiz-buttons").style.display = "none"; 
 
         //присваивание функции showResult новому свойству show объектов
         minsk.show = showResult;
