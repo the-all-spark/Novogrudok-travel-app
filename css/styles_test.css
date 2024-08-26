@@ -94,14 +94,10 @@ p.task.general-text {
     font-family: 'PlayRegular';
     color: var(--text_error_color);
     font-size: 20px;
-    /*position: absolute;*/
-    /* bottom: 8%; */
-    /*right: 14%;*/
     width: 300px;
 }
 
 .warning-point.hide-message {
-    /*display: none;*/
     visibility: hidden;
 }
 
@@ -117,7 +113,7 @@ p.task.general-text {
 }
 
 .image-test {
-    width: 55%;
+    width: 53%;
     margin-bottom: 30px;
 }
 
@@ -128,7 +124,7 @@ p.task.general-text {
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-    line-height: 35px;
+    line-height: 5px;
 }
 
 .title-test {
