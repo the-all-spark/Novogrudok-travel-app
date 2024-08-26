@@ -39,7 +39,7 @@ window.onload = function () {
         if(testForm.style.display === "none") {
             document.querySelector(".quiz-buttons").style.display = "flex"; // кнопки "Отправить", "Сбросить", сообщение
             testForm.style.display = "block"; // форма с тестом
-            document.querySelector(".task").style.display = "block";  // вводный к форме текст
+            document.querySelector(".task").style.display = "block";  // вводный текст к форме
             document.querySelector(".result-box").style.display = "none"; // блок с результатом
             document.querySelector("#close-quiz-btn").style.display = "block"; // показать кнопку закрытия формы
 
@@ -53,6 +53,12 @@ window.onload = function () {
         let closeBtn = document.querySelector("#close-quiz-btn");
         closeBtn.addEventListener("click", function() {
             quiz.style.display = "none";
+            cancelChecking(); //вызов функции
+        });
+
+        // * кнопка сброса выбранных пользователем пунктов
+        let clearFormBtn = document.querySelector("#reset");
+        clearFormBtn.addEventListener("click", function() {
             cancelChecking(); //вызов функции
         });
 
@@ -78,10 +84,12 @@ window.onload = function () {
 
                 // если выбран хотя бы 1 пункт
                 if(checkedBlockCount >= 1) {
-                    document.querySelector("#submit").classList.add("active-btn"); // сделать активной кнопку Отправить
+                    document.querySelector("#submit").classList.add("active-btn"); // сделать активными кнопки Отправить и Сбросить
+                    document.querySelector("#reset").classList.add("active-btn"); 
                     document.querySelector(".warning-point").classList.add("hide-message"); // скрыть предупреждение
                 } else {
-                    document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
+                    document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивными кнопку кнопки Отправить и Сбросить
+                    document.querySelector("#reset").classList.remove("active-btn"); 
                     document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
                 }
             };
@@ -111,7 +119,8 @@ window.onload = function () {
             } 
         })
 
-        document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивной кнопку Отправить
+        document.querySelector("#submit").classList.remove("active-btn"); // сделать неактивными кнопки Отправить и Сбросить
+        document.querySelector("#reset").classList.remove("active-btn");
         document.querySelector(".warning-point").classList.remove("hide-message"); // показать предупреждение
     }
 
