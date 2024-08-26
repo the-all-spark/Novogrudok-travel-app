@@ -188,6 +188,7 @@
                         <button class="button button-for-questions">Пройти опрос</button>
                     </div>
                 </div>
+
                 <!-- Quiz -->
                 <div class="test-block">
                     <div class="close-block" id="close-quiz-btn">
@@ -252,12 +253,13 @@
                             </div>
                         </div>
                     </form>
-                    <button type="submit" form="testForm" name="submit" id="submit"
-                        class="button button-for-questions submit-btn">Отправить
-                    </button>
 
-                    <div class="warning-point">Выберите хотя бы один пункт, чтобы получить результат!</div>
-
+                    <div class="quiz-buttons">
+                        <button type="reset" form="testForm" name="reset" id="reset" class="button">Сбросить</button>
+                        <button type="submit" form="testForm" name="submit" id="submit" class="button">Отправить</button>
+                        <div class="warning-point">Выберите хотя бы один пункт, чтобы получить результат!</div>
+                    </div>
+                    
                     <div class="result-box">
                         <div class="close-results">
                             <img src="./images/icons/close-results.svg" alt="close results">
