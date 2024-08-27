@@ -48,7 +48,7 @@ p.task.general-text {
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    color: #000000;    
+    color: #000000;
 }
 
 .checked-block-style label {
@@ -65,7 +65,7 @@ p.task.general-text {
     float: right;
 }
 
-.text-button .button-for-questions  {
+.text-button .button-for-questions {
     display: block;
     margin: 0 auto;
 }
@@ -108,7 +108,7 @@ p.task.general-text {
     width: 90%;
     height: 90%;
     margin: 0 auto;
-    text-align: center;    
+    text-align: center;
     position: relative;
 }
 
@@ -169,8 +169,61 @@ p.task.general-text {
 
 /* ------------------------------ Media queries ------------------------------ */
 
-@media screen and (max-width: 690px) {
-    
+@media screen and (max-width: 1250px) {
+
+    .test-block {
+        width: 100%;
+        top: 20%;
+        left: 0;
+    }
+
+}
+
+@media screen and (max-width: 1140px) {
+
+    .quiz-buttons {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .test-block form {
+        margin: 35px 50px 35px;
+    }
+
+    .button {
+        width: 140px;
+    }
+
+    .text-button button {
+        width: 170px;
+    }
+
+}
+
+@media screen and (max-width: 880px) {
+
+    .quiz-buttons {
+        width: 90%;
+    }
+
+    p.text-for-questions {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+
+    .map-buttons {
+        column-gap: 20px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
     .test-block label {
         font-size: 16px;
         line-height: 20px;
@@ -180,17 +233,81 @@ p.task.general-text {
         width: 70%;
     }
 
+    p.text-for-questions {
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 780px) {
+
+    .pass-message {
+        margin: 20px 20px 20px;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+
+    .questions {
+        grid-template-columns: 40% 60%;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .test-block form {
+        margin: 35px 40px 35px;
+    }
 
     .test-block label {
         font-size: 16px;
         line-height: 20px;
     }
 
+    p.text-for-questions {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .quiz-buttons {
+        width: 100%;
+        align-content: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
     .results-block {
         bottom: 5%;
+    }
+
+    .questions {
+        grid-template-columns: 100%;
+    }
+
+    section.where-to-travel {
+        height: 700px;
+        grid-template-rows: 90px 600px;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .questions {
+        grid-template-rows: 50% 48%;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    p.text-for-questions {
+        margin-right: 45px;
+        margin-left: 35px;
     }
 
 }
@@ -214,4 +331,34 @@ p.task.general-text {
         font-size: 16px;
         line-height: 20px;
     }
+
+    .test-block form {
+        margin: 35px 30px 35px;
+    }
+
+    #close-quiz-btn {
+        top: 1%;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    .questions {
+        grid-template-rows: 45% 48%;
+    }
+
+    .quiz-buttons {
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .quiz-buttons button {
+        align-self: center;
+    }
+
+    .warning-point {
+        text-align: center;
+    }
+
 }
