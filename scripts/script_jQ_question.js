@@ -47,11 +47,10 @@ $(function () {
             }
 
             // если все поля заполнены верно
+            // TODO присвоить класс для изменений и менять его в адаптивной верстке
             if (trueSend) {
                   $(".question-form form").css("display", "none");
-                  $(".question-form").css("border", "3px solid var(--text_error_color)");
-                  $(".question-form").css("width", "45%");
-                  $(".question-form").css("bottom", "90px");
+                  $(".question-form").addClass('submitted-form'); //присвоить класс
                   $(".thanks").css("display", "block"); // вывод сообщения
                   $("#close-question-form-btn").css("top", "10%");
             }
