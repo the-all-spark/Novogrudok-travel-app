@@ -63,6 +63,7 @@ body {
     color: rgb(235, 94, 57);
     font-weight: bold;
     font-family: 'PlayRegular';
+    z-index: 99;
   }
   
 .up-btn:hover {
@@ -1085,6 +1086,10 @@ p.list-to-download {
     grid-area: map-navigation;
 }
 
+.map-navigation div {
+    margin: 0 auto;
+}
+
 .novogrudok-app {
     grid-area: novogrudok-app;
     display: grid;
@@ -1181,44 +1186,45 @@ img.facebook {
 /* --------------- MEDIA QUERIES ----------------- */
 
 @media screen and (min-width: 1400px) {
-    
+    .decor-line {
+        display: block;
+    }
     .open-burger-menu {
         display: none;
     }
-
     section.lets-start {
         margin-left: 20%;
     }
 }
 
+@media screen and (min-width: 1550px) {
+    .decor-line {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 1610px) {
-    
     .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
-
     section.lets-start {
         margin-left: 23%;
     }
 }
 
 @media screen and (max-width: 1306px) {
-
     .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
-
     .decor-line {
         left: 66px;
         width: 93%;
     }
-
     .audio-block {
         display: none;
     }
-
     .audio-controls-on {
         display: block;
         position: absolute;
@@ -1227,7 +1233,6 @@ img.facebook {
         width: 35px; 
         height: 34px;
     }
-
     .audio-controls-off {
         display: none;
         position: absolute;
@@ -1236,26 +1241,21 @@ img.facebook {
         width: 35px; 
         height: 34px;
     }
-
     .audio-controls-on img,
     .audio-controls-off img {
         width: 35px; 
         height: 34px;
         display: block;
     }
-    
     .audio-controls-on:hover {
         cursor: pointer;
     }
-
     p.name {
         font-size: 20px;
     }
-
     ul.nav-menu {
         padding-left: 60px;
     }
-
     h1 {
         font-size: 52px;
         line-height: 60px;
@@ -1263,128 +1263,104 @@ img.facebook {
         margin-top: 30px;
         width: 80%;
     }
-
     p.details {
         margin-left: 70px;
     }
-
     .titles-frame-large {
         width: 48vw;
     }
-
     .titles-frame {
         width: 47vw;
     }
-
     section.about-us {
         width: 90%;
         grid-template-columns: 100%;
     }
-
     .cards {
         grid-template-columns: 260px 260px 260px 260px;
         column-gap: 4%;
     }
-
     section.where-to-travel {
         width: 90%;
         grid-template-columns: 100%;
     }
-
     .questions {
         grid-template-columns: 65% 35%;
         grid-template-rows: 100%;
         column-gap: 12px;
     }
-
     section.cities {
         width: 90%;
         grid-template-columns: 100%;
     }
-
     .novogrudok-city {
         grid-template-columns: 393px 394px 382px;
         column-gap: 10px;
     }
-
     .city-map, 
     .city-photos  {
         text-align: center;
         align-self: center;
     }
-
     .city-map img, 
     .city-photos img {
         width: 90%;
     }
-
     section.lets-start {
         margin-left: 12%;
         width: 82%;
         grid-template-columns: 100%;
     }
-
     .app-review  {
         width: 90%;
         height: 90%;
         justify-self: center;
         align-self: center;
     }
-
     .advertisement-download {
         column-gap: 33px;
         grid-template-columns: 565px 470px;
     }
-
     .map-buttons {
         grid-template-columns: 100%;
     }
 }
 
 @media screen and (max-width: 1250px) {
-
     .decor-line {
         display: none;
     }
-
     .drop-decor-left::before,
     .drop-decor-right::after {
         display: none;
     }
-
     .title-about-us,        /* центрирование заголовков*/
     .title-where-to-travel,
     .title-cities,
     .title-lets-start { 
         margin: auto;
     }
-
     .drop-where-to-travel,
     .drop-travel,
     .drop-cities,
     .drop-start {
         position: static;
     }
-
     .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
-
     p.details {
         margin-left: 55px;
     }
-
     h1 {
         margin-left: 55px;
     }
-
     section.slider {
         margin: 50px auto 110px;
     }
 
     /* ---- CARDS (Section "About us") ---- */
-
     .cards {
         grid-template-areas: "plan map"
                             "excursions infrastructure";
@@ -1394,7 +1370,6 @@ img.facebook {
         row-gap: 20px;
         justify-items: center;
     }
-
     .plan {
         display: grid;
         grid-template-areas: "icon-plan name-plan"
@@ -1405,22 +1380,18 @@ img.facebook {
         row-gap: 10px;
         width: 90%;
     }
-
     .icon-plan {
         grid-area: icon-plan;
     }
-
     .plan h3 {
         grid-area: name-plan;
         margin-top: 20px;
         margin-bottom: 10px;
     }
-
     .plan-advantage-list {
         grid-area: list-plan;
         margin-top: 10px;
     }
-
     .map-card {
         display: grid;
         grid-template-areas: "icon-map name-map"
@@ -1430,22 +1401,18 @@ img.facebook {
         column-gap: 10px;
         width: 90%;
     }
-
     .icon-map {
         grid-area: icon-map;
     }
-
     .map-card h3 {
         grid-area: name-map;
         margin-top: 15px;
         margin-bottom: 10px;
     }
-
     .map-advantage-list {
         grid-area: list-map;
         margin-top: 10px;
     }
-
     .excursions {
         display: grid;
         grid-template-areas: "icon-excursions name-excursions"
@@ -1455,11 +1422,9 @@ img.facebook {
         column-gap: 10px;
         width: 90%;
     }
-
     .icon-excursions {
         grid-area: icon-excursions;
     }
-
     .excursions h3 {
         grid-area: name-excursions;
         margin-top: 15px;
@@ -1467,13 +1432,11 @@ img.facebook {
         margin-left: 7px;
         margin-right: 7px;
     }
-
     .excursions-advantage-list {
         grid-area: list-excursions;
         margin-top: 10px;
         margin-right: 7px;
     }
-
     .infrastructure {
         display: grid;
         grid-template-areas: "icon-infrastructure name-infrastructure"
@@ -1483,11 +1446,9 @@ img.facebook {
         column-gap: 10px;
         width: 90%;
     }
-
     .icon-infrastructure {
         grid-area: icon-infrastructure;
     }
-
     .infrastructure h3 {
         grid-area: name-infrastructure;
         margin-top: 15px;
@@ -1495,7 +1456,6 @@ img.facebook {
         margin-left: 7px;
         margin-right: 7px;
     }
-
     .infrastructure-advantage-list {
         grid-area: list-infrastructure;
         margin-top: 10px;
@@ -1503,31 +1463,25 @@ img.facebook {
     }
 
     /* ---- Section "Where to travel" ---- */
-
     section.where-to-travel {
         width: 85%;
         height: 622px;
         grid-template-rows: 90px 472px;
     }
-
     .questions {
         grid-template-columns: 49% 49%;
     }
-
     .collage img {
         width: 80%;
     }
-
     .collage {
         text-align: center;
     }
 
     /* ---- Section "Cities of Belarus" ---- */
-
     section.cities {
         width: 85%;
     }
-
     .novogrudok-city {
         grid-template-areas: "city-map city-info"
                             "city-map city-photos";
@@ -1537,58 +1491,46 @@ img.facebook {
         row-gap: 20px;
         background-color: #FFFFFF;
     }
-
     .city-info h3 {
         margin: 11px 15px;
     }
-
     .city-map {
         grid-area: city-map;
     }
-
     .city-map img, 
     .city-photos img {
         width: 65%;
     }
-
     .city-info p:nth-of-type(1) {
         grid-area: city-info;
         margin: 5px 15px 5px;
     }
-
     .city-info p:nth-of-type(2) {
         display: none;
     }
-
     .city-photos img:nth-of-type(1) {
         grid-area: city-photos;
         margin-bottom: 0;
     }
-
     .city-photos img:nth-of-type(2) {
         display: none;
     }
 
     /* ---- Section "Let's start" ---- */
-
     section.lets-start {
         margin: 0 auto 50px;
     }
-
     .app-review {
         display: none;
     }
-
     .advertisement-download {
         grid-template-columns: 100%;
         grid-template-rows: 100%;
     }
-
     .map-buttons {
         align-items: center;
         justify-items: center;
     }
-
     .map-buttons {
         grid-template-areas:
             "list-to-download buttons"
@@ -1597,13 +1539,11 @@ img.facebook {
         grid-template-rows: 20% 78%;
         row-gap: 0;
     }
-
     .products {
         grid-template-columns: 55% 43%;
         grid-template-rows: 100%;
         column-gap: 30px;
     }
-
     .buttons {
         grid-template-areas: "ask"
                             "try"
@@ -1617,31 +1557,35 @@ img.facebook {
 }
 
 @media screen and (max-width: 1140px) {
-
+    header {
+        grid-template-columns: 25% 45% 9%;
+    }
+    .logo {
+        grid-template-columns: 23% 77%;
+    }
+    ul.nav-menu {
+        padding-left: 30px;
+    }
     .open-burger-menu,
     .close-burger-menu {
         display: none;
     }
-
     section.slider {
         width: 90%;
         margin: 50px auto 110px;
     }
-    
     .icon-plan img,
     .icon-map img,
     .icon-excursions img,
     .icon-infrastructure img {
         width: 80%;
     }
-
     .plan h3,
     .map-card h3,
     .excursions h3,
     .infrastructure h3 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
-
     .plan-advantage-list li,
     .map-advantage-list li,
     .excursions-advantage-list li,
@@ -1650,8 +1594,66 @@ img.facebook {
     }
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 1000px) {
+    header {
+        justify-content: end;
+        grid-template-columns: 25% 50% 9%;
+        float: right;
+    }
+    ul.nav-menu {
+        padding-left: 0;
+    }
 
+    /* Карточки */
+    .cards {
+        column-gap: 10px;
+    }
+    .plan,
+    .map-card,
+    .excursions,
+    .infrastructure {
+        width: 100%;
+    }
+    .buttons .button {
+        width: 170px;
+    }
+
+}
+
+@media screen and (max-width: 880px) {
+    h1 {
+        font-size: 43px;
+    }
+    .plan h3,
+    .map-card h3,
+    .excursions h3,
+    .infrastructure h3 {
+        font-size: 1.3em;
+    }
+    .infrastructure,
+    .excursions {
+        grid-template-columns: 40% 58%;
+    }
+    ul.plan-advantage-list,
+    ul.map-advantage-list,
+    ul.excursions-advantage-list,
+    ul.infrastructure-advantage-list {
+        padding-left: 30px;
+    }
+    header {
+        grid-template-columns: 30% 50% 9%;
+    }
+    .titles-frame-large {
+        width: 60vw;
+    }
+    .city-map img, 
+    .city-photos img {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
     header {
         grid-template-areas: "logo-name language burger-menu";
         grid-template-columns: 40% 27% 17%;
@@ -1660,44 +1662,36 @@ img.facebook {
     .logo {
         grid-template-columns: 29% 71%;
     }
-
     .symbol {
         align-self: center;
         justify-self: center;
     }
-
     p.name {
         margin: auto;
         padding-left: 0;
     }
-
     ul.nav-menu {           /*Основное меню*/
         display: none;
     }
-
     .open-burger-menu img, .close-burger-menu img {
         display: block;
     }
-
     .close-burger-menu {    /*Крестик для закрытия бургер-меню*/
         display: none;
         grid-area: burger-menu;
         align-self: center;
         justify-self: center;
     }
-
     .open-burger-menu {          /*Иконка бургер-меню*/
         grid-area: burger-menu;
         display: block;
         align-self: center;
         justify-self: center;
     }
-
     .burger-menu-block {
         display: none;         /*Скрыть блок бургер меню*/
         /*display: block;*/    /*Показать блок бургер меню*/
     }
-
     ul.burger-menu-list {
         display: grid;
         width: 180px;
@@ -1720,28 +1714,22 @@ img.facebook {
         align-items: center;
         align-content: center;
     }
-
     li.burger-list-about {
         grid-area: burger-list-about;
     }
-    
     li.burger-list-where-to-travel {
         grid-area: burger-list-where-to-travel;
     }
-    
     li.burger-list-cities {
         grid-area: burger-list-cities;
     }
-    
     li.burger-list-buy {
         grid-area: burger-list-buy;
     }
-
     .switch-language {
         justify-self: right;
         margin-right: 35px;
     }
-    
     .burger-menu-list a {
         text-decoration: none;
         font-family: 'PlayRegular';
@@ -1752,36 +1740,31 @@ img.facebook {
         text-align: center;
         color: var(--general_text_color);
     }
-    
     .burger-menu-list a:hover {
         border-bottom: 2px solid #EB5E39;
     }
 
     /* --- SLIDER --- */
-
     section.slider {
         width: 90%;
         margin: 50px 20px 110px 20px;
         height: 531px;
         grid-template-rows: 100%;
     }
-
     h1 {
         font-size: 35px;
         line-height: 40px;
         margin-left: 25px;
     }
-
     p.details {
         font-size: 26px;
         line-height: 35px;
         margin-left: 25px;
+        width: 90%;
     }
-
     .slider-left-block {
         grid-template-rows: 40% 29% 20% 10%;
     }
-    
     .slider-right-block {
         grid-template-areas: "app-mockup app-mockup"
                              "arrow-left arrow-right";
@@ -1791,73 +1774,59 @@ img.facebook {
         background-position: center top;
         background-size: contain;
     }
-
     .arrow-slider {
-        height: 70%; 
+        height: 100%; 
     }
-
     .slider-controls {
         margin-right: 20px;
         margin-top: 20px;
     }
-
     .screen {
         background-size: contain;
         top: -30px;
     }
-
     .advertisement-download {
         column-gap: 0;
     }
 
     /* -- Texts --- */
-
     h2 {
         font-size: 26px;
         line-height: 35px;
     }
-
     p.text-for-block {
         font-size: 24px;
         line-height: 35px;
     }
-
     p.general-text {
         font-size: 16px;
         line-height: 20px;
     }
-
     .social-media {
         column-gap: 11px;
     }
-
     section.lets-start,
     section.cities,
     section.where-to-travel,
     section.about-us {
         row-gap: 45px;
     }
-
     section.cities {
         height: 502px;
         grid-template-rows: 90px 367px;
     }
-
     .city-map img, 
     .city-photos img {
         width: 80%;
     }
-
     section.where-to-travel {
         height: 518px;
         grid-template-rows: 90px 384px;
     }
-
     p.text-for-questions {
         margin-top: 47px;
         margin-bottom: 29px;
     }
-
     .cards {
         grid-template-areas:
             "plan"
@@ -1871,12 +1840,10 @@ img.facebook {
         justify-items: center;
         align-items: center;
     }
-
     section.about-us {
         height: 1225px;
         grid-template-rows: 140px 1032px;
     }
-
     .icon-plan,
     .icon-map,
     .icon-excursions,
@@ -1884,43 +1851,46 @@ img.facebook {
         margin-top: 0;
         align-self: center;
     }
-
     .icon-plan img, 
     .icon-map img, 
     .icon-excursions img, 
     .icon-infrastructure img {
-        width: 70%;
+        width: 200px;
     }
-    
-    .excursions {
-        height: 100%;
-    }
-
+    .excursions,
     .infrastructure {
         height: 100%;
+        grid-template-rows: 50% 50%;
     }
-
     .map-card {
         height: 100%;
     }
-
     .map-card h3,
     .excursions h3 {
         margin-left: 20px;
         margin-right: 20px;
+        margin-top: 25px;
     }
-
+    .infrastructure h3{
+        margin-top: 25px;
+    }
     .plan-advantage-list li,
-    .map-advantage-list li,
     .excursions-advantage-list li,
     .infrastructure-advantage-list li {
-        font-size: 1.2em;
+        font-size: 1.3em;
+        padding-right: 10px;
     }
-
+    .map-advantage-list li {
+        font-size: 1.3em;
+        padding-right: 30px;
+    }
+    .plan, 
+    .map-card {
+        grid-template-columns: 40% 58%;
+    }
     section.lets-start {
         height: 578px;
     }
-
     .products {
         grid-template-areas: "novogrudok-app"
                              "map-navigation";
@@ -1929,40 +1899,35 @@ img.facebook {
         column-gap: 0;
         row-gap: 10px;
     }
-
     .novogrudok-app {
         grid-template-columns: 20% 50%;
         grid-template-rows: 100%;
         justify-content: center;
     }
-
     .buttons {
         grid-template-rows: 1fr 1fr 1fr;
         align-self: center;
     }
+    .novogrudok-city {
+        grid-template-columns: 40% 58%;
+    }
 }
 
-@media screen and (max-width: 500px) {
-    
+@media screen and (max-width: 600px) {
     /* -- Header, General settings --*/
-
     header {
         grid-template-columns: 35% 30% 15%;
     }
-
     p.name {
         text-align: center;
         line-height: 30px;
     }    
-
     .titles-frame {
         width: 90vw;
     }
-
     .titles-frame-large {
         width: 90vw;
     }
-
     .drop-decor-left,
     .drop-where-to-travel,
      .drop-start {
@@ -1970,7 +1935,6 @@ img.facebook {
     }
 
     /* -- Section Slider --*/
-
     section.slider {
         width: 90%;
         height: 970px;
@@ -1981,7 +1945,6 @@ img.facebook {
         row-gap: 0;
         margin: 50px auto 110px;
     }
-
     .slider-right-block {
         grid-template-areas: "arrow-left app-mockup arrow-right";
         grid-template-columns: 10% 80% 10%;
@@ -1989,29 +1952,26 @@ img.facebook {
         row-gap: 0;
         background-position: center center;
     }
-
     .slider-left-block {
+        margin-top: 30px;
         grid-template-rows: 30% 32% 20% 13%;
     }
-
     .slider-controls {
         justify-content: center;
         margin-right: 0;
     }
-
     .arrow-slider {
         width: 30px;
         height: 60px;
     }
-
     h1 {
         line-height: 40px;
         margin-left: 0;
         margin-top: 10px;
         margin: auto;
         width: 80%;
+        font-size: 30px;
     }
-
     p.details {
         font-size: 24px;
         line-height: 30px;
@@ -2019,18 +1979,15 @@ img.facebook {
         margin: auto;
         width: 80%;
     }
-
     .screen {
         top: 0;
     }
 
     /* -- Section About us --*/
-
     section.about-us {
         width: 85%;
         height: 1238px;
     }
-
     .plan,
     .map-card,
     .excursions,
@@ -2038,7 +1995,6 @@ img.facebook {
         width: 100%;
         height: 100%;
     }
-
     .plan-advantage-list li, 
     .map-advantage-list li, 
     .excursions-advantage-list li, 
@@ -2046,77 +2002,62 @@ img.facebook {
         font-size: 18px;
         margin-bottom: 18px;
     }
-
     .icon-plan img, 
     .icon-map img, 
     .icon-excursions img, 
     .icon-infrastructure img {
         width: 80%;
     }
-
     .plan {
         grid-template-columns: 40% 58%;
     }
-
     .map-card {
         grid-template-columns: 40% 58%;
     }
-
     .excursions {
         grid-template-columns: 40% 58%;
     }
-
     .infrastructure {
         grid-template-columns: 40% 58%;
     }
 
     /* -- Section Where to travel --*/
-
     section.where-to-travel {
         height: 632px;
         grid-template-rows: 90px 494px;
     }
-
     .questions {
         grid-template-columns: 100%;
         grid-template-rows: 56% 44%;
         grid-template-areas: "collage"
                              "text-button";
     }
-
     .collage img {
         width: 70%;
     }
-
-    p.text-for-questions {
-        margin-top: 2%;
-        margin-bottom: 4%;
+    .collage {
+        margin-top: 7%;
     }
 
     /* -- Section Cities --*/
-
     section.cities {
         height: 511px;
         grid-template-rows: 90px 375px;
     }
-
     .novogrudok-city {
         grid-template-columns: 45% 54%;
         grid-template-rows: 66% 33%;
         row-gap: 10px;
         column-gap: 10px;
     }
-
     .city-map img {
         width: 90%;
     }
-
     .city-photos img {
         width: 70%;
     }
 
     /* -- Section Let's start --*/
-
     section.lets-start {
         margin-left: 0;
         margin-right: 0;
@@ -2125,276 +2066,62 @@ img.facebook {
         height: 536px;
         grid-template-rows: 90px 400px;
     }
-
     .map-buttons {
         grid-template-columns: 58% 42%;
         grid-template-rows: 20% 80%;
     }
-
     .products {
         row-gap: 24px;
     }
-
     p.text-for-block {
         line-height: 30px;
         text-align: center;
     }
-
     .map-navigation {
         text-align: center;
     }
-
     .map-navigation div {
         width: 90%;
     }
 
     /* -- Footer --*/
-
     footer {
         grid-template-columns: 30% 50%;
     }
 }
 
-@media screen and (max-width: 400px) {
-
-    /* -- Header, General section settings --*/
-
-    header {
-        grid-template-columns: 50% 17% 15%;
-    }
-
-    p.name {
-        line-height: 25px;
-        text-align: left;
-        padding-left: 5px;
-        font-size: 18px;
-    }
-    
-    .open-burger-menu {
-        text-align: center;
-    }
-
-    .open-burger-menu img,
-    .switch-language img {
-        width: 80%;
-    }
-
-    .switch-language {
-        justify-self: center;
-        margin-right: 0;
-    }
-
-    .titles-frame {
-        width: 90vw;
-    }
-
-    .titles-frame-large {
-        width: 90vw;
-    }
-
-    .titles-frame-large::before,
-    .titles-frame-large::after,
-    .titles-frame::before,
-    .titles-frame::after {
-        width: 30px;
-    }
-
-    /* -- Slider -- */
-
-    .slider-left-block {
-        grid-template-rows: 31% 34% 20% 15%;
-    }
-
-    h1 {
-        font-size: 26px;
-        line-height: 30px;
-        width: 85%;
-    }
-
-    .slider-controls {
-        margin-top: 0;
-    }
-
-    /* -- Section About us --*/
-
-    section.about-us {
-        width: 85%;
-        height: 1225px;
-        /*grid-template-rows: 140px 1032px;*/
-        grid-template-rows: 140px 1fr;
-    }
-
-    .cards {
-        grid-template-rows: 22% 24% 24% 24%;
-    }
-
-    .icon-plan img, 
-    .icon-map img, 
-    .icon-excursions img, 
-    .icon-infrastructure img {
-        width: 80%;
-    }
-
-    .plan h3, 
-    .map-card h3, 
-    .excursions h3, 
-    .infrastructure h3 {
-        font-size: 20px;
-        margin: 15px auto 5px;
-        line-height: 25px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .plan {
-        grid-template-areas:
-            "name-plan"
-            "icon-plan";
-        grid-template-columns: 100%;
-        grid-template-rows: 25% 75%;
-        column-gap: 0;
-        row-gap: 0;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .map-card {
-        display: grid;
-        grid-template-areas:
-            "name-map"
-            "icon-map";
-        grid-template-columns: 100%;
-        grid-template-rows: 26% 73%;
-        column-gap: 0;
-        width: 100%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .excursions {
-        grid-template-areas:
-            "name-excursions"
-            "icon-excursions";
-        grid-template-columns: 100%;
-        grid-template-rows: 25% 75%;
-        column-gap: 0;
-        width: 100%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .infrastructure {
-        grid-template-areas:
-            "name-infrastructure"
-            "icon-infrastructure";
-        grid-template-columns: 100%;
-        grid-template-rows: 32% 69%;
-        column-gap: 0;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .plan-advantage-list,
-    .map-advantage-list,
-    .excursions-advantage-list,
-    .infrastructure-advantage-list {
-        display: none;
-    }
-
-    h2 {
-        font-size: 24px;
-        line-height: 30px;
-    }
-
-    /* -- Section Where to travel --*/
-
-    section.where-to-travel {
-        height: 552px;
-        grid-template-rows: 90px 420px;
-    }
-
-    .questions {
-        grid-template-columns: 100%;
-        grid-template-rows: 52% 48%;
-        grid-template-areas: "collage"
-                            "text-button";
-    }
-
-    .collage img {
-        width: 70%;
-    }
-
-    p.text-for-block {
-        font-size: 20px;
-        line-height: 25px;
-    }
-    
-    p.text-for-questions {
-        margin-top: 15px;
-        margin-bottom: 16px;
-    }
-
-    .text-button {
-        align-self: center;
-    }
-
-    /* -- Section Cities --*/
-
-    section.cities {
-        height: 948px;
-        grid-template-rows: 90px 815px;
-    }
-    
+@media screen and (max-width: 500px) {
     .novogrudok-city {
         grid-template-areas:
-            "city-info"
-            "city-map"
-            "city-photos";
-        grid-template-columns: 100%;
-        grid-template-rows: 25% 50% 25%;
-        row-gap: 0;
+        "city-map city-info"
+        "city-photos ...";
+        grid-template-rows: 65% 40%;
+        row-gap: 20px;
     }
-
-    .city-map img, 
     .city-photos img {
         width: 90%;
     }
 
-    .drop-decor-left,
-    .drop-where-to-travel,
-     .drop-start {
-        width: 100%;
-    }
-
     /* -- Section Let's start --*/
-
     section.lets-start {
         height: 707px;
         grid-template-columns: 100%;
         grid-template-rows: 90px 602px;
         margin: 0 auto 50px;
     }
-
     .title-lets-start h2 {
         margin-left: 10px;
         margin-right: 10px;
     }
-
     p.app-name {
         display: inline-block;
         margin-bottom: 10px;
         
     }
-
     .map-navigation {
         display: block;        
         text-align: center;
     }
-
     .map-buttons {
         grid-template-areas:
             "list-to-download-block"
@@ -2404,12 +2131,10 @@ img.facebook {
         grid-template-rows: 9% 52% 35%;
         row-gap: 10px;
     }
-
     p.list-to-download {
         grid-area: list-to-download-block;
         margin: 0 auto 0;
     }
-    
     .products {
         grid-area: products-block;
         grid-template-areas: "novogrudok-app"
@@ -2419,7 +2144,6 @@ img.facebook {
         row-gap: 10px;
         column-gap: 0;
     }
-
     .buttons {
         grid-area: buttons-block;
         display: grid;
@@ -2433,7 +2157,6 @@ img.facebook {
     }
 
     /* -- Footer --*/
-
     footer {
         width: 100%;
         height: 90px;
@@ -2445,16 +2168,215 @@ img.facebook {
         align-content: center;
         justify-content: center;
     }
-
     p.rights {
         justify-self: center;
         font-size: 14px;
     }
-
     .social-media {
         column-gap: 20px;
         align-items: center;
         justify-self: center;
     }
+}
 
+@media screen and (max-width: 420px) {
+    .excursions,
+    .infrastructure,
+    .map-card,
+    .plan {
+        grid-template-columns: 35% 65%;
+    }
+    .up-btn {
+        bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* -- Header, General section settings --*/
+    header {
+        grid-template-columns: 50% 17% 15%;
+    }
+    p.name {
+        line-height: 25px;
+        text-align: left;
+        padding-left: 5px;
+        font-size: 18px;
+    }
+    .open-burger-menu {
+        text-align: center;
+    }
+    .open-burger-menu img,
+    .switch-language img {
+        width: 80%;
+    }
+    .switch-language {
+        justify-self: center;
+        margin-right: 0;
+    }
+    .titles-frame {
+        width: 90vw;
+    }
+    .titles-frame-large {
+        width: 90vw;
+    }
+    .titles-frame-large::before,
+    .titles-frame-large::after,
+    .titles-frame::before,
+    .titles-frame::after {
+        width: 30px;
+    }
+
+    /* -- Slider -- */
+    .slider-left-block {
+        grid-template-rows: 31% 34% 20% 15%;
+    }
+    h1 {
+        font-size: 26px;
+        line-height: 30px;
+        width: 85%;
+    }
+    .slider-controls {
+        margin-top: 0;
+    }
+
+    /* -- Section About us --*/
+    section.about-us {
+        width: 85%;
+        height: 1225px;
+        /*grid-template-rows: 140px 1032px;*/
+        grid-template-rows: 140px 1fr;
+    }
+    .cards {
+        grid-template-rows: 22% 24% 24% 24%;
+    }
+    .icon-plan img, 
+    .icon-map img, 
+    .icon-excursions img, 
+    .icon-infrastructure img {
+        width: 80%;
+    }
+    .plan h3, 
+    .map-card h3, 
+    .excursions h3, 
+    .infrastructure h3 {
+        font-size: 20px;
+        margin: 15px auto 5px;
+        line-height: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .plan {
+        grid-template-areas:
+            "name-plan"
+            "icon-plan";
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 75%;
+        column-gap: 0;
+        row-gap: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .map-card {
+        display: grid;
+        grid-template-areas:
+            "name-map"
+            "icon-map";
+        grid-template-columns: 100%;
+        grid-template-rows: 26% 73%;
+        column-gap: 0;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .excursions {
+        grid-template-areas:
+            "name-excursions"
+            "icon-excursions";
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 75%;
+        column-gap: 0;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .infrastructure {
+        grid-template-areas:
+            "name-infrastructure"
+            "icon-infrastructure";
+        grid-template-columns: 100%;
+        grid-template-rows: 32% 69%;
+        column-gap: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .plan-advantage-list,
+    .map-advantage-list,
+    .excursions-advantage-list,
+    .infrastructure-advantage-list {
+        display: none;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    /* -- Section Where to travel --*/
+    section.where-to-travel {
+        height: 552px;
+        grid-template-rows: 90px 420px;
+    }
+    .questions {
+        grid-template-columns: 100%;
+        grid-template-rows: 52% 48%;
+        grid-template-areas: "collage"
+                            "text-button";
+    }
+    .collage img {
+        width: 70%;
+    }
+    p.text-for-block {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    p.text-for-questions {
+        margin-top: 15px;
+        margin-bottom: 16px;
+    }
+    .text-button {
+        align-self: center;
+    }
+
+    /* -- Section Cities --*/
+    section.cities {
+        height: 948px;
+        grid-template-rows: 90px 815px;
+    }
+    .novogrudok-city {
+        grid-template-areas:
+            "city-info"
+            "city-map"
+            "city-photos";
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 50% 25%;
+        row-gap: 0;
+    }
+    .city-map img, 
+    .city-photos img {
+        width: 90%;
+    }
+    .drop-decor-left,
+    .drop-where-to-travel,
+     .drop-start {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px)  {
+    .text-button .button {
+        width: 170px;
+    }
 }
