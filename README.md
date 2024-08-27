@@ -30,4 +30,5 @@ A promotional page for the Novogrudok tourist app, describing its strengths and 
    - after closing the result, you can take the survey again by clicking on the “Reset” icon.
 5. “Ask a question” feedback form (validation using jQuery library). After submitting the form, a "thank" message is displayed.
 6. integrated Yandex-map with marked city Novogrudok on it (HTML);
-7. integrated advertising banner (Adobe Animate CC). 
+7. integrated advertising banner (Adobe Animate CC);
+8. responsive layout (for screen widths from 1920 px to 350 px) (CSS).
